@@ -6,20 +6,16 @@
 # --- Required options --- #
 
 # Name of website
-title: My Website
+title: attacker-codeninja.github.io
 
 # Your name to show in the footer
-author: Some Person
+author: Aakash Choudhary
 
 # --- List of links in the navigation bar --- #
 
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
-
+  
 # --- Logo --- #
 
 # Image to show in the navigation bar - works best with a square image
@@ -39,12 +35,9 @@ round-avatar: true
 # Select the social network links that you want to show in the footer.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "someone@example.com"
-  facebook: deanattali
-  github: daattali
-  twitter: daattali
-  patreon: DeanAttali
-  youtube: c/daattali
+  email: "choudharyaakash68@gmail.com"
+  github: attacker-codeninja
+  twitter: LearnerHunter
 #  medium: yourname
 #  reddit: yourname
 #  linkedin: daattali
