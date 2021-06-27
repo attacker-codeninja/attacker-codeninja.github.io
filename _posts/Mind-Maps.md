@@ -8,7 +8,7 @@ typora-copy-images-to: ./Mind-Maps
 
 ## 1. IDOR Techniques
 
-<img src="/assets/img//IDOR Techniques-MindMap.png" alt="IDOR Techniques" style="zoom:200%;" />
+<img src="/assets/img/IDOR Techniques-MindMap.png" alt="IDOR Techniques" style="zoom:200%;" />
 
 
 
@@ -16,7 +16,7 @@ typora-copy-images-to: ./Mind-Maps
 
 
 
-![Testing 2FA](/assets/img//Testing 2FA.jpeg)
+![Testing 2FA](/assets/img/Testing 2FA.jpeg)
 
 
 
