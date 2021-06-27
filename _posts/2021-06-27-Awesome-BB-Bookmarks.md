@@ -25,6 +25,8 @@ tags: [bookmarks, bug bounty]
 * [0xn3va Cheatsheets](https://0xn3va.gitbook.io/cheat-sheets/)
 * [Code-Breaking, Cipher and Logic Puzzles solving tools](https://www.boxentriq.com/code-breaking)
 * [Bug Hunter Handbook](https://gowthams.gitbook.io/bughunter-handbook)
+* [Link Share](https://linksshare.io/)
+* [🐛 Bug Bounty Hunting Search Engine](https://www.bugbountyhunting.com/)
 
 
 
