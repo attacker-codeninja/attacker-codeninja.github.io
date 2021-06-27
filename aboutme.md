@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: System Pentester Lover
 ---
 
 My name is CodeNinja a.k.a Aakash Choudhary
