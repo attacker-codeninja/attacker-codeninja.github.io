@@ -55,7 +55,7 @@ typora-copy-images-to: ./Mind-Maps
 
 ## 6. SSRF
 
-<img src="/assets/img/ssrf.png" alt="SSRF" style="zoom:200%;" />
+<img src="/assets/img/ssrf.jpeg" alt="SSRF" style="zoom:200%;" />
 
 
 
@@ -98,7 +98,7 @@ typora-copy-images-to: ./Mind-Maps
 
 ---
 
-<img src="/assets/img/map.jpeg" alt="Mobile App Security" style="zoom:200%;" />
+<img src="/assets/img/map.png" alt="Mobile App Security" style="zoom:200%;" />
 
 
 ---
