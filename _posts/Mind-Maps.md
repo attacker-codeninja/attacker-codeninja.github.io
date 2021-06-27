@@ -16,7 +16,7 @@ typora-copy-images-to: ./Mind-Maps
 
 
 
-![Testing 2FA](/assets/img/Testing 2FA.jpeg)
+<img src="/assets/img/Testing 2FA.jpeg" alt="Testing 2FA" style="zoom:200%;" /)
 
 
 
