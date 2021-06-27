@@ -18,19 +18,15 @@ typora-copy-images-to: ./Mind-Maps
 
 <img src="/assets/img/Testing 2FA.jpeg" alt="Testing 2FA" style="zoom:200%;" />
 
-
-
-![Testing 2FA - 2](Mind-Maps/So, you want to.jpeg)
-
+---
+<img src="/assets/img/So, you want to.jpeg" alt="Testing 2FA - 2" style="zoom:200%;" />
 
 
 
 
 ## 3. 2FA Bypass Techniques
 
-
-
-![2FA Bypass Techniques](Mind-Maps/2FA Bypass Techniques.png)
+<img src="/assets/img/2FA Bypass Techniques.png" alt="2FA Bypass Techniques" style="zoom:200%;" />
 
 
 
@@ -39,8 +35,8 @@ typora-copy-images-to: ./Mind-Maps
 ## 4. Bugs in Register/ Signup Feature
 
 
+<img src="/assets/img/Bugs-in-Register- Signup-Feature.jpg" alt="Bugs in Register/ Signup Feature" style="zoom:200%;" />
 
-![Bugs in Register/ Signup Feature](Mind-Maps/Bugs-in-Register- Signup-Feature.jpg)
 
 
 
@@ -49,8 +45,9 @@ typora-copy-images-to: ./Mind-Maps
 ## 5. Cookie_Based_Authentication_Vulnerabilities
 
 
+<img src="/assets/img/Cookie_Based_Authentication_Vulnerabilities.png" alt="Cookie_Based_Authentication_Vulnerabilities" style="zoom:200%;" />
 
-![Cookie_Based_Authentication_Vulnerabilities](Mind-Maps/Cookie_Based_Authentication_Vulnerabilities.png)
+
 
 
 
@@ -58,9 +55,7 @@ typora-copy-images-to: ./Mind-Maps
 
 ## 6. SSRF
 
-
-
-![SSRF](Mind-Maps/ssrf.jpeg)
+<img src="/assets/img/ssrf.png" alt="SSRF" style="zoom:200%;" />
 
 
 
@@ -69,16 +64,16 @@ typora-copy-images-to: ./Mind-Maps
 ## 7. Tesing JIRA for CVE's
 
 
+<img src="/assets/img/JIRA_CVEs.png" alt="Tesing JIRA for CVE's" style="zoom:200%;" />
 
-![Tesing JIRA for CVE's](Mind-Maps/JIRA_CVEs.png)
 
 
 
 ## 8. OAUTH2 Pentesting Checklist
 
+<img src="/assets/img/obtain refresh token.png" alt="OAUTH2 Pentesting Checklist" style="zoom:200%;" />
 
 
-![OAUTH2 Pentesting Checklist](Mind-Maps/obtain refresh token.png)
 
 
 
@@ -86,9 +81,9 @@ typora-copy-images-to: ./Mind-Maps
 
 ## 9. Testing OAUTH
 
+<img src="/assets/img/OAuth 2.0.jpeg" alt="Testing OAUTH" style="zoom:200%;" />
 
 
-![Testing OAUTH](Mind-Maps/OAuth 2.0.jpeg)
 
 
 
@@ -97,17 +92,16 @@ typora-copy-images-to: ./Mind-Maps
 ## 10. Android Testing Related MindMAP
 
 
-
-![Android Application PT Checklist](Mind-Maps/AndroidMindmap.jpeg)
-
+<img src="/assets/img/AndroidMindmap.jpeg" alt="Android Application PT Checklist" style="zoom:200%;" />
 
 
 
+---
+
+<img src="/assets/img/map.jpeg" alt="Mobile App Security" style="zoom:200%;" />
 
 
+---
 
-![Mobile App Security](Mind-Maps/map.png)
+<img src="/assets/img/Android Attack Vectors Xmind Map.png" alt="Android Attack Vector" style="zoom:200%;" />
 
-
-
-![Android Attack Vector](Mind-Maps/Android Attack Vectors Xmind Map.png)
