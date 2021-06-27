@@ -1,3 +1,9 @@
+---
+layout: post
+title: Awesome Bug Bounty Bookmarks
+tags: [bookmarks, bug bounty]
+---
+
 ## Awesome Bug bounty Bookmarks
 
 
