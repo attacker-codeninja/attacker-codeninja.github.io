@@ -30,11 +30,36 @@ tags: [bookmarks, bug bounty]
 
 
 
+### 2. Recon - Methodologies - Checklists
 
 
-### 2. IDORs
+
+* [Recon For Dummies](https://infosecwriteups.com/recon-for-dummies-632f8f50ce12)
+* [Finding The Real Origin IPs Hiding Behind CloudFlare or Tor](https://www.secjuice.com/finding-real-ips-of-origin-servers-behind-cloudflare-or-tor/)
+* [BUG BOUNTY CHECK LIST BY C1](https://medium.com/@cc1h2e1/bug-bounty-check-list-by-c1-2beb7ae3c116)
+* [Basic Bug Bounty Recon](https://www.youtube.com/watch?v=9CfZQxyPJU0)
+* [Bug Bounty Recon — Tools And Resources - TheXSSRat](https://thexssrat.medium.com/bug-bounty-recon-tools-and-resources-903f52318f5c)
+* [THE BEST BUG BOUNTY RECON METHODOLOGY](https://securib.ee/beelog/the-best-bug-bounty-recon-methodology/)
+* [Recon Everything](https://infosecwriteups.com/recon-everything-48aafbb8987)
+
+
+
+
+
+### 3. Awesome Blogs
+
+
+
+* [Securitum Blog](https://research.securitum.com/)
+* 
+
+
+
+
+
+### 4. IDORs
 
 
 
 * [All about IDOR vulnerability](https://notes.mufaddal.info/web/idor)
-*  
+* 
