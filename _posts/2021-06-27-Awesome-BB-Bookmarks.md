@@ -51,7 +51,7 @@ tags: [bookmarks, bug bounty]
 
 
 * [Securitum Blog](https://research.securitum.com/)
-* 
+* [Finding and Exploiting Unintended Functionality in Main Web App APIs](https://bendtheory.medium.com/finding-and-exploiting-unintended-functionality-in-main-web-app-apis-6eca3ef000af) - Must Read
 
 
 
