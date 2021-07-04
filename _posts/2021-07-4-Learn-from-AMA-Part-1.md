@@ -274,3 +274,6 @@ tags: [AMA,ama, bug bounty]
 
 
 
+### References
+
+[BugBountyForum Blog AMA](https://bugbountyforum.com/ama/)
