@@ -442,7 +442,7 @@ __proto__: Object
 
 
 
-> **Prototype  Pollution** occus when there is a bug in application that makes it possible to pollute **Object.prototype** with **arbitrary properties.**
+> **Prototype  Pollution** occurs when there is a bug in application that makes it possible to pollute **Object.prototype** with **arbitrary properties.**
 
 
 
