@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: Learn Prototype Pollution in Series - Part 3
