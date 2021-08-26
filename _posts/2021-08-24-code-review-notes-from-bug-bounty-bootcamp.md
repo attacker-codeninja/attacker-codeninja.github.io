@@ -10,6 +10,11 @@ tags: [code review]
 ---
 
 
+> Before starting, Thanks to Vickie Li for making this awesome book on Bug Bounty
+
+* Her Twitter Link -> https://twitter.com/vickieli7
+* Bug Bounty Bootcamp Link -> https://www.amazon.in/Bug-Bounty-Bootcamp-Reporting-Vulnerabilities-ebook/dp/B08YK368Y3
+
 
 ## 1. The Fast Approach: grep Is Your Best Friend
 
