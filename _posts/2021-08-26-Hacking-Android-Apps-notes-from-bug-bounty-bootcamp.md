@@ -153,7 +153,7 @@ tags: [androing pentesting]
 
 
 
-* ` classes.dex file`
+* `classes.dex file`
   * contains the `application source code` compiled in the **DEX** file format.
 * `resources.arsc file`
   * contains the application’s `precompiled resources`, such as **strings, colors, and styles**
@@ -165,7 +165,7 @@ tags: [androing pentesting]
   * `Compiled kernel modules are located here and are often a source of vulnerabilities.`
 * `assets folder`
   * contains the application’s assets, such as **video, audio, and document templates**
-* ` META-INF folder`
+* `META-INF folder`
   * contains the **MANIFEST.MF** file, which `stores metadata about the application`
   *  This folder also contains the `certificate and signature of the APK`.
 
@@ -183,7 +183,7 @@ tags: [androing pentesting]
 
 
 
-> After understanding the components of an Android application we  now need to know `how to process the APK file` and e`xtract the Android source code`
+> After understanding the components of an Android application we  now need to know `how to process the APK file` and `extract the Android source code`
 
 
 
@@ -240,7 +240,7 @@ tags: [androing pentesting]
 * We  can use Apktool to get individual files from an APK for source code analysis
 * Example Command -> ` apktool d example.apk`
   * this command extracts files from an APK called example.apk
-* Another useful Command -> ` apktool b example -o example.apk`
+* Another useful Command -> `apktool b example -o example.apk`
   * This command `packages the content of the example folder into the file example.apk`
   * Why needing ? -> 
     * Sometimes, we want to modify an APK’s source code and see if that changes the behavior of the app
@@ -332,7 +332,7 @@ tags: [androing pentesting]
 * ` AndroidManifest.xml contains basic information about the application and its functionalities`
   * Good starting point for analysis 
 * Unpack the APK File -> then read the files to get the basic understanding of the applications
-  * Like its **components ** and **permissions it uses **
+  * Like its **components** and **permissions it uses**
   * Then dive into other files to look for other mobile-specific vulnerabilities.
   * Look for `hardcoded secrets or API keys` that the application needs to access web services.
 * `res/values/strings.xml file`
