@@ -285,23 +285,6 @@ def validate_referer(): 3
 
 
 
----
-
-
-
-
-
-## Summary =>
-
-
-
-* Code review is an effective way of finding vulnerabilities
-* If we can extract source code at any point during our hacking process, dive into the source code and see what we can find
-* Manual code review can be time consuming
-* Using static analysis security testing (SAST) tools is a great way to automate the process
-
-
-
 
 
 
