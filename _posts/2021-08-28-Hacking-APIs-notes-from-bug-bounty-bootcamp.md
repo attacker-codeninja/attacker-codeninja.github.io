@@ -428,24 +428,4 @@ tags: [androing pentesting]
 
 
 
----
-
-
-
-## 3. SUMMARY
-
-
-
-* API -> Application Programming Interface
-  * Used to communicate between user and server Using Requests
-* Get all Endpoints and enumerate them and test them for various vulnerabilities 
-* Check for all HTTP Request Methods and switch between them
-* Not only focus Endpoints for Web but also for Mobile
-  * Might set protection for both differently and hence -> can be loophole there
-* Various Methodologies are there for API Testing and all are written is above
-
-
-
-
-
 
