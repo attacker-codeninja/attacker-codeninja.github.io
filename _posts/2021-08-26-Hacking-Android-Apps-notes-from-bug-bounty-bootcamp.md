@@ -359,29 +359,3 @@ tags: [androing pentesting]
 >
 > Keep in mind the special classes of vulnerabilities, like hardcoded secrets and the storage of sensitive data in database files, that tend to manifest in mobile apps more than in web applications.
 
-
-
-
-
----
-
-
-
-## 6. Summary
-
-
-
-
-
-* Mobile Pentesting is also a good starting point to test compare to web pentesting because of less hackers in Mobile Pentesting
-* We can use Physical Device and as well as Emulators [Android Studio and Genymotion - for Android]
-* Understanding core concepts of Android is important before testing Android hacking
-* **AndroidManifest.xml** -> is the backbone of android applications -> always check this files
-* Often contain unique endpoints as compare to web applications - so look for this
-* Setting burp with android devices [physical] and emulators -> Very important and must to know the applications and testing
-* APK -> Android Package -> just like ZIP File
-* Certificate Pinning -> Mechanism that only trust **predefined certificates only**
-  * So, as a tester we must know to Bypass this Certificate Pinning
-  * Tool -> Frida + Objection
-* ADB -> Very good command to connect with devices
-* APKTOOL -> Good tool to extract packages from application [apk files]
