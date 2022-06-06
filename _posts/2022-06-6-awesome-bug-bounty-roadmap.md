@@ -42,7 +42,7 @@ Without wasting time, following are the Roadmaps =>
     * [https//cinzinga.com/2-Years-Of-Bug-Bounty/](https//cinzinga.com/2-Years-Of-Bug-Bounty/)
     * [https//medium.com/@dprice_theblogger/my-first-year-as-a-pentester-241f0eb52c73](https//medium.com/@dprice_theblogger/my-first-year-as-a-pentester-241f0eb52c73)
     * [https//justintaft.com/blog/bug-hunting-tips](https//justintaft.com/blog/bug-hunting-tips)
-    * [https//github.com/TheHairyJ/Gratis/blob/main/Your%20Career%20in%20Cybersecurity.pdf](https//github.com/TheHairyJ/Gratis/blob/main/Your%20Career%20in%20Cybersecurity.pdf)
+    * [https//github.com/TheHairyJ/Gratis/blob/main/Your%20Career%20in%20Cybersecurity.pdf](https://github.com/TheHairyJ/Gratis/blob/main/Your%20Career%20in%20Cybersecurity.pdf))
     * [https//medium.com/@skavans_/bug-bounty-do-you-need-to-be-a-programmer-adaa54679f4](https//medium.com/@skavans_/bug-bounty-do-you-need-to-be-a-programmer-adaa54679f4)
     * [https//www.offensive-security.com/offsec/reflections-on-failure-one/](https//www.offensive-security.com/offsec/reflections-on-failure-one/)
     * [https//www.offensive-security.com/offsec/reflections-on-failure-two/](https//www.offensive-security.com/offsec/reflections-on-failure-two/)
