@@ -51,20 +51,16 @@ Without wasting time, following are the Roadmaps =>
     * https://github.com/hakluke/bug-bounty-standards
     * https://twitter.com/InsiderPhD/status/1477648560241979396
     * https://www.checkpoint.com/pages/vulnerability-research/
-    * https://www.checkpoint.com/pages/vulnerability-research/
-    * https://www.checkpoint.com/pages/vulnerability-research/
-    * https://www.checkpoint.com/pages/vulnerability-research/
+    * [https://www.offensive-security.com/offsec/thoughts-teaching-hacking/](https://ozguralp.medium.com/how-to-start-bug-bounties-101-how-to-make-a-million-in-4-years-e15ee62d6f4)
+    * https://s0md3v.github.io/blog/creativity-and-self-doubt
     * https://microsoftedge.github.io/edgevr/posts/bug-bounty-hunter-to-working-at-microsoft/
     * https://codingo.com/posts/2021-07-18-bounties-for-a-living/
-    * https://codingo.com/posts/2021-07-18-bounties-for-a-living/
-    * https://codingo.com/posts/2021-07-18-bounties-for-a-living/
-    * https://codingo.com/posts/2021-07-18-bounties-for-a-living/
-    * https://codingo.com/posts/2021-07-18-bounties-for-a-living/
+    * https://codingo.com/posts/2021-04-04-bug-classes-starting-out/
+    * https://iamsarvagyaa.github.io/think-outof-thebox-01
     * https://iamsarvagyaa.github.io/think-outof-thebox-02
-    * https://iamsarvagyaa.github.io/think-outof-thebox-02
-    * https://iamsarvagyaa.github.io/think-outof-thebox-02
-    * https://iamsarvagyaa.github.io/think-outof-thebox-02
-    * https://iamsarvagyaa.github.io/think-outof-thebox-02
+    * https://medium.com/@iamsarvagyaa/so-you-want-to-be-a-hacker-e33cc556b240
+    * https://iamsarvagyaa.github.io/think-outof-thebox-03
+    * https://iamsarvagyaa.github.io/think-outof-thebox-04
     * https://securitytrails.com/blog/interview-hakluke
     * https://sametsahin.net/posts/bug-bounty-top-hackers/
     * https://blog.redteam-pentesting.de/2021/wholesome-curl-calls/
