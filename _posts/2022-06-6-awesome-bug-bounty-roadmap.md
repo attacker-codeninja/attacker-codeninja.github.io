@@ -35,7 +35,7 @@ Without wasting time, following are the Roadmaps =>
     * Learn to use => 1. Burpsuite 2. ZAP 3. Nuceli  4. Jaeles
         * That is work on your creativity to use above tools
 
-
+<br><br>
 * Read following blogs or Twitter or Articles
 
     * [https//njmulsqb.engineer/2022/04/10/the-100daysofhacking-challenge.html](https//njmulsqb.engineer/2022/04/10/the-100daysofhacking-challenge.html)
@@ -138,7 +138,7 @@ Without wasting time, following are the Roadmaps =>
 
 
 
-
+<br><br>
 * Now time for make your concepts solid by reading following books
     * The tangled Web: a guide to securing modern Web applications
     * breaking into information security
@@ -148,22 +148,22 @@ Without wasting time, following are the Roadmaps =>
     * WAHH -> Bible -> Always helpful as a reference
     * Web hacking 101 OR Real world bug hunting
 
-
+<br>
 NOTE : Its not necessary to complete every books [Though it will help a lot for beginners even experts in some part]
 
-
+<br><br>
 * Time for Practical knowledge learning
     * For this I will advice you to start by CTFs related to web 
         * HTB,Pentesterlab,Pentester Academy, rootme , THM,PortSwigger, Hacker101, ctfchallenge.com  and like that many  other ctfs 
     * It will build your skills to high level
     * blog.intigriti => have a section of CTFs + challenges => just keep an eye on it and grab all those and start practising 
 
-
+<br><br>
 * Time to build RECON Knowledge
     * Watch nahamsec videos and note down every important part and do things at the same time while learning
     * Jhaddix have a great methodology on recon
 
-
+<br><br>
 * Some Useful Youtube Channels must to join and watch
     * [https//www.youtube.com/channel/UCDl4jpAVAezUdzsDBDDTGsQ](https//www.youtube.com/channel/UCDl4jpAVAezUdzsDBDDTGsQ)
     * [https//www.youtube.com/channel/UCDl4jpAVAezUdzsDBDDTGsQ](https//www.youtube.com/channel/UCDl4jpAVAezUdzsDBDDTGsQ)
@@ -194,10 +194,10 @@ NOTE : Its not necessary to complete every books [Though it will help a lot for 
     * [https//www.youtube.com/c/jassics/playlists](https//www.youtube.com/c/jassics/playlists)
 
 
-
+<br><br>
 * Want to learn something or specific thing ?
     * [https://twitter.com/LearnerHunter/status/1437720210631389187](https://twitter.com/LearnerHunter/status/1437720210631389187)
-
+<br><br>
 * Important Github Projects
    * [https//github.com/attacker-codeninja/security-study-plan](https//github.com/attacker-codeninja/security-study-plan)
    * [https//github.com/harsh-bothra/SecurityExplained](https//github.com/harsh-bothra/SecurityExplained)
@@ -212,7 +212,7 @@ NOTE : Its not necessary to complete every books [Though it will help a lot for 
 
 
 
-
+<br><br>
 * Learn from Others => AMAs
 
   * [https://bugbountyforum.com/ama/](https://bugbountyforum.com/ama/)
@@ -220,7 +220,7 @@ NOTE : Its not necessary to complete every books [Though it will help a lot for 
   * [https://twitter.com/search?q=AMA%20%23bugbountytips&src=typed_query&f=live](https://twitter.com/search?q=AMA%20%23bugbountytips&src=typed_query&f=live)
 
 
-
+<br><br>
 ##  Beside this here is my advice => 
 
 * Learn Programming for Automation for make your tasks easier and it will make your logic strong
@@ -230,7 +230,7 @@ NOTE : Its not necessary to complete every books [Though it will help a lot for 
 * Make your learning and practical testing strategy 
 * Most important -> Take break and keep good health
 
-
+<br><br>
 Hope it helps to beginners
 
 Thanks
