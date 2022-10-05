@@ -69,7 +69,7 @@ Without wasting time, following are the Roadmaps =>
     * [https://heitorgouvea.me/2021/01/03/bug-bounty-and-collabs](https://heitorgouvea.me/2021/01/03/bug-bounty-and-collabs)
     * [https://hogarth45.medium.com/mortgage-with-bug-bounties-week-1-e44d5f0c613c](https://hogarth45.medium.com/mortgage-with-bug-bounties-week-1-e44d5f0c613c)
     * [https://securit.ie/blog/?p=117](https://securit.ie/blog/?p=117)
-    * [https://lab.wallarm.com/owasp-top-10-2021-proposal-based-on-a-statistical-data/?utm_source=Reddit&utm_medium=SubReddits&utm_campaign=owasp-2021(https://lab.wallarm.com/owasp-top-10-2021-proposal-based-on-a-statistical-data/?utm_source=Reddit&utm_medium=SubReddits&utm_campaign=owasp-2021-)
+    * [https://lab.wallarm.com/owasp-top-10-2021-proposal-based-on-a-statistical-data/?utm_source=Reddit&utm_medium=SubReddits&utm_campaign=owasp-2021](https://lab.wallarm.com/owasp-top-10-2021-proposal-based-on-a-statistical-data/?utm_source=Reddit&utm_medium=SubReddits&utm_campaign=owasp-2021-)
     * [https://www.ceos3c.com/security/avoid-burnout-as-a-programmer-or-hacker/](https://www.ceos3c.com/security/avoid-burnout-as-a-programmer-or-hacker/)
     * [https://r2c.dev/blog/2021/four-levels-of-maturity-that-bridge-the-app-sec-engineering-divide/](https://r2c.dev/blog/2021/four-levels-of-maturity-that-bridge-the-app-sec-engineering-divide/)
     * [http//rez0.blog/hacking/2020/12/26/non-technical-bug-bounty-tips.html](http//rez0.blog/hacking/2020/12/26/non-technical-bug-bounty-tips.html)
