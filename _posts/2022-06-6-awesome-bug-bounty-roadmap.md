@@ -69,11 +69,9 @@ Without wasting time, following are the Roadmaps =>
     * [https://heitorgouvea.me/2021/01/03/bug-bounty-and-collabs](https://heitorgouvea.me/2021/01/03/bug-bounty-and-collabs)
     * [https://hogarth45.medium.com/mortgage-with-bug-bounties-week-1-e44d5f0c613c](https://hogarth45.medium.com/mortgage-with-bug-bounties-week-1-e44d5f0c613c)
     * [https://securit.ie/blog/?p=117](https://securit.ie/blog/?p=117)
-    *
-[https://lab.wallarm.com/owasp-top-10-2021-proposal-based-on-a-statistical-data/?utm_source=Reddit&utm_medium=SubReddits&utm_campaign=owasp-2021-](https://lab.wallarm.com/owasp-top-10-2021-proposal-based-on-a-statistical-data/?utm_source=Reddit&utm_medium=SubReddits&utm_campaign=owasp-2021-)
+    * [https://lab.wallarm.com/owasp-top-10-2021-proposal-based-on-a-statistical-data/?utm_source=Reddit&utm_medium=SubReddits&utm_campaign=owasp-2021] (https://lab.wallarm.com/owasp-top-10-2021-proposal-based-on-a-statistical-data/?utm_source=Reddit&utm_medium=SubReddits&utm_campaign=owasp-2021-)
     * [https://www.ceos3c.com/security/avoid-burnout-as-a-programmer-or-hacker/](https://www.ceos3c.com/security/avoid-burnout-as-a-programmer-or-hacker/)
-    *
-[https://r2c.dev/blog/2021/four-levels-of-maturity-that-bridge-the-app-sec-engineering-divide/](https://r2c.dev/blog/2021/four-levels-of-maturity-that-bridge-the-app-sec-engineering-divide/)
+    * [https://r2c.dev/blog/2021/four-levels-of-maturity-that-bridge-the-app-sec-engineering-divide/](https://r2c.dev/blog/2021/four-levels-of-maturity-that-bridge-the-app-sec-engineering-divide/)
     * [http//rez0.blog/hacking/2020/12/26/non-technical-bug-bounty-tips.html](http//rez0.blog/hacking/2020/12/26/non-technical-bug-bounty-tips.html)
     * [https://twitter.com/daeken/status/1337600964128354304](https://twitter.com/daeken/status/1337600964128354304)
     * [https://danielmiessler.com/blog/analysis-of-the-recon-attack-surface-management-space/](https://danielmiessler.com/blog/analysis-of-the-recon-attack-surface-management-space/)
@@ -86,16 +84,13 @@ Without wasting time, following are the Roadmaps =>
     * [https://utkusen.com/blog/security-by-obscurity-is-underrated](https://utkusen.com/blog/security-by-obscurity-is-underrated)
     * [https://thesephist.com/posts/tools/](https://thesephist.com/posts/tools/)
     * [https://danielmiessler.com/blog/algorithmic-vs-faith-based-learning/](https://danielmiessler.com/blog/algorithmic-vs-faith-based-learning/)
-    *
-[https://danielmiessler.com/blog/what-they-dont-tell-you-about-being-a-bounty-hunter-or-security-content-creator/](https://danielmiessler.com/blog/what-they-dont-tell-you-about-being-a-bounty-hunter-or-security-content-creator/)
+    * [https://danielmiessler.com/blog/what-they-dont-tell-you-about-being-a-bounty-hunter-or-security-content-creator/ (https://danielmiessler.com/blog/what-they-dont-tell-you-about-being-a-bounty-hunter-or-security-content-creator/)
     * [https://gynvael.coldwind.pl/?lang=en&id=728](https://gynvael.coldwind.pl/?lang=en&id=728)
     * [https://infosecwriteups.com/the-bug-bounty-mindset-that-leads-to-success-5bf32dcab48](https://infosecwriteups.com/the-bug-bounty-mindset-that-leads-to-success-5bf32dcab48)
     * [https://medium.com/taptuit/docker-for-penetration-testers-3e37db5d678a](https://medium.com/taptuit/docker-for-penetration-testers-3e37db5d678a)
-    *
-[https://systemoverlord.com/2020/07/10/comparing-3-great-web-security-books.html?utm_source=dlvr.it&utm_medium=twitter](https://systemoverlord.com/2020/07/10/comparing-3-great-web-security-books.html?utm_source=dlvr.it&utm_medium=twitter)
+    * [https://systemoverlord.com/2020/07/10/comparing-3-great-web-security-books.html?utm_source=dlvr.it&utm_medium=twitter](https://systemoverlord.com/2020/07/10/comparing-3-great-web-security-books.html?utm_source=dlvr.it&utm_medium=twitter)
     * [https://threadreaderapp.com/thread/1277958302731603968.html](https://threadreaderapp.com/thread/1277958302731603968.html)
-    *
-[https://www.rapid7.com/blog/post/2020/06/17/the-security-practitioners-intro-to-the-cloud-everything-you-ever-wanted-to-know-but-were-afraid-to-ask/](https://www.rapid7.com/blog/post/2020/06/17/the-security-practitioners-intro-to-the-cloud-everything-you-ever-wanted-to-know-but-were-afraid-to-ask/)
+    * [https://www.rapid7.com/blog/post/2020/06/17/the-security-practitioners-intro-to-the-cloud-everything-you-ever-wanted-to-know-but-were-afraid-to-ask/](https://www.rapid7.com/blog/post/2020/06/17/the-security-practitioners-intro-to-the-cloud-everything-you-ever-wanted-to-know-but-were-afraid-to-ask/)
     * [https://www.madisontaskett.com/lazy-bastard-productivity/](https://www.madisontaskett.com/lazy-bastard-productivity/)
     * [https://naveenroy008.medium.com/how-to-write-a-bug-bounty-report-ffe60c4ae702](https://naveenroy008.medium.com/how-to-write-a-bug-bounty-report-ffe60c4ae702)
     * [https://medium.com/bug-bounty-hunting/coping-up-with-bug-bounty-failures-7d9ca4e6d257](https://medium.com/bug-bounty-hunting/coping-up-with-bug-bounty-failures-7d9ca4e6d257)
@@ -104,19 +99,15 @@ Without wasting time, following are the Roadmaps =>
     * [https://craighays.com/bug-bounty-hunting-tips-6-simplify/](https://craighays.com/bug-bounty-hunting-tips-6-simplify/)
     * [https://www.xmind.net/blog/en/how-does-mind-mapping-help-for-better-bug-bounty/](https://www.xmind.net/blog/en/how-does-mind-mapping-help-for-better-bug-bounty/)
     * [https://www.scotthyoung.com/blog/2020/04/27/productivity-rules/](https://www.scotthyoung.com/blog/2020/04/27/productivity-rules/)
-    *
-[https://infosecwriteups.com/effective-vulnerability-report-writing-quick-triages-to-bonus-always-a-win-41b37188c63f](https://infosecwriteups.com/effective-vulnerability-report-writing-quick-triages-to-bonus-always-a-win-41b37188c63f)
+    * [https://infosecwriteups.com/effective-vulnerability-report-writing-quick-triages-to-bonus-always-a-win-41b37188c63f](https://infosecwriteups.com/effective-vulnerability-report-writing-quick-triages-to-bonus-always-a-win-41b37188c63f)
     * [https://medium.com/swlh/why-you-fail-at-bug-bounties-f17be7ba72ea](https://medium.com/swlh/why-you-fail-at-bug-bounties-f17be7ba72ea)
-    *
-[https://sankethsharath.medium.com/raising-your-web-hacking-bug-bounty-hunting-game-6104bb80aca7](https://sankethsharath.medium.com/raising-your-web-hacking-bug-bounty-hunting-game-6104bb80aca7)
+    * [https://sankethsharath.medium.com/raising-your-web-hacking-bug-bounty-hunting-game-6104bb80aca7](https://sankethsharath.medium.com/raising-your-web-hacking-bug-bounty-hunting-game-6104bb80aca7)
     * [https://blog.intigriti.com/2020/04/29/bug-business-3-zseanos-notes-on-hacking-mentoring](https://blog.intigriti.com/2020/04/29/bug-business-3-zseanos-notes-on-hacking-mentoring)
     * [https://whitton.io/articles/from-researcher-to-engineer-and-beyond/](https://whitton.io/articles/from-researcher-to-engineer-and-beyond/)
-    *
-[https://ladysecspeare.wordpress.com/2020/03/06/reaching-out-to-fellow-beginners-in-bug-bounty-hunting/](https://ladysecspeare.wordpress.com/2020/03/06/reaching-out-to-fellow-beginners-in-bug-bounty-hunting/)
+    * [https://ladysecspeare.wordpress.com/2020/03/06/reaching-out-to-fellow-beginners-in-bug-bounty-hunting/](https://ladysecspeare.wordpress.com/2020/03/06/reaching-out-to-fellow-beginners-in-bug-bounty-hunting/)
     * [https://medium.com/@debian1842/beginnersquest-part-1-what-to-do-after-recon-461e0b659f25](https://medium.com/@debian1842/beginnersquest-part-1-what-to-do-after-recon-461e0b659f25)
     * [https://www.linkedin.com/pulse/anatomy-automated-account-takeovers-tal-eliyahu/](https://www.linkedin.com/pulse/anatomy-automated-account-takeovers-tal-eliyahu/)
-    *
-[https://medium.com/@circleninja/a-small-change-in-life-helps-to-convert-entertainment-to-productive-work-9bd8cc1993ce](https://medium.com/@circleninja/a-small-change-in-life-helps-to-convert-entertainment-to-productive-work-9bd8cc1993ce)
+    * [https://medium.com/@circleninja/a-small-change-in-life-helps-to-convert-entertainment-to-productive-work-9bd8cc1993ce](https://medium.com/@circleninja/a-small-change-in-life-helps-to-convert-entertainment-to-productive-work-9bd8cc1993ce)
     * [https://subfn.net/2020/04/08/learn-bypasses-not-payloads/](https://subfn.net/2020/04/08/learn-bypasses-not-payloads/)
     * [http//collingreene.com/5_years_of_bug_bounty.html](http//collingreene.com/5_years_of_bug_bounty.html)
     * [http//10degres.net/how-to-keep-hackers-motivated-in-bug-bounty/](http//10degres.net/how-to-keep-hackers-motivated-in-bug-bounty/)
@@ -127,10 +118,8 @@ Without wasting time, following are the Roadmaps =>
     * [https://infosecwriteups.com/help-i-cant-find-bugs-88b005eb69a2](https://infosecwriteups.com/help-i-cant-find-bugs-88b005eb69a2)
     * [https://medium.com/swlh/a-tour-around-the-bug-bounty-zoo-c63ccbf4d7cd](https://medium.com/swlh/a-tour-around-the-bug-bounty-zoo-c63ccbf4d7cd)
     * [https://twitter.com/pdp/status/1229085767877713935](https://twitter.com/pdp/status/1229085767877713935)
-    *
-[https://www.reddit.com/r/bugbounty/comments/f1n9fh/weekly_discussion_february_10_2020_ask_all_your/fh8xvrc/?context=8&depth=9](https://www.reddit.com/r/bugbounty/comments/f1n9fh/weekly_discussion_february_10_2020_ask_all_your/fh8xvrc/?context=8&depth=9)
-    *
-[https://medium.com/@circleninja/how-to-become-more-successful-and-achieve-your-dreams-17cd1d3c0613](https://medium.com/@circleninja/how-to-become-more-successful-and-achieve-your-dreams-17cd1d3c0613)
+    * [https://www.reddit.com/r/bugbounty/comments/f1n9fh/weekly_discussion_february_10_2020_ask_all_your/fh8xvrc/?context=8&depth=9](https://www.reddit.com/r/bugbounty/comments/f1n9fh/weekly_discussion_february_10_2020_ask_all_your/fh8xvrc/?context=8&depth=9)
+    * [https://medium.com/@circleninja/how-to-become-more-successful-and-achieve-your-dreams-17cd1d3c0613](https://medium.com/@circleninja/how-to-become-more-successful-and-achieve-your-dreams-17cd1d3c0613)
     * [http//10degres.net/5-things-to-avoid-in-bug-bounty/](http//10degres.net/5-things-to-avoid-in-bug-bounty/)
     * [https://www.fourzerothree.in/p/note-making-and-methodology-bug-bounty?s=r](https://www.fourzerothree.in/p/note-making-and-methodology-bug-bounty?s=r)
     * [http//10degres.net/bug-bounty-management-a-bad-example/](http//10degres.net/bug-bounty-management-a-bad-example/)
@@ -139,16 +128,13 @@ Without wasting time, following are the Roadmaps =>
     * [https://danielmiessler.com/blog/the-most-important-productivity-lesson-i-ever-learned/](https://danielmiessler.com/blog/the-most-important-productivity-lesson-i-ever-learned/)
     * [https://unknownuser1806.medium.com/problems-i-have-faced-in-bug-bounty-3c9d0a679d8b](https://unknownuser1806.medium.com/problems-i-have-faced-in-bug-bounty-3c9d0a679d8b)
     * [https://www.fourzerothree.in/p/learning-bug-bounty-hunting?s=r](https://www.fourzerothree.in/p/learning-bug-bounty-hunting?s=r)
-    *
-[https://www.reddit.com/r/bugbounty/comments/dq67ea/how_are_people_finding_hundredsthousands_of_bugs/](https://www.reddit.com/r/bugbounty/comments/dq67ea/how_are_people_finding_hundredsthousands_of_bugs/)
+    * [https://www.reddit.com/r/bugbounty/comments/dq67ea/how_are_people_finding_hundredsthousands_of_bugs/](https://www.reddit.com/r/bugbounty/comments/dq67ea/how_are_people_finding_hundredsthousands_of_bugs/)
     * [https://jamesclear.com/deliberate-practice-theory](https://jamesclear.com/deliberate-practice-theory)
     * [https://medium.com/swlh/out-of-scope-2de1168aa0d9](https://medium.com/swlh/out-of-scope-2de1168aa0d9)
     * [https://dmshagov.github.io/Economics-of-the-Bug-Bounty-Hunting/](https://dmshagov.github.io/Economics-of-the-Bug-Bounty-Hunting/)
     * [https://kabilan1290.medium.com/journey-of-my-first-bug-bounty-72175d903ce3](https://kabilan1290.medium.com/journey-of-my-first-bug-bounty-72175d903ce3)
-    *
-[https://azeria-labs.com/the-importance-of-deep-work-the-30-hour-method-for-learning-a-new-skill/](https://azeria-labs.com/the-importance-of-deep-work-the-30-hour-method-for-learning-a-new-skill/)
-    *
-[https://medium.com/@eraymitrani/how-to-prepare-for-a-security-engineer-interview-6cf1d84de22f](https://medium.com/@eraymitrani/how-to-prepare-for-a-security-engineer-interview-6cf1d84de22f)
+    * [https://azeria-labs.com/the-importance-of-deep-work-the-30-hour-method-for-learning-a-new-skill/](https://azeria-labs.com/the-importance-of-deep-work-the-30-hour-method-for-learning-a-new-skill/)
+    * [https://medium.com/@eraymitrani/how-to-prepare-for-a-security-engineer-interview-6cf1d84de22f](https://medium.com/@eraymitrani/how-to-prepare-for-a-security-engineer-interview-6cf1d84de22f)
 
 
 
