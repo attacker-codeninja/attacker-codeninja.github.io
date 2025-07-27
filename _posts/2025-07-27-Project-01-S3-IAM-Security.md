@@ -99,7 +99,7 @@ Disabling public access is dangerous unless you **really** need public files. Ma
 📌 NOTE:  **S3 Buckets are global-named. Use a unique name.**
 
 
-![[Pasted image 20250727164102.png]]
+![](/assets/img/s3-iam-project/Pasted\ image\ 20250727164102.png)
 
 
 ![[Pasted image 20250727161740.png]]
