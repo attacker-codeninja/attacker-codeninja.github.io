@@ -99,19 +99,19 @@ Disabling public access is dangerous unless you **really** need public files. Ma
 📌 NOTE:  **S3 Buckets are global-named. Use a unique name.**
 
 
-![](/assets/img/s3-iam-project/Pasted\ image\ 20250727164102.png)
+![](/assets/img/s3-iam-project/20250727164102.png)
 
 
-![[Pasted image 20250727161740.png]]
+![](20250727161740.png)
 
-![[Pasted image 20250727162652.png]]
+![](20250727162652.png)
 
-![[Pasted image 20250727162739.png]]
+![](20250727162739.png)
 
-![[Pasted image 20250727173343.png]]
+![](20250727173343.png)
 
 
-![[Pasted image 20250727173409.png]]
+![](20250727173409.png)
 
 
 
@@ -133,18 +133,18 @@ DB_PASSWORD=123456
 
 **aakash-cloudsec-demo** -> this is your object
 
-![[Pasted image 20250727174208.png]]
+![](20250727174208.png)
 
 
-![[Pasted image 20250727174239.png]]
+![](20250727174239.png)
 
 
-![[Pasted image 20250727174320.png]]
+![](20250727174320.png)
 
-![[Pasted image 20250727174337.png]]
+![](20250727174337.png)
 
 
-![[Pasted image 20250727174402.png]]
+![](20250727174402.png)
 
 
 ---
@@ -184,30 +184,30 @@ This means:
 
 #### Before ->
 
-![[Pasted image 20250727174824.png]]
+![](20250727174824.png)
 
 or
 
-![[Pasted image 20250727174855.png]]
+![](20250727174855.png)
 
 
 When Open this file in browser -> 
 
-![[Pasted image 20250727174928.png]]
+![](20250727174928.png)
 
 
 #### NOW ->
 
-![[Pasted image 20250727175017.png]]
+![](20250727175017.png)
 
-![[Pasted image 20250727175113.png]]
+![](20250727175113.png)
 
-![[Pasted image 20250727175125.png]]
+![](20250727175125.png)
 
 
 Now able to see in public ->
 
-![[Pasted image 20250727175222.png]]
+![](20250727175222.png)
 
 
 
@@ -256,32 +256,32 @@ When **Block Public Access is enabled**, AWS does these enforcement-level things
 🛡️ **Security Insight:** Giving full access to S3 is too much! We’ll restrict it soon.
 
 
-![[Pasted image 20250727180343.png]]
+![](20250727180343.png)
 
 
-![[Pasted image 20250727180423.png]]
+![](20250727180423.png)
 
 
-![[Pasted image 20250727180447.png]]
+![](20250727180447.png)
 
-![[Pasted image 20250727180711.png]]
-
-
-![[Pasted image 20250727180805.png]]
+![](20250727180711.png)
 
 
-![[Pasted image 20250727180832.png]]
+![](20250727180805.png)
 
 
-![[Pasted image 20250727180849.png]]
+![](20250727180832.png)
 
 
-![[Pasted image 20250727180938.png]]
-
-![[Pasted image 20250727181205.png]]
+![](20250727180849.png)
 
 
-![[Pasted image 20250727181245.png]]
+![](20250727180938.png)
+
+![](20250727181205.png)
+
+
+![](20250727181245.png)
 
 
 ❌ Why This Is a Security Problem ?
@@ -321,39 +321,39 @@ Finally where we are going to fix the misconfiguration
 
 - Go to S3 → Permissions tab → Delete the public bucket policy
 
-![[Pasted image 20250727182014.png]]
+![](20250727182014.png)
 
-![[Pasted image 20250727182034.png]]
+![](20250727182034.png)
 
 
-![[Pasted image 20250727182049.png]]
+![](20250727182049.png)
 
 
 ##### ✅ Block All Public Access
 
 - In bucket settings → Enable **“Block all public access”**
 
-![[Pasted image 20250727182141.png]]
+![](20250727182141.png)
 
 
 Before ->
 
-![[Pasted image 20250727182201.png]]
+![](20250727182201.png)
 
 
 After ->
 
-![[Pasted image 20250727182221.png]]
+![](20250727182221.png)
 
-![[Pasted image 20250727182234.png]]
+![](20250727182234.png)
 
 
-![[Pasted image 20250727182252.png]]
+![](20250727182252.png)
 
 
 Now -> 
 
-![[Pasted image 20250727182416.png]]
+![](20250727182416.png)
 
 
 
@@ -362,16 +362,16 @@ Now ->
 
 * Go to IAM → Policies → Create Policy → JSON
 
-![[Pasted image 20250727182520.png]]
+![](20250727182520.png)
 
-![[Pasted image 20250727182617.png]]
+![](20250727182617.png)
 
 
-![[Pasted image 20250727182853.png]]
+![](20250727182853.png)
 
 Replace below json policy 
 
-![[Pasted image 20250727182917.png]]
+![](20250727182917.png)
 
 
 With below Policy:
@@ -396,10 +396,10 @@ With below Policy:
 
 ```
 
-![[Pasted image 20250727183105.png]]
+![](20250727183105.png)
 
 
-![[Pasted image 20250727183205.png]]
+![](20250727183205.png)
 
 
 Then **Create Policy**
@@ -413,13 +413,13 @@ Then **Create Policy**
 
 
 
-![[Pasted image 20250727183411.png]]
+![](20250727183411.png)
 
-![[Pasted image 20250727183534.png]]
+![](20250727183534.png)
 
-![[Pasted image 20250727183546.png]]
+![](20250727183546.png)
 
-![[Pasted image 20250727183608.png]]
+![](20250727183608.png)
 
 
 ## 🔐 Policy Comparison: Before vs After Fix
@@ -442,12 +442,12 @@ Then **Create Policy**
 ✅ Target bucket: `log-bucket-yourname`  
 
 
-![[Pasted image 20250727185905.png]]
+![](20250727185905.png)
 
-![[Pasted image 20250727190114.png]]
+![](20250727190114.png)
 
 
-![[Pasted image 20250727190132.png]]
+![](20250727190132.png)
 
 
 
@@ -564,7 +564,7 @@ But now let's add another Policy this time directly to S3 Bucket to allow Specif
 ```
 
 
-![[Pasted image 20250727184410.png]]
+![](20250727184410.png)
 
 
 ✅  Save Changes
