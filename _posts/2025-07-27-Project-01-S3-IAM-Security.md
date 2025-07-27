@@ -15,7 +15,7 @@ tags:
 description: Beginner-friendly project to understand S3 misconfigurations, IAM policies, and securing your AWS resources the right way.
 ---
 
-![[your-header-image.png]]
+![Securing Your First S3 Bucket Project](/assets/img/s3-iam-project/your-header-image.png)
 
 
 ## 🔐 Project 1: Securing Your First S3 Bucket & IAM User — Guided by a Security Engineer
