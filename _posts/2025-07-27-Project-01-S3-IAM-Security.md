@@ -102,16 +102,16 @@ Disabling public access is dangerous unless you **really** need public files. Ma
 ![](/assets/img/s3-iam-project/20250727164102.png)
 
 
-![](20250727161740.png)
+![](/assets/img/s3-iam-project/20250727161740.png)
 
-![](20250727162652.png)
+![](/assets/img/s3-iam-project/20250727162652.png)
 
-![](20250727162739.png)
+![](/assets/img/s3-iam-project/20250727162739.png)
 
-![](20250727173343.png)
+![](/assets/img/s3-iam-project/20250727173343.png)
 
 
-![](20250727173409.png)
+![](/assets/img/s3-iam-project/20250727173409.png)
 
 
 
@@ -133,18 +133,18 @@ DB_PASSWORD=123456
 
 **aakash-cloudsec-demo** -> this is your object
 
-![](20250727174208.png)
+![](/assets/img/s3-iam-project/20250727174208.png)
 
 
-![](20250727174239.png)
+![](/assets/img/s3-iam-project/20250727174239.png)
 
 
-![](20250727174320.png)
+![](/assets/img/s3-iam-project/20250727174320.png)
 
-![](20250727174337.png)
+![](/assets/img/s3-iam-project/20250727174337.png)
 
 
-![](20250727174402.png)
+![](/assets/img/s3-iam-project/20250727174402.png)
 
 
 ---
@@ -184,30 +184,30 @@ This means:
 
 #### Before ->
 
-![](20250727174824.png)
+![](/assets/img/s3-iam-project/20250727174824.png)
 
 or
 
-![](20250727174855.png)
+![](/assets/img/s3-iam-project/20250727174855.png)
 
 
 When Open this file in browser -> 
 
-![](20250727174928.png)
+![](/assets/img/s3-iam-project/20250727174928.png)
 
 
 #### NOW ->
 
-![](20250727175017.png)
+![](/assets/img/s3-iam-project/20250727175017.png)
 
-![](20250727175113.png)
+![](/assets/img/s3-iam-project/20250727175113.png)
 
-![](20250727175125.png)
+![](/assets/img/s3-iam-project/20250727175125.png)
 
 
 Now able to see in public ->
 
-![](20250727175222.png)
+![](/assets/img/s3-iam-project/20250727175222.png)
 
 
 
@@ -256,32 +256,32 @@ When **Block Public Access is enabled**, AWS does these enforcement-level things
 🛡️ **Security Insight:** Giving full access to S3 is too much! We’ll restrict it soon.
 
 
-![](20250727180343.png)
+![](/assets/img/s3-iam-project/20250727180343.png)
 
 
-![](20250727180423.png)
+![](/assets/img/s3-iam-project/20250727180423.png)
 
 
-![](20250727180447.png)
+![](/assets/img/s3-iam-project/20250727180447.png)
 
-![](20250727180711.png)
-
-
-![](20250727180805.png)
+![](/assets/img/s3-iam-project/20250727180711.png)
 
 
-![](20250727180832.png)
+![](/assets/img/s3-iam-project/20250727180805.png)
 
 
-![](20250727180849.png)
+![](/assets/img/s3-iam-project/20250727180832.png)
 
 
-![](20250727180938.png)
-
-![](20250727181205.png)
+![](/assets/img/s3-iam-project/20250727180849.png)
 
 
-![](20250727181245.png)
+![](/assets/img/s3-iam-project/20250727180938.png)
+
+![](/assets/img/s3-iam-project/20250727181205.png)
+
+
+![](/assets/img/s3-iam-project/20250727181245.png)
 
 
 ❌ Why This Is a Security Problem ?
@@ -321,39 +321,39 @@ Finally where we are going to fix the misconfiguration
 
 - Go to S3 → Permissions tab → Delete the public bucket policy
 
-![](20250727182014.png)
+![](/assets/img/s3-iam-project/20250727182014.png)
 
-![](20250727182034.png)
+![](/assets/img/s3-iam-project/20250727182034.png)
 
 
-![](20250727182049.png)
+![](/assets/img/s3-iam-project/20250727182049.png)
 
 
 ##### ✅ Block All Public Access
 
 - In bucket settings → Enable **“Block all public access”**
 
-![](20250727182141.png)
+![](/assets/img/s3-iam-project/20250727182141.png)
 
 
 Before ->
 
-![](20250727182201.png)
+![](/assets/img/s3-iam-project/20250727182201.png)
 
 
 After ->
 
-![](20250727182221.png)
+![](/assets/img/s3-iam-project/20250727182221.png)
 
-![](20250727182234.png)
+![](/assets/img/s3-iam-project/20250727182234.png)
 
 
-![](20250727182252.png)
+![](/assets/img/s3-iam-project/20250727182252.png)
 
 
 Now -> 
 
-![](20250727182416.png)
+![](/assets/img/s3-iam-project/20250727182416.png)
 
 
 
@@ -362,16 +362,16 @@ Now ->
 
 * Go to IAM → Policies → Create Policy → JSON
 
-![](20250727182520.png)
+![](/assets/img/s3-iam-project/20250727182520.png)
 
-![](20250727182617.png)
+![](/assets/img/s3-iam-project/20250727182617.png)
 
 
-![](20250727182853.png)
+![](/assets/img/s3-iam-project/20250727182853.png)
 
 Replace below json policy 
 
-![](20250727182917.png)
+![](/assets/img/s3-iam-project/20250727182917.png)
 
 
 With below Policy:
@@ -396,10 +396,10 @@ With below Policy:
 
 ```
 
-![](20250727183105.png)
+![](/assets/img/s3-iam-project/20250727183105.png)
 
 
-![](20250727183205.png)
+![](/assets/img/s3-iam-project/20250727183205.png)
 
 
 Then **Create Policy**
@@ -413,13 +413,13 @@ Then **Create Policy**
 
 
 
-![](20250727183411.png)
+![](/assets/img/s3-iam-project/20250727183411.png)
 
-![](20250727183534.png)
+![](/assets/img/s3-iam-project/20250727183534.png)
 
-![](20250727183546.png)
+![](/assets/img/s3-iam-project/20250727183546.png)
 
-![](20250727183608.png)
+![](/assets/img/s3-iam-project/20250727183608.png)
 
 
 ## 🔐 Policy Comparison: Before vs After Fix
@@ -442,12 +442,12 @@ Then **Create Policy**
 ✅ Target bucket: `log-bucket-yourname`  
 
 
-![](20250727185905.png)
+![](/assets/img/s3-iam-project/20250727185905.png)
 
-![](20250727190114.png)
+![](/assets/img/s3-iam-project/20250727190114.png)
 
 
-![](20250727190132.png)
+![](/assets/img/s3-iam-project/20250727190132.png)
 
 
 
@@ -564,7 +564,7 @@ But now let's add another Policy this time directly to S3 Bucket to allow Specif
 ```
 
 
-![](20250727184410.png)
+![](/assets/img/s3-iam-project/20250727184410.png)
 
 
 ✅  Save Changes
