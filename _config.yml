@@ -22,6 +22,11 @@ navbar-links:
 # Remove this parameter if you don't want an image in the navbar
 avatar: "/assets/img/profile.jpeg"
 
+
+
+site-css:
+  - "/assets/css/custom.css"
+
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
 round-avatar: true
 

@@ -1,0 +1,197 @@
+/* === Custom version of beautifuljekyll.css with black background and gradient h1 === */
+
+/* Black background and white text globally */
+body {
+  font-family: 'Lora', 'Times New Roman', serif;
+  font-size: 1.125rem;
+  color: #fff;
+  position: relative;
+  background-color: #000;
+}
+
+/* General text and headings */
+p {
+  line-height: 1.5;
+  margin: 1.875rem 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+}
+
+/* Gradient only for h1 */
+h1 {
+  font-size: 2.25rem;
+  background: linear-gradient(90deg, #ff4e50, #f9d423, #24c6dc, #514a9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+h2 { font-size: 1.875rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.125rem; }
+h1, h2, h3, h4 {
+  margin-top: 1.25rem;
+}
+
+/* Links adjusted for dark background */
+a {
+  color: #00aaff;
+}
+a:hover,
+a:focus {
+  color: #66d9ff;
+}
+
+/* Blockquotes, horizontal rules and misc elements */
+blockquote {
+  color: #aaa;
+  font-style: italic;
+}
+
+hr.small {
+  max-width: 6.25rem;
+  margin: 1rem auto;
+  border-width: 0.25rem;
+  border-color: inherit;
+  border-radius: 0.1875rem;
+}
+
+::-moz-selection {
+  color: #fff;
+  text-shadow: none;
+  background-color: #0085A1;
+}
+::selection {
+  color: #fff;
+  text-shadow: none;
+  background-color: #0085A1;
+}
+img::selection,
+img::-moz-selection {
+  color: #fff;
+  background: transparent;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Navbar (kept light adjustments) */
+.navbar-custom {
+  background-color: #111;
+  border-bottom: 1px solid #222;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav .nav-link {
+  font-weight: 800;
+  color: #fff;
+}
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-nav .nav-link:hover {
+  color: #66d9ff;
+}
+
+/* Footer dark */
+footer {
+  padding: 1.875rem 0;
+  border-top: 1px #333 solid;
+  margin-top: 3.125rem;
+  font-size: 0.875rem;
+  background-color: #111;
+}
+footer p.text-muted {
+  color: #aaa !important;
+}
+footer a {
+  color: #ccc;
+}
+footer a:hover {
+  color: #fff;
+}
+
+/* Tables dark mode */
+table tr {
+  border-top: 1px solid #333;
+  background-color: #111;
+}
+table tr:nth-child(2n) {
+  background-color: #1a1a1a;
+}
+table tr th {
+  font-weight: bold;
+  border: 1px solid #444;
+  text-align: left;
+  padding: 0.375rem 0.8125rem;
+}
+table tr td {
+  border: 1px solid #444;
+  text-align: left;
+  padding: 0.375rem 0.8125rem;
+}
+
+/* Code blocks dark mode */
+code {
+  padding: 0.125rem 0.25rem;
+  color: #f08d49;
+  background-color: #222;
+  border-radius: 0.25rem;
+}
+pre {
+  font-size: 0.875rem;
+  line-height: 1.5em;
+  border-radius: 0.25rem;
+  padding: 0.59375rem;
+  background-color: #111;
+  color: #fff;
+}
+
+/* Post previews dark */
+.post-preview {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #333;
+}
+.post-preview a {
+  color: #fff;
+}
+.post-preview a:hover {
+  color: #66d9ff;
+}
+.post-preview .post-title {
+  font-size: 1.875rem;
+  margin-top: 0;
+  color: #fff;
+}
+.post-preview .post-meta {
+  color: #aaa;
+  font-size: 1.125rem;
+  font-style: italic;
+}
+
+/* Tags dark */
+.blog-tags a {
+  color: #ddd;
+  opacity: 0.8;
+  border: 1px solid transparent;
+}
+.blog-tags a:hover {
+  opacity: 1;
+  border-color: #ddd;
+}
+
+/* Pagination dark */
+.pagination .page-item .page-link {
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #444;
+}
+.pagination .page-item .page-link:hover {
+  background-color: #0085A1;
+  color: #fff;
+}
