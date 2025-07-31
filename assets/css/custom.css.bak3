@@ -2,11 +2,11 @@
 
 /* Black background and white text globally */
 body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-            color: white;
-            overflow-x: hidden;
-            min-height: 100vh;
+  font-family: 'Lora', 'Times New Roman', serif;
+  font-size: 1.125rem;
+  color: #fff;
+  position: relative;
+  background-color: #000;
 }
 
 /* Strong text gradient */
