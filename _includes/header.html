@@ -28,13 +28,18 @@
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
         <div class="{{ include.type }}-heading">
 		{% if site.avatar and page.show-avatar != false %}
-  			<div class="avatar-container-page text-center mb-3">
-    				<div class="avatar-img-border">
-      					<a href="{{ '' | absolute_url }}">
-        					<img alt="Main header avatar" class="avatar-img" src="{{ site.avatar | relative_url }}" />
-      					</a>
-    				</div>
-  			</div>
+			<div class="profile-section">
+            			<div class="profile-container">
+                			<div class="profile-ring ring-1"></div>
+                			<div class="profile-ring ring-2"></div>
+                			<div class="profile-ring ring-3"></div>
+                			<div class="profile-image">
+                    				<div class="profile-inner">
+                        				<span class="ninja-emoji">🥷</span>
+                    				</div>
+                			</div>
+            			</div>
+        		</div>
 		{% endif %}
           <h1 class="main-title">{% if page.title %}{{ page.title }}{% else %}<br/>{% endif %}</h1>
           {% if page.subtitle %}
