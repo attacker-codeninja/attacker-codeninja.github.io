@@ -71,6 +71,28 @@ h1 {
   text-align: center;
 }
 
+.main-title {
+            font-size: clamp(4rem, 12vw, 12rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d, #64ffda, #00d4ff, #ff6b6b);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease-in-out infinite;
+            text-shadow: 0 0 60px rgba(100, 255, 218, 0.5);
+            letter-spacing: -4px;
+            line-height: 0.9;
+        }
+        
+@keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 25% 50%; }
+            50% { background-position: 100% 50%; }
+            75% { background-position: 75% 50%; }
+        }
+
 h2 { font-size: 1.875rem; }
 h3 { font-size: 1.5rem; }
 h4 { font-size: 1.125rem; }
