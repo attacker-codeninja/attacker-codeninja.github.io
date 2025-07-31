@@ -9,6 +9,14 @@ body {
   background-color: #000;
 }
 
+strong, b {
+  background: linear-gradient(90deg, #7effb2, #f9f871);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+
 /* General text and headings */
 p {
   line-height: 1.5;
