@@ -19,20 +19,27 @@ strong, b {
 
 /* Comic-style paragraphs - only top-level paragraphs inside the blog post */
 .blog-post > p {
-  font-family: Verdana, sans-serif;
+font-family: 'Verdana', sans-serif;
   font-size: 20px;
-  color: #ffd369;
-  line-height: 1.8;
+  color: #ffeb99; /* warm yellow text */
+  background-color: #111; /* dark background */
 
-  /* Comic style box */
-  border-left: 6px solid #ff6b6b;
-  border-radius: 20px 5px 5px 20px;
-  background: rgba(255, 255, 255, 0.04);
-  padding: 0.8rem 1rem;
-  margin: 1.3rem 0;
+  /* Gradient full border */
+  border: 3px solid transparent;
+  border-radius: 15px;
+  background-clip: padding-box;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
 
-  /* Glow for better visibility */
-  box-shadow: 2px 2px 6px rgba(255, 107, 107, 0.35);
+  /* Outer border gradient using pseudo background */
+  background-image:
+    linear-gradient(#111, #111), /* inner background */
+    linear-gradient(90deg, #ff4e50, #f9d423); /* border gradient */
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  /* Optional soft glow */
+  box-shadow: 0 0 12px rgba(255, 102, 0, 0.4);
 }
 
 /* Blockquotes - elegant style */
