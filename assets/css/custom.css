@@ -17,11 +17,24 @@ strong, b {
 }
 
 
-/* General text and headings */
+/* General text and headings 
 p {
   line-height: 1.5;
   margin: 1.875rem 0;
 }
+*/
+
+/* Paragraphs - comic vibrant style */
+p {
+  font-size: 1.15rem;
+  margin: 1.3rem 0;
+  color: #ffd369; /* warm yellow comic style text */
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 2px #ff6b6b; /* soft red glow */
+  line-height: 1.9;
+}
+
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
