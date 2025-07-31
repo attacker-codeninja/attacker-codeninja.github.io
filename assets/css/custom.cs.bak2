@@ -9,7 +9,6 @@ body {
   background-color: #000;
 }
 
-/* Strong text gradient */
 strong, b {
   background: linear-gradient(90deg, #7effb2, #f9f871);
   -webkit-background-clip: text;
@@ -17,37 +16,21 @@ strong, b {
   font-weight: 800;
 }
 
-/* Comic-style paragraphs - only top-level paragraphs inside the blog post */
-.blog-post > p {
-  font-family: Verdana, sans-serif;
+
+blockquote, p {
+  font-family: verdana;
   font-size: 20px;
   color: #ffd369;
-  line-height: 1.8;
-
+  
   /* Comic style box */
-  border-left: 6px solid #ff6b6b;
-  border-radius: 20px 5px 5px 20px;
-  background: rgba(255, 255, 255, 0.04);
-  padding: 0.8rem 1rem;
-  margin: 1.3rem 0;
-
-  /* Glow for better visibility */
-  box-shadow: 2px 2px 6px rgba(255, 107, 107, 0.35);
-}
-
-/* Blockquotes - elegant style */
-blockquote {
-  border-left: 4px solid #f9d423;
+  border-left: 4px solid #ff6b6b;
   background: rgba(255, 255, 255, 0.05);
-  color: #ddd;
-  font-style: italic;
-  font-family: 'Lora', serif;
-  padding: 0.8rem 1rem;
-  margin: 1.3rem 0;
-  border-radius: 6px;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  
 }
 
-/* Headings */
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 800;
@@ -80,7 +63,12 @@ a:focus {
   color: #66d9ff;
 }
 
-/* Horizontal rules */
+/* Blockquotes, horizontal rules and misc elements */
+blockquote {
+  color: #aaa;
+  font-style: italic;
+}
+
 hr.small {
   max-width: 6.25rem;
   margin: 1rem auto;
@@ -89,7 +77,6 @@ hr.small {
   border-radius: 0.1875rem;
 }
 
-/* Selection styles */
 ::-moz-selection {
   color: #fff;
   text-shadow: none;
