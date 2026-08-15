@@ -1,0 +1,664 @@
+/* ============================================================
+   Everforest Clarity
+   ------------------------------------------------------------
+   Everforest 配色,深色版与 Ghostty 的 Everforest Dark Hard 逐色对齐。
+   为数理笔记(LaTeX)与中英混排的长时间阅读而调。
+   深浅两套配色的正文、标题、强调色全部 ≥ WCAG AA (4.5:1)。
+   ============================================================ */
+
+/* ---------- 原始调色板 ---------- */
+.theme-dark {
+  /* 背景阶梯:bg_dim -> bg5,与 Ghostty background #1e2326 同源 */
+  --ef-bg-dim:   #1e2326;
+  --ef-bg0:      #272e33;
+  --ef-bg1:      #2e383c;
+  --ef-bg2:      #374145;
+  --ef-bg3:      #414b50;
+  --ef-bg4:      #495156;
+  --ef-bg5:      #4f5b58;
+
+  /* 高亮用的低饱和底色 */
+  --ef-bg-red:    #4c3743;
+  --ef-bg-visual: #493b40;
+  --ef-bg-yellow: #45443c;
+  --ef-bg-green:  #3c4841;
+  --ef-bg-blue:   #384b55;
+
+  /* 前景 */
+  --ef-fg:     #d3c6aa;
+  --ef-grey0:  #7a8478;
+  --ef-grey1:  #859289;
+  --ef-grey2:  #9da9a0;
+
+  /* 强调色(与 Ghostty palette 1-6 一致) */
+  --ef-red:    #e67e80;
+  --ef-orange: #e69875;
+  --ef-yellow: #dbbc7f;
+  --ef-green:  #a7c080;
+  --ef-aqua:   #83c092;
+  --ef-blue:   #7fbbb3;
+  --ef-purple: #d699b6;
+}
+
+.theme-light {
+  --ef-bg-dim:   #efebd4;
+  --ef-bg0:      #fffbef;
+  --ef-bg1:      #f8f5e4;
+  --ef-bg2:      #f2efdf;
+  --ef-bg3:      #edeada;
+  --ef-bg4:      #e8e5d5;
+  --ef-bg5:      #bec5b2;
+
+  --ef-bg-red:    #fdeff0;
+  --ef-bg-visual: #f0f2d4;
+  --ef-bg-yellow: #fbf1e4;
+  --ef-bg-green:  #f3f5e4;
+  --ef-bg-blue:   #eef5ed;
+
+  --ef-fg:     #4a5560;
+  --ef-grey0:  #8a9488;
+  --ef-grey1:  #6f7d6f;
+  --ef-grey2:  #5f6b5f;
+
+  /*
+   * 注意:这里不能直接用 Ghostty light palette 的色值。
+   * 那套色是给终端设计的(#f57d26 等),放在 #efebd4 浅底上只有 2.2:1,
+   * 做标题和正文全部不达标。以下是压暗后的版本,均 ≥4.5:1。
+   */
+  --ef-red:    #b02a26;
+  --ef-orange: #a54e16;
+  --ef-yellow: #7d5b00;
+  --ef-green:  #586401;
+  --ef-aqua:   #20654b;
+  --ef-blue:   #2a6f94;
+  --ef-purple: #943c74;
+}
+
+/* ---------- 映射到 Obsidian 变量 ---------- */
+.theme-dark,
+.theme-light {
+  /* 正文区 = Ghostty 背景色;侧栏略亮一档,层次感来自明度而非描边 */
+  --background-primary:        var(--ef-bg-dim);
+  --background-primary-alt:    var(--ef-bg0);
+  --background-secondary:      var(--ef-bg0);
+  --background-secondary-alt:  var(--ef-bg1);
+  --background-modifier-border:        var(--ef-bg2);
+  --background-modifier-border-hover:  var(--ef-bg3);
+  --background-modifier-border-focus:  var(--ef-green);
+  --background-modifier-hover:         var(--ef-bg1);
+  --background-modifier-active-hover:  var(--ef-bg2);
+  --background-modifier-form-field:    var(--ef-bg0);
+  --background-modifier-error:         var(--ef-bg-red);
+  --background-modifier-error-hover:   var(--ef-red);
+  --background-modifier-success:       var(--ef-bg-green);
+  --background-modifier-message:       var(--ef-bg2);
+
+  --text-normal:   var(--ef-fg);
+  --text-muted:    var(--ef-grey2);
+  --text-faint:    var(--ef-grey1);
+  --text-on-accent: var(--ef-bg-dim);
+  --text-error:    var(--ef-red);
+  --text-success:  var(--ef-green);
+  --text-warning:  var(--ef-yellow);
+  --text-accent:   var(--ef-green);
+  --text-accent-hover: var(--ef-aqua);
+
+  --text-selection:      var(--ef-bg-visual);
+  --text-highlight-bg:   var(--ef-bg-yellow);
+
+  --interactive-normal:      var(--ef-bg1);
+  --interactive-hover:       var(--ef-bg2);
+  --interactive-accent:      var(--ef-green);
+  --interactive-accent-hover: var(--ef-aqua);
+
+  --divider-color: var(--ef-bg2);
+  --icon-color:    var(--ef-grey1);
+  --icon-color-hover: var(--ef-fg);
+  --icon-color-active: var(--ef-green);
+}
+
+/* ---------- 字体与排版 ---------- */
+/*
+ * 中英混排的关键:Latin 字体写在前面,中文字体兜底。
+ * 浏览器按字符逐个回退,所以拉丁字母走 Inter/SF,汉字自动落到苹方,
+ * 两者混排时基线和字重才协调。反过来写会让英文也被苹方接管,发扁。
+ */
+body {
+  --font-text-theme:
+    "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-interface-theme:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "PingFang SC", "Hiragino Sans GB", sans-serif;
+  --font-monospace-theme:
+    "JetBrainsMono Nerd Font", "JetBrains Mono", "MesloLGS NF",
+    "SF Mono", ui-monospace, "PingFang SC", monospace;
+
+  /* 中文字面率高,行距要比纯英文更松才透气(Obsidian 默认 1.5) */
+  --line-height-normal: 1.75;
+  --line-height-tight:  1.35;
+
+  /* 17px 下约 40 字/行,接近中文阅读的舒适区 */
+  --font-text-size: 17px;
+  --file-line-width: 44rem;
+
+  --p-spacing: 1.1rem;
+  --h1-size: 1.85em;
+  --h2-size: 1.5em;
+  --h3-size: 1.28em;
+  --h4-size: 1.12em;
+  --h5-size: 1em;
+  --h6-size: 0.92em;
+  --h1-weight: 700;
+  --h2-weight: 650;
+  --h3-weight: 600;
+  --h4-weight: 600;
+  --bold-weight: 650;
+  --radius-s: 5px;
+  --radius-m: 8px;
+  --radius-l: 12px;
+}
+
+/* 浅色前景 + 深底容易显糊,抗锯齿让笔画更利落 */
+.theme-dark {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.markdown-preview-view,
+.markdown-source-view.mod-cm6 .cm-content {
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
+}
+
+/* ---------- 标题 ---------- */
+/* 六级各用一个色相,靠颜色而非仅字号区分层级,扫读时定位更快 */
+body {
+  --h1-color: var(--ef-orange);
+  --h2-color: var(--ef-yellow);
+  --h3-color: var(--ef-green);
+  --h4-color: var(--ef-aqua);
+  --h5-color: var(--ef-blue);
+  --h6-color: var(--ef-purple);
+}
+.markdown-rendered h1, .HyperMD-header-1 { color: var(--h1-color); }
+.markdown-rendered h2, .HyperMD-header-2 { color: var(--h2-color); }
+.markdown-rendered h3, .HyperMD-header-3 { color: var(--h3-color); }
+.markdown-rendered h4, .HyperMD-header-4 { color: var(--h4-color); }
+.markdown-rendered h5, .HyperMD-header-5 { color: var(--h5-color); }
+.markdown-rendered h6, .HyperMD-header-6 { color: var(--h6-color); }
+
+/* 上间距大于下间距,标题在视觉上归属于下方段落 */
+.markdown-rendered h1 { margin-top: 2em;   margin-bottom: 0.6em; letter-spacing: -0.01em; }
+.markdown-rendered h2 { margin-top: 1.8em; margin-bottom: 0.55em; }
+.markdown-rendered h3 { margin-top: 1.5em; margin-bottom: 0.45em; }
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6 { margin-top: 1.3em; margin-bottom: 0.4em; }
+
+/* H2 加一条极淡下划线,长文里章节切分更清楚 */
+.markdown-rendered h2 {
+  padding-bottom: 0.24em;
+  border-bottom: 1px solid var(--ef-bg2);
+}
+
+.inline-title {
+  color: var(--ef-orange);
+  font-weight: 700;
+}
+
+/* ---------- 高亮 / 粗体 / 斜体 ---------- */
+/*
+ * ==高亮== 默认黄底。文字一律用正常前景色,不用同色系 ——
+ * 红底配红字只有 3.81:1,不可读。正常前景色在七种底色上都保 5.6:1 以上。
+ */
+.markdown-rendered mark,
+.cm-s-obsidian .cm-highlight {
+  background-color: var(--ef-hl-yellow);
+  color: var(--text-normal);
+  border-radius: 3px;
+  padding: 0.08em 0.26em;
+  margin: 0 0.02em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* ---------- 七色高亮 ---------- */
+/*
+ * 用法:<mark class="green">文字</mark>
+ * 底色 = 强调色按比例混入页面背景(深色 20-25%,浅色 28%)。
+ * 深色版每种底与页面的区分度 ≥1.52:1,块内正文 ≥5.60:1。
+ */
+.theme-dark {
+  --ef-hl-red:    #503a3c;
+  --ef-hl-orange: #50403a;
+  --ef-hl-yellow: #444238;
+  --ef-hl-green:  #394238;
+  --ef-hl-aqua:   #374a41;
+  --ef-hl-blue:   #364949;
+  --ef-hl-purple: #4c404a;
+}
+/* 浅色版改用饱和的浅色调混入,更像荧光笔;混 28%,正文仍 ≥4.7:1 */
+.theme-light {
+  --ef-hl-red:    #f2c1b0;
+  --ef-hl-orange: #f1cca3;
+  --ef-hl-yellow: #ebd699;
+  --ef-hl-green:  #d4d699;
+  --ef-hl-aqua:   #bbd8bb;
+  --ef-hl-blue:   #bcd3d0;
+  --ef-hl-purple: #ebc7cd;
+}
+
+.markdown-rendered mark.red,    mark.red    { background-color: var(--ef-hl-red); }
+.markdown-rendered mark.orange, mark.orange { background-color: var(--ef-hl-orange); }
+.markdown-rendered mark.yellow, mark.yellow { background-color: var(--ef-hl-yellow); }
+.markdown-rendered mark.green,  mark.green  { background-color: var(--ef-hl-green); }
+.markdown-rendered mark.aqua,   mark.aqua   { background-color: var(--ef-hl-aqua); }
+.markdown-rendered mark.blue,   mark.blue   { background-color: var(--ef-hl-blue); }
+.markdown-rendered mark.purple, mark.purple { background-color: var(--ef-hl-purple); }
+
+/* ---------- 七色文字(无底色) ---------- */
+/*
+ * 用法:<span class="c-green">文字</span>
+ * 只改字色不加底,更接近 Gruvbox 那种满页暖色点的观感。
+ * 七色在深色页面上 5.79-8.70:1,浅色页面上 4.61-6.34:1。
+ */
+.c-red    { color: var(--ef-red); }
+.c-orange { color: var(--ef-orange); }
+.c-yellow { color: var(--ef-yellow); }
+.c-green  { color: var(--ef-green); }
+.c-aqua   { color: var(--ef-aqua); }
+.c-blue   { color: var(--ef-blue); }
+.c-purple { color: var(--ef-purple); }
+
+/* ---------- 组合语法(不用写 HTML) ---------- */
+/*
+ * 嵌套 Markdown 也能换色,记不住 class 名时用这个:
+ *   ==文字==       -> 黄底(默认)
+ *   **==文字==**   -> 橙底
+ *   *==文字==*     -> 绿底
+ *   ***==文字==*** -> 青底
+ * 原理是靠父元素选择器区分,纯 CSS,不需要插件。
+ */
+.markdown-rendered strong > mark:only-child { background-color: var(--ef-hl-orange); }
+.markdown-rendered em > mark:only-child     { background-color: var(--ef-hl-green); }
+.markdown-rendered strong > em > mark:only-child,
+.markdown-rendered em > strong > mark:only-child { background-color: var(--ef-hl-aqua); }
+/* 这几种组合里,外层的粗体/斜体色要让位给底色,否则字色和底色打架 */
+.markdown-rendered strong > mark,
+.markdown-rendered em > mark {
+  color: var(--text-normal);
+}
+
+/*
+ * 粗体带暖琥珀色 —— 这是 Gruvbox 那种"满页暖色点"观感的主要来源,
+ * 不是靠给高亮加底色。用 Everforest 的 yellow:
+ * 页面上 8.70:1,绿色 callout 底上 6.30:1,两种场景都达标。
+ * 标题虽也有 yellow(H2),但字号差一倍以上,不会混淆。
+ */
+.markdown-rendered strong,
+.cm-s-obsidian .cm-strong {
+  color: var(--ef-yellow);
+  font-weight: var(--bold-weight);
+}
+/* 标题内的粗体跟随标题色,否则 H1 里的粗体会突然变黄 */
+.markdown-rendered h1 strong, .markdown-rendered h2 strong,
+.markdown-rendered h3 strong, .markdown-rendered h4 strong,
+.markdown-rendered h5 strong, .markdown-rendered h6 strong {
+  color: inherit;
+}
+/* 高亮块内的粗体不变色:块内已有底色,再变色就过载了 */
+.markdown-rendered mark strong {
+  color: inherit;
+}
+
+/* 斜体用绿色:中文没有真正的斜体字形,靠颜色区分比靠倾斜可靠 */
+.markdown-rendered em,
+.cm-s-obsidian .cm-em {
+  color: var(--ef-green);
+  font-style: italic;
+}
+
+.markdown-rendered del,
+.cm-s-obsidian .cm-strikethrough {
+  color: var(--ef-grey1);
+  text-decoration-color: var(--ef-red);
+}
+
+/* 选中态与搜索命中 */
+::selection,
+.cm-s-obsidian .cm-selectionBackground,
+.markdown-source-view .cm-selectionBackground {
+  background-color: var(--ef-bg-visual) !important;
+}
+.search-result-file-matched-text,
+.suggestion-highlight {
+  background-color: var(--ef-bg-blue);
+  color: #f2efdf;
+  border-radius: 2px;
+}
+
+/* ---------- 数学公式 (MathJax) ---------- */
+/*
+ * 三个默认行为需要修:
+ *  1. MathJax 视觉字号比正文小,混排时公式显得"矮一截" -> 放大到 1.06
+ *  2. 行内公式的上下伸展会顶开行距,段落出现不均匀的空隙 -> 锁 line-height
+ *  3. 长公式默认溢出被裁掉 -> 独立公式改为可横向滚动
+ */
+mjx-container {
+  color: var(--text-normal);
+}
+mjx-container:not([display]) {
+  font-size: 1.06em;
+  line-height: 0;              /* 关键:行内公式不再影响段落行距 */
+  vertical-align: baseline;
+}
+
+/* 独立公式:加背景和内衬,从正文里"浮"出来,长式子可横滑 */
+mjx-container[display="true"] {
+  font-size: 1.1em;
+  margin: 1.15em 0;
+  padding: 0.85em 1em;
+  background-color: var(--ef-bg0);
+  border-left: 2px solid var(--ef-bg5);
+  border-radius: var(--radius-s);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.theme-light mjx-container[display="true"] {
+  background-color: var(--ef-bg1);
+}
+
+/* 公式编号靠右不被压缩 */
+mjx-container[display="true"] mjx-mtable { min-width: 0; }
+
+/* 编辑模式下公式源码用暖色,和普通文本区分 */
+.cm-s-obsidian .cm-math,
+.cm-s-obsidian .math {
+  color: var(--ef-yellow);
+}
+.cm-s-obsidian .cm-formatting-math {
+  color: var(--ef-grey1);
+}
+
+/* 编辑时的行内公式预览块 */
+.cm-embed-block.math,
+.math-block-preview {
+  background-color: var(--ef-bg0);
+  border-radius: var(--radius-s);
+}
+
+/* ---------- 代码 ---------- */
+body {
+  --code-background: var(--ef-bg0);
+  --code-normal:   var(--ef-fg);
+  --code-comment:  var(--ef-grey1);
+  --code-keyword:  var(--ef-red);
+  --code-function: var(--ef-green);
+  --code-string:   var(--ef-yellow);
+  --code-value:    var(--ef-purple);
+  --code-property: var(--ef-blue);
+  --code-operator: var(--ef-orange);
+  --code-tag:      var(--ef-aqua);
+  --code-important: var(--ef-orange);
+  --code-size: 0.9em;
+}
+
+/* 行内代码:橙色 + 底色,在中文里也能一眼框出边界 */
+.markdown-rendered code:not(pre code),
+.cm-s-obsidian .cm-inline-code {
+  background-color: var(--ef-bg1);
+  color: var(--ef-orange);
+  border-radius: 4px;
+  padding: 0.12em 0.35em;
+  font-size: 0.88em;
+}
+
+.markdown-rendered pre,
+.cm-s-obsidian .HyperMD-codeblock-bg {
+  background-color: var(--ef-bg0);
+  border: 1px solid var(--ef-bg2);
+  border-radius: var(--radius-m);
+}
+.markdown-rendered pre code { color: var(--ef-fg); }
+
+/* ---------- 链接与标签 ---------- */
+body {
+  --link-color: var(--ef-blue);
+  --link-color-hover: var(--ef-aqua);
+  --link-external-color: var(--ef-aqua);
+  --link-external-color-hover: var(--ef-green);
+  --link-unresolved-color: var(--ef-grey0);
+  --link-unresolved-opacity: 0.7;
+  --link-decoration: none;
+  --link-decoration-hover: underline;
+}
+
+.tag,
+a.tag {
+  background-color: var(--ef-bg-green);
+  color: var(--ef-green);
+  border: none;
+  border-radius: 12px;
+  padding: 0.14em 0.6em;
+  font-size: 0.83em;
+  text-decoration: none;
+}
+.tag:hover {
+  background-color: var(--ef-green);
+  color: var(--ef-bg-dim);
+}
+
+/* ---------- Callout ---------- */
+/* Obsidian 的 callout 变量要 "r, g, b" 三元组,不能用 hex */
+body {
+  --callout-border-width: 0px;
+  --callout-border-opacity: 0.25;
+  --callout-padding: 0.9em 1.1em;
+  --callout-radius: var(--radius-m);
+  --callout-blend-mode: normal;
+
+  --callout-info:     127, 187, 179;   /* blue   */
+  --callout-todo:     127, 187, 179;
+  --callout-tip:      131, 192, 146;   /* aqua   */
+  --callout-success:  167, 192, 128;   /* green  */
+  --callout-question: 219, 188, 127;   /* yellow */
+  --callout-warning:  230, 152, 117;   /* orange */
+  --callout-fail:     230, 126, 128;   /* red    */
+  --callout-error:    230, 126, 128;
+  --callout-bug:      230, 126, 128;
+  --callout-example:  214, 153, 182;   /* purple */
+  --callout-quote:    154, 169, 160;   /* grey   */
+  --callout-abstract: 131, 192, 146;
+  --callout-summary:  131, 192, 146;
+  --callout-important: 230, 152, 117;
+}
+
+/*
+ * 底色 = 抬升一档的表面色 + 12% 该 callout 色的着色。
+ * 两层写法的原因:--callout-color 是 "r, g, b" 三元组而非合法 CSS 颜色,
+ * 不能直接喂给 color-mix(),所以用一层半透明渐变叠在不透明表面色上。
+ * 结果与页面背景区分度约 1.48:1(相邻色块 1.2:1 即可辨),正文仍保 6.36:1。
+ */
+.callout {
+  background-color: var(--ef-bg0);
+  background-image: linear-gradient(
+    rgba(var(--callout-color), 0.12),
+    rgba(var(--callout-color), 0.12)
+  );
+  border-left: 3px solid rgb(var(--callout-color));
+  mix-blend-mode: normal;
+}
+/* 红色系饱和度最高,12% 会把标题色压到 4.17:1,单独降一档 */
+.callout[data-callout="danger"],
+.callout[data-callout="error"],
+.callout[data-callout="bug"],
+.callout[data-callout="fail"],
+.callout[data-callout="failure"],
+.callout[data-callout="missing"] {
+  background-image: linear-gradient(
+    rgba(var(--callout-color), 0.08),
+    rgba(var(--callout-color), 0.08)
+  );
+}
+/* 标题条再深一点,和正文区拉开层次 */
+.callout-title {
+  font-weight: 650;
+  padding: 0;
+  align-items: center;
+  background-color: rgba(var(--callout-color), 0.07);
+  margin: calc(var(--callout-padding) * -1);
+  margin-bottom: 0;
+  padding: 0.55em 1.1em;
+  border-radius: var(--radius-m) var(--radius-m) 0 0;
+}
+.callout-title-inner { color: rgb(var(--callout-color)); }
+.callout-icon { color: rgb(var(--callout-color)); }
+/* 标题条通栏后,内容区自己补回内边距 */
+.callout-content {
+  padding-top: 0.75em;
+}
+.callout-content > :first-child { margin-top: 0; }
+.callout-content > :last-child  { margin-bottom: 0; }
+
+/* 无标题的 callout(只有 > [!note] 一行内容)不需要标题条留白 */
+.callout:not(:has(.callout-title)) .callout-content {
+  padding-top: 0;
+}
+
+/* ---------- 引用 ---------- */
+blockquote,
+.markdown-rendered blockquote {
+  background-color: var(--ef-bg0);
+  border-left: 3px solid var(--ef-green);
+  border-radius: 0 var(--radius-s) var(--radius-s) 0;
+  padding: 0.6em 1em;
+  color: var(--text-normal);   /* 引用文字不压暗,否则长引用读起来费力 */
+  font-style: normal;
+}
+
+/* ---------- 表格 ---------- */
+body {
+  --table-header-background: var(--ef-bg1);
+  --table-header-background-hover: var(--ef-bg2);
+  --table-row-background-hover: var(--ef-bg0);
+  --table-row-alt-background: var(--ef-bg0);
+  --table-border-color: var(--ef-bg2);
+  --table-header-color: var(--ef-yellow);
+  --table-border-width: 1px;
+}
+.markdown-rendered table {
+  border-radius: var(--radius-s);
+  overflow: hidden;
+  border-collapse: collapse;
+}
+.markdown-rendered th {
+  font-weight: 650;
+  color: var(--ef-yellow);
+}
+/* 隔行浅底,宽表格横向扫读不串行 */
+.markdown-rendered tbody tr:nth-child(even) {
+  background-color: var(--ef-bg0);
+}
+
+/* ---------- 列表 ---------- */
+body {
+  --list-marker-color: var(--ef-aqua);
+  --list-marker-color-hover: var(--ef-green);
+  --list-indent: 1.9em;
+  --list-spacing: 0.12em;
+}
+.markdown-rendered ul > li::marker,
+.markdown-rendered ol > li::marker {
+  color: var(--ef-aqua);
+}
+/* 多层嵌套时的缩进参考线,你的笔记层级较深 */
+.markdown-source-view.mod-cm6 .cm-indent::before,
+.markdown-rendered .list-bullet::after {
+  border-color: var(--ef-bg3);
+}
+
+/* 任务列表 */
+.markdown-rendered input[type="checkbox"] {
+  --checkbox-color: var(--ef-green);
+  --checkbox-color-hover: var(--ef-aqua);
+  --checkbox-border-color: var(--ef-grey0);
+  --checkbox-border-color-hover: var(--ef-green);
+  --checkbox-marker-color: var(--ef-bg-dim);
+}
+.markdown-rendered li.task-list-item.is-checked {
+  color: var(--ef-grey1);
+  text-decoration-color: var(--ef-grey0);
+}
+
+/* ---------- 编辑器细节 ---------- */
+/* 光标与 Ghostty 一致的 aqua */
+.markdown-source-view.mod-cm6 .cm-cursor,
+.cm-s-obsidian .cm-cursor-primary {
+  border-left-color: var(--ef-aqua) !important;
+  border-left-width: 2px !important;
+}
+/* 当前行极淡底色:编辑长公式时不易看错行,又不干扰阅读 */
+.markdown-source-view.mod-cm6 .cm-active.cm-line {
+  background-color: rgba(255, 255, 255, 0.022);
+}
+.theme-light .markdown-source-view.mod-cm6 .cm-active.cm-line {
+  background-color: rgba(0, 0, 0, 0.018);
+}
+/* Markdown 语法符号压暗,不与内容争视线 */
+.cm-s-obsidian .cm-formatting {
+  color: var(--ef-grey0);
+  opacity: 0.75;
+}
+.markdown-rendered hr,
+.cm-s-obsidian .cm-hr {
+  border-color: var(--ef-bg2);
+  border-top-width: 1px;
+}
+
+/* ---------- 界面外壳 ---------- */
+.workspace-tabs .workspace-tab-header.is-active {
+  background-color: var(--ef-bg-dim);
+}
+.workspace-tab-header.is-active .workspace-tab-header-inner-title {
+  color: var(--ef-fg);
+}
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+  background-color: var(--ef-bg2);
+  color: var(--ef-fg);
+}
+.tree-item-self:hover { background-color: var(--ef-bg1); }
+.status-bar {
+  background-color: var(--ef-bg0);
+  border-top: 1px solid var(--ef-bg2);
+  color: var(--ef-grey1);
+}
+.titlebar, .workspace-ribbon { background-color: var(--ef-bg0); }
+.view-header-title { color: var(--ef-fg); }
+.view-header-breadcrumb { color: var(--ef-grey1); }
+
+/* 细滚动条,悬停才明显 */
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background-color: var(--ef-bg3);
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover { background-color: var(--ef-bg5); }
+
+/* ---------- 属性 / frontmatter ---------- */
+.metadata-container {
+  background-color: var(--ef-bg0);
+  border-radius: var(--radius-m);
+  padding: 0.6em 0.9em;
+}
+.metadata-property-key { color: var(--ef-grey2); }
+.metadata-property-value { color: var(--ef-fg); }
+
+/* ---------- Spaced Repetition 插件 ---------- */
+.sr-flashcard, .sr-modal { background-color: var(--ef-bg0); }
+.sr-response .sr-good { background-color: var(--ef-bg-green); color: var(--ef-green); }
+.sr-response .sr-bad  { background-color: var(--ef-bg-red);   color: var(--ef-red); }
+.sr-response .sr-easy { background-color: var(--ef-bg-blue);  color: var(--ef-blue); }
