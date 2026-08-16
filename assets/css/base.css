@@ -172,11 +172,38 @@ h1.post-title::after {
 
 /* Highlight semantics */
 .post-content mark, mark { background:none; color:inherit; padding:0 3px; border-radius:3px; font-weight:600;}
-.mk-key { background:rgba(232,176,75,0.16); color:var(--gold); }
-.mk-bad { background:rgba(229,72,77,0.16); color:var(--red); }
-.mk-good { background:rgba(61,214,140,0.16); color:var(--green); }
-.mk-link { background:rgba(79,163,227,0.16); color:var(--blue); }
+.post-content mark.mk-bad { color:var(--red); }
+.post-content mark.mk-good { color:var(--green); }
+.post-content mark.mk-key { color:var(--gold); }
+.post-content mark.mk-link { color:var(--blue); }
+
 .strike { color: var(--red); }
+.mk-good { color: var(--green); }
+.mk-key { color: var(--gold); }
+.mk-link { color: var(--blue); }
+
+/* Category Navigation Menu */
+.category-nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.category-nav a {
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.category-nav a:hover {
+  color: var(--text-primary);
+}
+.category-nav a.active {
+  color: var(--gold);
+  font-weight: 700;
+}
 
 /* Blockquote */
 .post-content blockquote {

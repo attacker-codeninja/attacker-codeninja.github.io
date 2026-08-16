@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: base
 title: AWS
 category_name: AWS
 permalink: /category/aws/

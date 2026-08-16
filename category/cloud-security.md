@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: base
 title: Cloud Security
 category_name: Cloud Security
 permalink: /category/cloud-security/

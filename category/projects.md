@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: base
 title: Projects
 category_name: Projects
 permalink: /category/projects/

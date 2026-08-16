@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: base
 title: Claude Code AI
 category_name: Claude Code AI
 permalink: /category/claude-code-ai/
