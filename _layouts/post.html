@@ -1,25 +1,22 @@
 ---
 layout: base
 ---
-<div class="post-container">
-  <div class="eyebrow">
-    <span>{{ page.date | date: "%B %-d, %Y" }}</span>
-  </div>
 
-  <h1 class="post-title">{{ page.title }}</h1>
+<article>
+  <header class="post-header">
+    <span class="post-date">{{ page.date | date: "%B %-d, %Y" }}</span>
+    <h1 class="post-title">{{ page.title }}</h1>
+    
+    {% if page.tags.size > 0 %}
+      <div class="post-tags">
+        {% for tag in page.tags %}
+          <a href="{{ '/tags' | relative_url }}#{{- tag -}}" class="post-tag">{{- tag -}}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </header>
 
   <div class="post-content">
     {{ content }}
   </div>
-
-  {% if page.tags.size > 0 %}
-    <div style="margin-top: 60px; border-top: 1px solid var(--border); padding-top: 24px;">
-      <span style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim);">Tags</span>
-      <div style="display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap;">
-        {% for tag in page.tags %}
-          <a href="{{ '/tags' | relative_url }}#{{- tag -}}" style="background: var(--bg-panel-2); color: var(--text-primary); border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; font-size: 12px; font-family: var(--mono); text-decoration: none;">{{- tag -}}</a>
-        {% endfor %}
-      </div>
-    </div>
-  {% endif %}
-</div>
+</article>
