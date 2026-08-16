@@ -136,8 +136,34 @@ h1.post-title::after {
 .post-content p { font-size:17px; line-height:1.75; color:var(--text-primary); margin-bottom:18px; }
 .post-content a { color:var(--blue); text-decoration:none; }
 .post-content a:hover { text-decoration:underline; }
-.post-content ul, .post-content ol { margin-bottom:18px; padding-left:24px; font-size:17px; line-height:1.75; color:var(--text-primary); }
-.post-content li { margin-bottom:8px; }
+
+/* Lists styled as Box */
+.post-content ul, .post-content ol {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 24px 24px 48px;
+  margin: 24px 0;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--text-primary);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.post-content ul ul, .post-content ul ol, 
+.post-content ol ul, .post-content ol ol {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 12px 0 0 28px;
+  margin: 0;
+  box-shadow: none;
+}
+.post-content li {
+  margin-bottom: 12px;
+}
+.post-content li:last-child {
+  margin-bottom: 0;
+}
 
 /* Highlight semantics */
 .post-content mark, mark { background:none; color:inherit; padding:0 3px; border-radius:3px; font-weight:600;}
