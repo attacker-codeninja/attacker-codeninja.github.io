@@ -6,7 +6,7 @@ tags: [prototype pollution]
 
 
 
-# Part 4 - Prototype Pollution Continue
+# Part 4 - Prototype Pollution <span class="strike">Continue</span>
 
 ---
 
@@ -122,7 +122,7 @@ tags: [prototype pollution]
 
 
 
-## Difference between `__proto_` and prototype
+## Difference between `__proto_` and <span class="strike">prototype</span>
 
 
 

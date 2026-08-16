@@ -18,12 +18,12 @@ description: Beginner-friendly project to understand S3 misconfigurations, IAM p
 ![Securing Your First S3 Bucket Project](/assets/img/s3-iam-project/your-header-image.png)
 
 
-## 🔐 Project 1: Securing Your First S3 Bucket & IAM User — Guided by a Security Engineer
+## 🔐 Project 1: Securing Your First S3 Bucket & IAM User — Guided by a Security <span class="strike">Engineer</span>
 
 > _A Beginner’s Journey into S3 Security and IAM - Guided by a Security Engineer_
 
 
-### 🎯 **Objective**
+### 🎯 <span class="strike">**Objective</span>**
 
 > **Help beginners understand how simple misconfigurations in S3 buckets and IAM policies can expose sensitive data - and how to fix them securely.**
 
@@ -33,7 +33,7 @@ In this project, I will walk you through intentionally misconfiguring an S3 buck
 
 ---
 
-### 🧰 Tools You’ll Use
+### 🧰 Tools You’ll <span class="strike">Use</span>
 
 - ✅ AWS Console (GUI)
 - ✅ Amazon S3
@@ -41,7 +41,7 @@ In this project, I will walk you through intentionally misconfiguring an S3 buck
 - ✅ AWS CLI _(Optional – for those wanting to level up)_
 
 ---
-## 🔧 What We’ll Do
+## 🔧 What We’ll <span class="strike">Do</span>
 
 You’ll simulate a real-world misconfiguration:
 
@@ -57,7 +57,7 @@ Then, you’ll **detect**, **fix**, and **harden** the setup using:
 ---
 
 
-## 🧠 Why This Project Matters
+## 🧠 Why This Project <span class="strike">Matters</span>
 
 > **“S3 bucket leaks are a cloud security engineer’s worst recurring nightmare.”**  
    Misconfigured buckets have exposed sensitive data from startups to Fortune 500s. Why? Because it's **easy to get wrong**, and **hard to notice** until someone tweets it.
@@ -70,17 +70,17 @@ So let’s **learn to break it**, **spot the danger**, and then **secure it like
 
 ---
 
-#  🚀 Step-by-Step Implementation
+# 🚀 Step-by-Step <span class="strike">Implementation</span>
 
 
-### 🛠️ Step-by-Step Guide
+### 🛠️ Step-by-Step <span class="strike">Guide</span>
 
 > Think of this as a **security lab exercise** - we simulate the misconfiguration, then fix it, all while learning key IAM and S3 security concepts
 
 
 
 
-### ✅ Step 1: Create an S3 Bucket
+### ✅ Step 1: Create an S3 <span class="strike">Bucket</span>
 
 
 📌 Bucket Name: `your-name-cloudsec-demo`
@@ -117,7 +117,7 @@ Disabling public access is dangerous unless you **really** need public files. Ma
 
 ---
 
-### ✅ Step 2: Upload a Sample Sensitive File
+### ✅ Step 2: Upload a Sample Sensitive <span class="strike">File</span>
 
 
 📄 File Name: `sensitive.txt`  
@@ -149,7 +149,7 @@ DB_PASSWORD=123456
 
 ---
 
-### ✅ Step 3: Make the Bucket Public (Simulate Misconfiguration)
+### ✅ Step 3: Make the Bucket Public (Simulate <span class="strike">Misconfiguration</span>)
 
 > 🎯 Simulating what often goes wrong in the real world
 
@@ -245,7 +245,7 @@ When **Block Public Access is enabled**, AWS does these enforcement-level things
 
 ---
 
-### ✅ Step 4: Create an IAM User – `junior-analyst`
+### ✅ Step 4: Create an IAM User – <span class="strike">`junior-analyst</span>`
 
 ✅ Go to IAM → Users → Add User  
 ✅ Username: `junior-analyst`  
@@ -313,7 +313,7 @@ Here's what it looks like:
 
 ---
 
-### ✅ Step 5: Fix the Misconfiguration
+### ✅ Step 5: Fix the <span class="strike">Misconfiguration</span>
 
 Finally where we are going to fix the misconfiguration
 
@@ -422,7 +422,7 @@ Then **Create Policy**
 ![](/assets/img/s3-iam-project/20250727183608.png)
 
 
-## 🔐 Policy Comparison: Before vs After Fix
+## 🔐 Policy Comparison: Before vs After <span class="strike">Fix</span>
 
 | Policy               | Access Level       | Bucket Scope        | Security Risk |
 | -------------------- | ------------------ | ------------------- | ------------- |
@@ -433,7 +433,7 @@ Then **Create Policy**
 
 ---
 
-### ✅ Step 6:  Enable S3 Server Access Logging
+### ✅ Step 6: Enable S3 Server Access <span class="strike">Logging</span>
 
 
 ✅ Create a new Bucket -> `log-bucket-yourname`
@@ -496,7 +496,7 @@ So -> ✅  It Helps in Auditing and even ✅ Detect Misuse or Malicious Activity
 🔧 Fixing a misconfiguration is only **half the solution**.  
 🕵️‍♂️ **Detecting if someone already exploited it** or **is trying to** - is the other half.
 
-## ⚙️ How It Works (Behind the Scenes)
+## ⚙️ How It Works (Behind the <span class="strike">Scenes</span>)
 
 When you enable Server Access Logging:
 
@@ -520,7 +520,7 @@ By This We can ->
 
 
 
-## ⚠️ Common Mistake Beginners Make
+## ⚠️ Common Mistake Beginners <span class="strike">Make</span>
 
 - They fix a misconfigured policy
 - But forget to **turn on logging**
@@ -530,7 +530,7 @@ As a Security Engineer, you should always **log before you relax.**
 
 ---
 
-# BONUS -  IAM Policy for S3 Bucket
+# BONUS - IAM Policy for S3 <span class="strike">Bucket</span>
 
 In our misconfguration steps we added Policy to Access Specific S3 Bucket and Object to IAM User
 
@@ -569,7 +569,7 @@ But now let's add another Policy this time directly to S3 Bucket to allow Specif
 
 ✅  Save Changes
 
-### ✅ What This Policy Is Doing
+### ✅ What This Policy Is <span class="strike">Doing</span>
 
 🔐 This is a **Bucket Policy** that says:
 
@@ -584,7 +584,7 @@ This is placed **directly on the S3 bucket** → under _Permissions > Bucket Pol
 - The bucket **trusts a specific IAM user**, and gives it permission.
 - You must still ensure that IAM **allows** the action too - it must match both bucket + IAM permissions.
 
-## 🔄 So… What’s the Difference?
+## 🔄 So… What’s the <span class="strike">Difference</span>?
 
 | Feature           | **Bucket Policy**                       | **IAM Policy**                 |
 | ----------------- | --------------------------------------- | ------------------------------ |
@@ -596,7 +596,7 @@ This is placed **directly on the S3 bucket** → under _Permissions > Bucket Pol
 | Security Practice | OK if locked to one user, but too broad | Best practice for internal IAM |
 
 
-## 🔐 Security Engineer Insight: Which One Should I Use?
+## 🔐 Security Engineer Insight: Which One Should I <span class="strike">Use</span>?
 
 ✅ **Use IAM policy (identity-based)** when:
 
@@ -625,7 +625,7 @@ It’s **better** to scope down the actions.
 ---
 
 
-## ✅ Final Outcome — What We Built
+## ✅ Final Outcome — What We <span class="strike">Built</span>
 
 By the end of this project, we created a **secure and auditable S3 environment**, simulating real-world risks and applying best practices to fix them.
 
@@ -643,11 +643,11 @@ Here’s what the final setup looks like:
 
 ---
 
-## 🧠 What I Learned from This Project (If I Were a Beginner)
+## 🧠 What I Learned from This Project (If I Were a <span class="strike">Beginner</span>)
 
 While guiding this project as a security engineer, if I were a beginner, these would be my biggest takeaways:
 
-### 1. 🔓 S3 Buckets Can Be Dangerous If Misconfigured
+### 1. 🔓 S3 Buckets Can Be Dangerous If <span class="strike">Misconfigured</span>
 
 Even one line in a bucket policy like `"Principal": "*"` can expose your private data to the internet. 
 
@@ -656,7 +656,7 @@ I now understand why **AWS gives so many red warnings** when you try to disable 
 > ✅ Lesson: Always treat storage like it’s public by default - and lock it down intentionally.
 
 
-### 2. 👤 IAM Policies Matter — A Lot
+### 2. 👤 IAM Policies Matter — A <span class="strike">Lot</span>
 
 Giving **AmazonS3FullAccess** to any user feels like a quick fix - but it’s a **disaster waiting to happen**. 
 
@@ -669,7 +669,7 @@ I learned how to:
 > ✅ Lesson: Always ask - “Does this user really need this level of access?”
 
 
-### 3. 🔄 IAM vs Bucket Policy — Two Ways to Grant Access
+### 3. 🔄 IAM vs Bucket Policy — Two Ways to Grant <span class="strike">Access</span>
 
 I didn’t just copy-paste JSON - I now understand:
 
@@ -681,7 +681,7 @@ I didn’t just copy-paste JSON - I now understand:
 
 
 
-### 4. 📜 Access Logs Are Not Optional
+### 4. 📜 Access Logs Are Not <span class="strike">Optional</span>
 
 Fixing a vulnerability isn’t complete until I know:
 
@@ -697,7 +697,7 @@ I learned how to:
 > ✅ Lesson: You can’t protect what you can’t monitor.
 
 
-### 5. 💡 Security Isn’t Just Technical — It’s About Intent
+### 5. 💡 Security Isn’t Just Technical — It’s About <span class="strike">Intent</span>
 
 I realized that good security comes from:
 

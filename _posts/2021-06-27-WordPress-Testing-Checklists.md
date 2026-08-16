@@ -4,7 +4,7 @@ title: Wordpress Testing Checklist
 tags: [checklist,wordpress]
 ---
 
-# Wordpress Testing Checklists
+# Wordpress Testing <span class="strike">Checklists</span>
 
 
 

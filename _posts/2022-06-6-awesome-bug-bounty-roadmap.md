@@ -5,7 +5,7 @@ subtitle: bug bounty roadmap
 tags: [bug bounty roadmap]
 ---
 
-# Awesome Bug Bounty Roadmap 
+# Awesome Bug Bounty <span class="strike">Roadmap</span>
 
 Hi Friends, This is CodeNinja a.k.a Aakash Choudhary.
 
@@ -221,7 +221,7 @@ NOTE : Its not necessary to complete every books [Though it will help a lot for 
 
 
 <br><br>
-##  Beside this here is my advice => 
+## Beside this here is my advice => 
 
 * Learn Programming for Automation for make your tasks easier and it will make your logic strong
 * Learn Programming like PHP,JS etc => to understand things more clearly and to go the mind of developer ;)

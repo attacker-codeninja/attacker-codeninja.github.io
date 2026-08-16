@@ -5,7 +5,7 @@ subtitle: android hacking Notes
 tags: [androing pentesting]
 ---
 
-# Bug Bounty Bootcamp Notes - Chapter 23 - HACKING ANDROID APPS
+# Bug Bounty Bootcamp Notes - Chapter 23 - HACKING ANDROID <span class="strike">APPS</span>
 
 ---
 
@@ -22,7 +22,7 @@ tags: [androing pentesting]
 
 
 
-## 1. Setting Up Your Mobile Proxy
+## 1. Setting Up Your Mobile <span class="strike">Proxy</span>
 
 
 
@@ -70,7 +70,7 @@ tags: [androing pentesting]
 
 
 
-## 2. Bypassing Certificate Pinning
+## 2. Bypassing Certificate <span class="strike">Pinning</span>
 
 
 
@@ -105,7 +105,7 @@ tags: [androing pentesting]
 
 
 
-## 3. Anatomy of an APK
+## 3. Anatomy of an <span class="strike">APK</span>
 
 
 
@@ -182,7 +182,7 @@ tags: [androing pentesting]
 
 
 
-## 4. Tools to Use
+## 4. Tools to <span class="strike">Use</span>
 
 
 
@@ -192,7 +192,7 @@ tags: [androing pentesting]
 
 
 
-### 4.1 Android Debug Bridge
+### 4.1 Android Debug <span class="strike">Bridge</span>
 
 
 
@@ -223,7 +223,7 @@ tags: [androing pentesting]
 
 
 
-### 4.2 Android Studio
+### 4.2 Android <span class="strike">Studio</span>
 
 
 
@@ -236,7 +236,7 @@ tags: [androing pentesting]
 
 
 
-### 4.3 Apktool
+### 4.3 <span class="strike">Apktool</span>
 
 
 
@@ -255,7 +255,7 @@ tags: [androing pentesting]
 
 
 
-### 4.4 Frida
+### 4.4 <span class="strike">Frida</span>
 
 
 
@@ -271,7 +271,7 @@ tags: [androing pentesting]
 
 
 
-### 4.5 Mobile Security Framework
+### 4.5 Mobile Security <span class="strike">Framework</span>
 
 
 
@@ -286,7 +286,7 @@ tags: [androing pentesting]
 
 
 
-## 5. Hunting for Vulnerabilities
+## 5. Hunting for <span class="strike">Vulnerabilities</span>
 
 
 

@@ -6,7 +6,7 @@ tags: [prototype pollution]
 
 
 
-# Part 2 - Prototype Pollution Continue
+# Part 2 - Prototype Pollution <span class="strike">Continue</span>
 
 
 
@@ -530,7 +530,7 @@ So, lets learn again about the same concept.
 
 
 
-### Prototype Chain
+### Prototype <span class="strike">Chain</span>
 
 
 

@@ -4,7 +4,7 @@ title: Learn from AMA Series Part 1
 tags: [AMA,ama, bug bounty]
 ---
 
-## Learn from AMA Series from BugBountyForum
+## Learn from AMA Series from <span class="strike">BugBountyForum</span>
 
 
 

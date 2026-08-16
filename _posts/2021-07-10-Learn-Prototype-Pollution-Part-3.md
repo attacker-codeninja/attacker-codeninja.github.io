@@ -7,7 +7,7 @@ tags: [prototype pollution]
 
 
 
-# Part 3 - Prototype Pollution Continue
+# Part 3 - Prototype Pollution <span class="strike">Continue</span>
 
 ---
 
@@ -319,7 +319,7 @@ __proto__: Object
 
 
 
-## Prototype Inheritance 
+## Prototype <span class="strike">Inheritance</span>
 
 
 
@@ -434,7 +434,7 @@ __proto__: Object
 
 
 
-## Prototype Pollution
+## Prototype <span class="strike">Pollution</span>
 
 
 

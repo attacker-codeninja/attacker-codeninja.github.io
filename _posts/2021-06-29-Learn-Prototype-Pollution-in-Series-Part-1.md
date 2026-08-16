@@ -4,7 +4,7 @@ title: Learn Prototype Pollution in Series - Part 1
 tags: [prototype pollution]
 ---
 
-# Vulnerability Focus - Prototype Pollution - Part 1
+# Vulnerability Focus - Prototype Pollution - Part <span class="strike">1</span>
 
 
 
@@ -16,7 +16,7 @@ tags: [prototype pollution]
 
 
 
-### In this Part , we are learning very basics
+### In this Part , we are learning very <span class="strike">basics</span>
 
 
 
@@ -118,7 +118,7 @@ tags: [prototype pollution]
 
 
 
-### More on Prototype
+### More on <span class="strike">Prototype</span>
 
 > So, far we learned about Objects , properties and methods
 >

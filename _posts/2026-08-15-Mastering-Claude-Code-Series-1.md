@@ -29,7 +29,7 @@ This specific post serves as the **Introduction** to the series. Throughout this
 
 So, let me start with the most important question:
 
-## 🎯 Why I started this blog <span class="strike">series?</span>
+## 🎯 Why I started this blog <span class="strike">series</span>?
 
 I use AI models a lot for my own purposes, and Claude Code is one of the tools I rely on the most. 
 
@@ -63,7 +63,7 @@ The truth is, **both are the culprit - the AI model AND us.** 🤝
 
 That is exactly why I started this blog post series: to solve this fundamental problem for myself and for everyone else facing the same struggle.
 
-## 💡 So what changed my <span class="mk-good">mind?</span>
+## 💡 So what changed my <span class="strike">mind</span>?
 
 It all shifted during a conversation with my best and closest friend. I explained my frustration, and he gave me a piece of advice that completely flipped my perspective:
 
@@ -75,14 +75,14 @@ I realized that instead of blindly ordering the AI around - and then wasting hou
 
 And that is exactly why I decided to dive deep and do thorough research on my favorite AI model: **Claude Code**. 🕵️‍♂️
 
-### 👥 Who is this series <span class="mk-link">for?</span>
+### 👥 Who is this series <span class="strike">for</span>?
 If you are a Developer, Security Engineer, or Bug Hunter who wants to use AI to speed up your work - but instead finds yourself wasting time fixing the AI's bugs - this series is exactly for you.
 
-### 📜 The Golden Rule of This <span class="mk-key">Series</span>
+### 📜 The Golden Rule of This <span class="strike">Series</span>
 Since we are shifting from a "Builder" to a "User" mindset, we will follow one strict rule throughout this journey:
 > **The AI does not create the logic; WE create the logic. The AI simply executes it. We dictate the rules, and the AI writes the code.**
 
-### 🚀 What to Expect from This <span class="mk-link">Series?</span>
+### 🚀 What to Expect from This <span class="strike">Series</span>?
 
 This blog series will document my entire research and learning journey. We won't be talking about generic "copy-paste prompts." Instead, we will look at this systematically, heavily inspired by a Security Engineer’s mindset:
 
@@ -95,7 +95,7 @@ If you are tired of wrestling with AI models and want them to start working *for
 
 Stay tuned for **Part 2**, where we will tear down the absolute basics and look under the hood of Claude Code! 🔥
 
-### 💬 Let's <span class="mk-key">Connect!</span>
+### 💬 Let's <span class="strike">Connect</span>!
 What has been your biggest frustration with AI models so far? Let's discuss it! 
 Drop a comment below, or join my new **[Telegram Community](https://t.me/AwesomeAboutAI)** where we can share insights, frustrations, and bug bounty strategies together. See you there!
 

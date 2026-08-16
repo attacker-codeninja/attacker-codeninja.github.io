@@ -157,7 +157,7 @@ This is like this ==>
 Even if you can't control the password reset link, you can sometimes use the Host header to inject HTML into sensitive emails. Note that email clients typically don't execute JavaScript, but other HTML injection techniques like dangling markup attacks may still apply.
 ```
 
-### Lab 1 => Basic password reset poisoning
+### Lab 1 => Basic password reset <span class="strike">poisoning</span>
 
 Here are the steps ->
 
@@ -181,7 +181,7 @@ extra tip: if the app is built on ruby, try adding a .json extension to the end 
  i've found a bug where I could use this to bypass a 4 digit code that they had for access control and inject host header and get password reset poisining
 ```
 
-### Lab 2 => Password reset poisoning via middleware
+### Lab 2 => Password reset poisoning via <span class="strike">middleware</span>
 
 Here are the Steps ->
 
@@ -191,7 +191,7 @@ Here are the Steps ->
 
 
 
-### Lab 3  => Password reset poisoning via dangling markup
+### Lab 3 => Password reset poisoning via dangling <span class="strike">markup</span>
 
 First Let's know what is dangling markup ? => https://portswigger.net/web-security/cross-site-scripting/dangling-markup
 
@@ -316,13 +316,13 @@ Ways to do this things -> HTTP Response Splitting, using unkeyed inputs, or by r
 
 ============================================================================
 
-## 3. Exploiting classic server-side vulnerabilities
+## 3. Exploiting classic server-side <span class="strike">vulnerabilities</span>
 
 * We can also try SQLi instead of XSS in Host header attack
 * If the value of the header is passed into a SQL statement, this could be exploitable.
 
 
-### Lab Solve => Host header authentication bypass -> Accessing restricted functionality
+### Lab Solve => Host header authentication bypass -> Accessing restricted <span class="strike">functionality</span>
 
 * Checked robots.txt and found /admin directory
 * While visiting to that directory got that error ->  Admin interface only available to local users 
@@ -332,7 +332,7 @@ Ways to do this things -> HTTP Response Splitting, using unkeyed inputs, or by r
 
 ===============================================================
 
-## 4. Accessing internal websites with virtual host brute-forcing
+## 4. Accessing internal websites with virtual host <span class="strike">brute-forcing</span>
 
 ``` 
 Companies host publicly accessible website, private and internal sites on same server , which is mistake.
@@ -359,7 +359,7 @@ Also can bruteforce virtual hosts using wordlist of candidate subdomains.
 *  If all else fails, you can still identify valid IP addresses by simply brute-forcing standard private IP ranges, such as 192.168.0.0/16.
 
 
-###  Lab Solve -> Routing-based SSRF
+### Lab Solve -> Routing-based <span class="strike">SSRF</span>
 
 * First to confirm about this vulnerability -> Go to / page and send to burp request 
 * Next from Burp Menu -> Collaborator Client -> Copy to clipboard -> paste in Host header of vulnerable target

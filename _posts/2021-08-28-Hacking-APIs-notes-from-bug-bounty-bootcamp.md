@@ -5,7 +5,7 @@ subtitle: android hacking Notes
 tags: [androing pentesting]
 ---
 
-# Bug Bounty Bootcamp Notes - Chapter 24 - API HACKING
+# Bug Bounty Bootcamp Notes - Chapter 24 - API <span class="strike">HACKING</span>
 
 ---
 
@@ -19,7 +19,7 @@ tags: [androing pentesting]
 
 ---
 
-## 1. What Are APIs?
+## 1. What Are <span class="strike">APIs</span>?
 
 
 
@@ -50,7 +50,7 @@ tags: [androing pentesting]
 
 
 
-### 1.1 REST APIs
+### 1.1 REST <span class="strike">APIs</span>
 
 
 
@@ -72,7 +72,7 @@ tags: [androing pentesting]
 
 
 
-### 1.2 SOAP APIs
+### 1.2 SOAP <span class="strike">APIs</span>
 
 
 
@@ -134,7 +134,7 @@ tags: [androing pentesting]
 
 
 
-### 1.3 GraphQL APIs
+### 1.3 GraphQL <span class="strike">APIs</span>
 
 
 
@@ -170,7 +170,7 @@ tags: [androing pentesting]
 
 
 
-### 1.4 API-Centric Applications
+### 1.4 API-Centric <span class="strike">Applications</span>
 
 
 
@@ -212,7 +212,7 @@ tags: [androing pentesting]
 
 
 
-## 2. Hunting for API Vulnerabilities
+## 2. Hunting for API <span class="strike">Vulnerabilities</span>
 
 
 
@@ -227,7 +227,7 @@ tags: [androing pentesting]
 
 
 
-### 2.1 Performing Recon
+### 2.1 Performing <span class="strike">Recon</span>
 
 
 
@@ -303,7 +303,7 @@ tags: [androing pentesting]
 
 
 
-### 2.2 Testing for Broken Access Control and Info Leaks
+### 2.2 Testing for Broken Access Control and Info <span class="strike">Leaks</span>
 
 
 
@@ -371,7 +371,7 @@ tags: [androing pentesting]
 
 
 
-### 2.3 Testing for Rate-Limiting Issues
+### 2.3 Testing for Rate-Limiting <span class="strike">Issues</span>
 
 
 
@@ -401,7 +401,7 @@ tags: [androing pentesting]
 
 
 
-### 2.4 Testing for Technical Bugs
+### 2.4 Testing for Technical <span class="strike">Bugs</span>
 
 
 

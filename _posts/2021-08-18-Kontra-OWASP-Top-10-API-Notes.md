@@ -6,13 +6,13 @@ tags: [api]
 ---
 
 
-## Kontra OWASP Top 10 for API - Notes
+## Kontra OWASP Top 10 for API - <span class="strike">Notes</span>
   
 
 ---
 
 
-### 1. Improper Assets Management
+### 1. Improper Assets <span class="strike">Management</span>
 
 * Change higher api version to lower version => /api/**v3**/code TO /api/**v1**/code  => **Improper Assets Management**
 
@@ -22,7 +22,7 @@ tags: [api]
 
 
 
-### 2. Excessive Data Exposure
+### 2. Excessive Data <span class="strike">Exposure</span>
 
 * Analyze Request and Response => and see what **sensitive data is exposure on these requests and response**
 
@@ -30,7 +30,7 @@ tags: [api]
 
 > our email and token **is exposing** directly in response => Vulnerable to **Exsessive Data Exposure**
 
-### 3.  Broken Object Level Authorization 
+### 3. Broken Object Level <span class="strike">Authorization</span>
 
 * Learnt to keep an eye on request and response of API and if API is calling **userId** and give back result without validating it then vulnerable to Broken Object Level Authorization
 
@@ -43,7 +43,7 @@ tags: [api]
 >  > This attack can potentially occur in any application feature where **untrusted parameter values** are passed to the application without performing adequate **authentication** and **authorization** checks.
 
 
-### 4. Broken User Authentication
+### 4. Broken User <span class="strike">Authentication</span>
 
 * It refers to ***weaknesses*** in authentication mechanisms and associated application workflows 
 * which can include authentication that *does not follow security design best practices*, authentication susceptible to brute-force attacks and credential stuffing, *lack of access token validation*, etc.
@@ -51,14 +51,14 @@ tags: [api]
 * In, this bypassed 2FA Token code , just because it is not having protection against brute-force
 
 
-### 5. Lack of Resources & Rate Limiting
+### 5. Lack of Resources & Rate <span class="strike">Limiting</span>
 
 * Most common areas for User Enumeration => **Registration** or **Forgot Password** Functionality
 * Keep an eye on **error messages** for such kind of Enumeration
 * Based on error messages can try **bruteforce** for particular thing we needed and If **No Rate Limiting** there then serious issue
 
 
-### 6. Broken Function Level Authorization
+### 6. Broken Function Level <span class="strike">Authorization</span>
 
 * During testing **userId** of the particular user to check for authorization => If  validating user properly Then =>
 
@@ -71,7 +71,7 @@ tags: [api]
 
 
 
-### 7. Mass Assignment
+### 7. Mass <span class="strike">Assignment</span>
 
 * **Mass Assignment** in which a malicious user modifies properties that they are not supposed to on the data objects stored in the backend, gaining unauthorized access or corrupting data as a result.
 
@@ -85,7 +85,7 @@ tags: [api]
 
 
 
-### 8. Security Misconfiguration Part 1
+### 8. Security Misconfiguration Part <span class="strike">1</span>
 
 * Testing for 2FA Verification Steps
 > * In our own account see what functionality we have given for 2FA = Can we disable 2FA Verification Step there ?
@@ -102,7 +102,7 @@ tags: [api]
 
 
 
-### 9. Security Misconfiguration Part 2
+### 9. Security Misconfiguration Part <span class="strike">2</span>
 
 
 * Developer use **X-Frame-Options** to prevent clickjacking but application need to use iframe for their own particular target
@@ -134,7 +134,7 @@ tags: [api]
 
 
 
-### 10. SQL Injection
+### 10. SQL <span class="strike">Injection</span>
 
 
 * Reviewing a web application's **HTML** source is a common technique used for mapping the application's structure and reveal potentially useful information such as **developer comments**, **hidden form** **fields**, **URL paths** that may otherwise not be visible in the browser.
@@ -151,7 +151,7 @@ tags: [api]
 
 
 
-### 11. Insufficient Logging & Monitoring
+### 11. Insufficient Logging & <span class="strike">Monitoring</span>
 
 * tail -f /var/www/application.log
 
@@ -167,7 +167,7 @@ tags: [api]
 
 
 
-### 12. XXE Injection
+### 12. XXE <span class="strike">Injection</span>
 
 * Find the upload functionality
 

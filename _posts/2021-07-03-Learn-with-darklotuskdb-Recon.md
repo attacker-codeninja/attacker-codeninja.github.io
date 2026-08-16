@@ -4,7 +4,7 @@ title: Youtube Notes - Learn-with-darklotuskdb-Recon
 tags: [recon, notes]
 ---
 
-## Subdomain Enumeration
+## Subdomain <span class="strike">Enumeration</span>
 
 
 
@@ -18,7 +18,7 @@ tags: [recon, notes]
 
 
 
-## Shodan Recon
+## Shodan <span class="strike">Recon</span>
 
 
 
@@ -36,7 +36,7 @@ tags: [recon, notes]
 
 
 
-## Spyse Recon
+## Spyse <span class="strike">Recon</span>
 
 
 
@@ -52,7 +52,7 @@ tags: [recon, notes]
 
 
 
-## Open Redirect
+## Open <span class="strike">Redirect</span>
 
 
 
@@ -83,7 +83,7 @@ tags: [recon, notes]
 
 
 
-## Bug Bounty Tips - Bot
+## Bug Bounty Tips - <span class="strike">Bot</span>
 
 
 

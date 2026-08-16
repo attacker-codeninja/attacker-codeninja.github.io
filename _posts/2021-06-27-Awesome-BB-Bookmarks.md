@@ -4,11 +4,11 @@ title: Awesome Bug Bounty Bookmarks
 tags: [bookmarks, bug bounty]
 ---
 
-## Awesome Bug bounty Bookmarks
+## Awesome Bug bounty <span class="strike">Bookmarks</span>
 
 
 
-### 1. Helpful Websites
+### 1. Helpful <span class="strike">Websites</span>
 
 
 
@@ -30,7 +30,7 @@ tags: [bookmarks, bug bounty]
 
 
 
-### 2. Recon - Methodologies - Checklists
+### 2. Recon - Methodologies - <span class="strike">Checklists</span>
 
 
 
@@ -46,7 +46,7 @@ tags: [bookmarks, bug bounty]
 
 
 
-### 3. Awesome Blogs
+### 3. Awesome <span class="strike">Blogs</span>
 
 
 
@@ -57,7 +57,7 @@ tags: [bookmarks, bug bounty]
 
 
 
-### 4. IDORs
+### 4. <span class="strike">IDORs</span>
 
 
 

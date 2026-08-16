@@ -5,7 +5,7 @@ subtitle: Code Review Notes
 tags: [code review]
 ---
 
-# Bug Bounty Bootcamp Notes - Chapter 22 : CONDUCTING CODE REVIEWS
+# Bug Bounty Bootcamp Notes - Chapter 22 : CONDUCTING CODE <span class="strike">REVIEWS</span>
 
 ---
 
@@ -16,7 +16,7 @@ tags: [code review]
 * Bug Bounty Bootcamp Link -> https://www.amazon.in/Bug-Bounty-Bootcamp-Reporting-Vulnerabilities-ebook/dp/B08YK368Y3
 
 
-## 1. The Fast Approach: grep Is Your Best Friend
+## 1. The Fast Approach: grep Is Your Best <span class="strike">Friend</span>
 
 
 
@@ -49,7 +49,7 @@ tags: [code review]
 
 
 
-### Leaked Secrets and Weak Encryption
+### Leaked Secrets and Weak <span class="strike">Encryption</span>
 
 
 
@@ -84,7 +84,7 @@ tags: [code review]
 
 
 
-### New Patches and Outdated Dependencies
+### New Patches and Outdated <span class="strike">Dependencies</span>
 
 
 
@@ -102,7 +102,7 @@ tags: [code review]
 
 
 
-### Developer Comments
+### Developer <span class="strike">Comments</span>
 
 
 
@@ -122,7 +122,7 @@ tags: [code review]
 
 
 
-### Debug Functionalities, Configuration Files, and Endpoints
+### Debug Functionalities, Configuration Files, and <span class="strike">Endpoints</span>
 
 
 
@@ -146,7 +146,7 @@ tags: [code review]
 
 
 
-## 2. The Detailed Approach
+## 2. The Detailed <span class="strike">Approach</span>
 
 
 
@@ -154,7 +154,7 @@ tags: [code review]
 
 
 
-### 1. Important Functions
+### 1. Important <span class="strike">Functions</span>
 
 
 
@@ -166,7 +166,7 @@ tags: [code review]
 
 
 
-### 2. User Input
+### 2. User <span class="strike">Input</span>
 
 
 
@@ -191,7 +191,7 @@ tags: [code review]
 
 
 
-## Exercise: Spot the Vulnerabilities
+## Exercise: Spot the <span class="strike">Vulnerabilities</span>
 
 
 

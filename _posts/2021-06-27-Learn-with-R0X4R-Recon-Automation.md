@@ -5,7 +5,7 @@ subtitle: Recon Automation by R0X4R
 tags: [recon,automation]
 ---
 
-### Subdomain Enumeration
+### Subdomain <span class="strike">Enumeration</span>
 
 
 
@@ -19,7 +19,7 @@ tags: [recon,automation]
 >
 > httpx => for protocol [443 and 80] only
 
-### Port Scan
+### Port <span class="strike">Scan</span>
 
 
 
@@ -37,7 +37,7 @@ tags: [recon,automation]
 
 
 
-### Vul Scan
+### Vul <span class="strike">Scan</span>
 
 
 

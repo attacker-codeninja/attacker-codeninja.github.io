@@ -18,12 +18,12 @@ description: A beginner-friendly AWS project to detect and alert on root account
 
 ![](/assets/img/project-2-root-account-monitoring/your-header-image.png)
 
-# 🔐 Project 2: monitoring/ AWS Root Account Activity with CloudTrail + SNS — Guided by a Security Engineer
+# 🔐 Project 2: monitoring/ AWS Root Account Activity with CloudTrail + SNS — Guided by a Security <span class="strike">Engineer</span>
 
 
 This blog is all about - Setting Up Real-Time Alerts Like a Cloud Security Engineer
 
-## 📌 Introduction — The Root of All Risks
+## 📌 Introduction — The Root of All <span class="strike">Risks</span>
 
 Let me tell you a quick story.
 
@@ -40,7 +40,7 @@ Let’s dive in!
 
 ---
 
-## 🎯 Objective
+## 🎯 <span class="strike">Objective</span>
 
 Simulate a real-world risky action:  
 ➡️ Log in as the **root user**,  
@@ -59,7 +59,7 @@ So -> **Detect and respond to sensitive activity performed by using the AWS Root
 
 ---
 
-## ⚠️ Why is Root Account Usage a Security Red Flag?
+## ⚠️ Why is Root Account Usage a Security Red <span class="strike">Flag</span>?
 
 By default, AWS allows you to create and manage your account with a **root user**, but here’s what makes it dangerous:
 
@@ -76,7 +76,7 @@ But if someone _does_ use it? That’s an event worth knowing **immediately**.
 
 ---
 
-## 🧰 Services Used
+## 🧰 Services <span class="strike">Used</span>
 
 Here’s what we’ll use to make our alert system:
 
@@ -89,13 +89,13 @@ Here’s what we’ll use to make our alert system:
 
 ---
 
-## 🛠️ Step-by-Step Setup: Root Account monitoring/ in AWS
+## 🛠️ Step-by-Step Setup: Root Account monitoring/ in <span class="strike">AWS</span>
 
 > Don't worry, each step includes what and _why_ we’re doing it. ❤️
 
 ---
 
-### ✅ Step 1: Simulate the Problem — Log in as Root
+### ✅ Step 1: Simulate the Problem — Log in as <span class="strike">Root</span>
 
 **Why this step?**  
 We want to see how CloudTrail captures this risky action.
@@ -122,7 +122,7 @@ We want to see how CloudTrail captures this risky action.
 
 ---
 
-### 📝 Step 2: Enable CloudTrail (if not already)
+### 📝 Step 2: Enable CloudTrail (if not <span class="strike">already</span>)
 
 **What is CloudTrail?**  
 It’s AWS’s built-in logging system. 
@@ -130,13 +130,13 @@ It’s AWS’s built-in logging system.
 Every time _someone does something_ (login, create S3 bucket, delete EC2 instance, etc.), CloudTrail writes it down.
 
 
-#### ✅ Open CloudTrail Service
+#### ✅ Open CloudTrail <span class="strike">Service</span>
 
 - Go to the **AWS Console**, search for **“CloudTrail”** in the search bar, and click the result.
     
 - Click **"Create trail"**.
 
-#### 📝 Configure the Trail:
+#### 📝 Configure the <span class="strike">Trail</span>:
 
 - **Trail name:** I named it **RootActivityTrail** to clearly reflect its purpose.
     
@@ -180,7 +180,7 @@ If anyone uses the root account - whether it’s you or someone malicious - we�
 
 ---
 
-### 🔔 Step 3: Set Up SNS — Our Alerting System
+### 🔔 Step 3: Set Up SNS — Our Alerting <span class="strike">System</span>
 
 **Why SNS?**  
 SNS (Simple Notification Service) can send alerts to email or SMS.
@@ -243,7 +243,7 @@ SNS (Simple Notification Service) can send alerts to email or SMS.
 
 > Though i used temp email but you need to use proper active email as you will get a confirmation link you **must** click before alerts start coming.
 
-### 🔐 Why This Step Is Critical for Security
+### 🔐 Why This Step Is Critical for <span class="strike">Security</span>
 
 Just logging a root user login event isn’t enough. **You need to be notified immediately**, in case it wasn’t you.
 
@@ -256,14 +256,14 @@ We’re not making that mistake. 😉 You’ll get alerted within seconds of a r
 
 ---
 
-### 📡 Step 4: Create CloudWatch Rule (EventBridge)
+### 📡 Step 4: Create CloudWatch Rule <span class="strike">(EventBridge</span>)
 
 We now tell AWS:  
 **“If anyone logs in using the root user, send me an alert.”**
 
 First, Let's know about CloudWatch and EventBridge
 
-#### 🤔 CloudWatch vs EventBridge — What’s the Deal?
+#### 🤔 CloudWatch vs EventBridge — What’s the <span class="strike">Deal</span>?
 
 If you're confused about where to create the alert rule — whether in **CloudWatch** or **EventBridge** - you're not alone.
 
@@ -365,7 +365,7 @@ Let's first know about this and which one we need for this time
 	3. Great for developers building apps that consume AWS events.
 
 
-#### 🤯 Why Is EventBridge Important for Security Engineers?
+#### 🤯 Why Is EventBridge Important for Security <span class="strike">Engineers</span>?
 
 1. **Automated Detection**
     
@@ -476,7 +476,7 @@ Only when the pattern **matches**, your rule is triggered - and the target (emai
 
 So, we saw Pattern above , let's know about that pattern ->
 
-### What it does:
+### What it <span class="strike">does</span>:
 
 - Catches **every API call** logged by CloudTrail.
     
@@ -503,7 +503,7 @@ So, instead of this Pattern we need following **Corrected Pattern** ->
 ![](/assets/img/project-2-root-account-monitoring/20250728113354.png)
 
 
-### What it does:
+### What it <span class="strike">does</span>:
 
 - Triggers **only** on AWS Console sign-in attempts.
     
@@ -519,7 +519,7 @@ So, instead of this Pattern we need following **Corrected Pattern** ->
 
 
 
-## 🧪 How does this help us?
+## 🧪 How does this help <span class="strike">us</span>?
 
 - **Noise reduction**: You only get alerted for actual sign-ins, not every API call.
     
@@ -640,7 +640,7 @@ We will see this ->
 ![](/assets/img/project-2-root-account-monitoring/20250728115316.png)
 
 
-#### ✅ Here's What Just Happened (Step-by-Step Summary):
+#### ✅ Here's What Just Happened (Step-by-Step <span class="strike">Summary</span>):
 
 | ✅ Step                 | What You Did                                                             |
 | ---------------------- | ------------------------------------------------------------------------ |
@@ -654,7 +654,7 @@ We will see this ->
 
 ---
 
-### Step 5: Test the Setup
+### Step 5: Test the <span class="strike">Setup</span>
 
 Now go back and **login again as Root** (without MFA).
 
@@ -671,9 +671,9 @@ Open **CloudTrail > Event History**, filter for **ConsoleLogin** events, and 
 
 ---
 
-## ✍️ What I Did & What I Learned
+## ✍️ What I Did & What I <span class="strike">Learned</span>
 
-### ✅ What I Did
+### ✅ What I <span class="strike">Did</span>
 
 - Created a CloudTrail trail to monitor all activity.
     
@@ -684,7 +684,7 @@ Open **CloudTrail > Event History**, filter for **ConsoleLogin** events, and 
 - Tested by logging in as root and received instant email alert.
     
 
-### 🤯 What I Learned
+### 🤯 What I <span class="strike">Learned</span>
 
 - AWS **doesn’t block** root usage, but it expects **you to monitor it**.
     
@@ -698,7 +698,7 @@ Open **CloudTrail > Event History**, filter for **ConsoleLogin** events, and 
 
 ---
 
-## 🔐 Final Reflection (For Beginners)
+## 🔐 Final Reflection (For <span class="strike">Beginners</span>)
 
 If you’re new to AWS security, let this sink in:
 
@@ -709,7 +709,7 @@ You’ve just done your first **real-world threat detection** setup. Be proud!
 And never, ever use the root account casually again. ☠️
 
 
-## 🧾 Next Steps (Optional Ideas)
+## 🧾 Next Steps (Optional <span class="strike">Ideas</span>)
 
 - Set up alerts for when **someone deletes CloudTrail** (yes, it happens).
     
@@ -721,7 +721,7 @@ And never, ever use the root account casually again. ☠️
 
 ---
 
-# 🔐 Security Engineer Insight — "The Root Account Is the Crown Jewel. Guard It Like a Secret Weapon."
+# 🔐 Security Engineer Insight — "The Root Account Is the Crown Jewel. Guard It Like a Secret <span class="strike">Weapon</span>."
 
 
 As a security engineer, I’ve seen this  - companies lock down everything _except_ the one identity that can destroy it all: the **root user**.
@@ -739,7 +739,7 @@ This wasn’t about fancy tools. It was about building **the one alarm that matt
 
 We leveraged **CloudTrail**, **SNS**, and **EventBridge Rules** to set up a low-cost, high-value root monitoring/ pipeline.
 
-## ✅ What We Built
+## ✅ What We <span class="strike">Built</span>
 
 By the end of this project, we had a **fully working detection & alerting mechanism** for AWS root account usage. 
 
@@ -761,7 +761,7 @@ This is **real detection engineering** on cloud - not theory, not guesswork.
 ---
 
 
-## 🧠 What I Learned from This Project (If I Were a Beginner)
+## 🧠 What I Learned from This Project (If I Were a <span class="strike">Beginner</span>)
 
 If I were a beginner learning this for the first time, here’s what I would’ve taken away:
 
