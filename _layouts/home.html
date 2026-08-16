@@ -2,23 +2,30 @@
 layout: base
 ---
 <div class="post-container" style="display: flex; flex-direction: column; justify-content: center; min-height: 70vh;">
-  <div style="font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 16px;">
-    Attacker CodeNinja
+  <div style="font-family: var(--mono); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 16px;">
+    // Index
   </div>
   
-  <div style="font-family: var(--mono); font-weight: 700; font-size: clamp(32px,6vw,58px); line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 20px;">
+  <div style="font-family: var(--mono); font-weight: 700; font-size: clamp(34px,6vw,64px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 24px;">
     {{ site.title | default: "Security Research" }}
   </div>
   
-  <p style="font-size: 16px; color: var(--text-primary); max-width: 600px; line-height: 1.65;">
-    {{ page.subtitle | default: "A collection of writeups, mental models, and exploits built to stay with you permanently." }}
+  <p style="font-size: 17px; color: var(--text-primary); max-width: 600px; line-height: 1.6;">
+    {{ page.subtitle | default: "A collection of writeups, mental models, and exploits." }}
   </p>
   
-  <div style="font-family: var(--mono); font-size: 11.5px; color: var(--text-faint); margin-top: 32px;">
-    {{ site.posts.size }} chapters available in the sidebar
-  </div>
-
-  <div class="post-content" style="margin-top: 40px;">
-    {{ content }}
+  <div class="post-content" style="margin-top: 60px;">
+    <h2 style="font-size: 20px; color: var(--text-dim); margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px;">Recent Writeups</h2>
+    
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      {% for post in site.posts %}
+        <a href="{{ post.url | relative_url }}" style="background: var(--bg-panel); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-decoration: none; transition: border-color 0.2s; display: block;">
+          <h3 style="font-family: var(--mono); font-size: 16px; margin: 0 0 8px 0; color: var(--text-primary);">{{ post.title }}</h3>
+          <div style="font-family: var(--mono); font-size: 12px; color: var(--text-dim);">
+            {{ post.date | date: "%B %-d, %Y" }}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
   </div>
 </div>
