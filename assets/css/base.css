@@ -164,6 +164,11 @@ h1.post-title::after {
 .post-content li:last-child {
   margin-bottom: 0;
 }
+.post-content ul li::marker, .post-content ol li::marker {
+  color: var(--gold);
+  font-family: var(--mono);
+  font-weight: 700;
+}
 
 /* Highlight semantics */
 .post-content mark, mark { background:none; color:inherit; padding:0 3px; border-radius:3px; font-weight:600;}
