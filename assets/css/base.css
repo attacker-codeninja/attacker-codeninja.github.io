@@ -103,38 +103,35 @@ main{
   background:linear-gradient(90deg, var(--border), transparent);
 }
 
-.post-content h1 {
-  font-family:var(--mono);
-  font-weight:700;
-  font-size:clamp(26px,4vw,42px);
-  line-height:1.15;
-  margin-top:40px;
-  margin-bottom:14px;
-  letter-spacing:-0.01em;
+.post-content h1, .post-content h2, .post-content h3, .post-content h4 {
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  line-height: 1.2;
 }
+
+.post-content h1 { font-size: clamp(28px, 4vw, 42px); }
+.post-content h2 { font-size: clamp(24px, 3vw, 34px); }
+.post-content h3 { font-size: clamp(20px, 2.5vw, 26px); }
+.post-content h4 { font-size: 18px; }
+
 h1.post-title {
   font-family:var(--mono);
   font-weight:700;
-  font-size:clamp(26px,4vw,42px);
+  font-size:clamp(28px,4vw,42px);
   line-height:1.15;
   margin-bottom:14px;
   letter-spacing:-0.01em;
 }
 
-.post-content h2 {
-  font-family:var(--sans);
-  font-weight:400;
-  font-size:clamp(14px,1.6vw,17px);
-  color:var(--text-dim);
-  margin-top:30px;
-  margin-bottom:22px;
-}
-
-.post-content p { font-size:15.5px; line-height:1.65; color:var(--text-primary); margin-bottom:12px; }
+.post-content p { font-size:17px; line-height:1.75; color:var(--text-primary); margin-bottom:18px; }
 .post-content a { color:var(--blue); text-decoration:none; }
 .post-content a:hover { text-decoration:underline; }
-.post-content ul, .post-content ol { margin-bottom:12px; padding-left:20px; font-size:15.5px; line-height:1.65; color:var(--text-primary); }
-.post-content li { margin-bottom:6px; }
+.post-content ul, .post-content ol { margin-bottom:18px; padding-left:24px; font-size:17px; line-height:1.75; color:var(--text-primary); }
+.post-content li { margin-bottom:8px; }
 
 /* Highlight semantics */
 .post-content mark, mark { background:none; color:inherit; padding:0 3px; border-radius:3px; font-weight:600;}
@@ -146,14 +143,17 @@ h1.post-title {
 /* Blockquote */
 .post-content blockquote {
   font-family:var(--mono);
-  font-size:clamp(18px,2.4vw,26px);
-  line-height:1.5;
+  font-size:17px;
+  line-height:1.6;
   color:var(--text-primary);
   border-left:3px solid var(--gold);
-  padding:6px 0 6px 20px;
-  margin:14px 0;
+  padding:8px 0 8px 20px;
+  margin:20px 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 0 6px 6px 0;
 }
-.post-content blockquote p { font-size: inherit; color: inherit; }
+.post-content blockquote p { font-size: inherit; color: inherit; margin-bottom: 0; }
+.post-content blockquote strong, .post-content blockquote b { color: var(--gold); font-weight: 600; }
 
 /* Table */
 .post-content table { width:100%; border-collapse:collapse; margin:10px 0 16px; font-size:14px; }
