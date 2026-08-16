@@ -348,3 +348,32 @@ h1.post-title::after {
   border-bottom-color: var(--gold);
   font-weight: 700;
 }
+
+/* Category Cards for Homepage */
+.cat-card {
+  padding: 40px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.cat-card h2 {
+  font-family: var(--mono);
+  font-size: 24px;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.cat-card p {
+  color: var(--text-dim);
+  font-size: 14px;
+  margin: 0;
+  font-family: var(--mono);
+}
