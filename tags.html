@@ -12,21 +12,22 @@ title: 'Tag Index'
 {%- endcapture -%}
 {%- assign tags_list = site_tags | split:',' | sort -%}
 
+<div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px;">
 {%- for tag in tags_list -%}
-    <a href="#{{- tag -}}" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})</a>
+    <a href="#{{- tag -}}" style="background: var(--bg-panel-2); color: var(--gold); border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; font-size: 13px; font-family: var(--mono); text-decoration: none; transition: border-color 0.2s;">#{{- tag -}} ({{site.tags[tag].size}})</a>
 {%- endfor -%}
+</div>
 
 <div id="full-tags-list">
 {%- for tag in tags_list -%}
-    <h2 id="{{- tag -}}" class="linked-section">
-        <i class="fas fa-tag" aria-hidden="true"></i>
-        &nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})
+    <h2 id="{{- tag -}}" style="font-family: var(--mono); color: var(--gold); margin-top: 40px; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px;">
+        #{{- tag -}} ({{site.tags[tag].size}})
     </h2>
-    <div class="post-list">
+    <div class="post-list" style="display: flex; flex-direction: column; gap: 12px;">
         {%- for post in site.tags[tag] -%}
-            <div class="tag-entry">
-                <a href="{{ post.url | relative_url }}">{{- post.title -}}</a>
-                <div class="entry-date">
+            <div class="tag-entry" style="background: var(--bg-panel); border: 1px solid var(--border); border-radius: 8px; padding: 16px;">
+                <a href="{{ post.url | relative_url }}" style="font-family: var(--sans); font-size: 16px; font-weight: 600; color: var(--text-primary); text-decoration: none; display: block; margin-bottom: 6px;">{{- post.title -}}</a>
+                <div class="entry-date" style="font-family: var(--mono); font-size: 12px; color: var(--text-dim);">
                     <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: date_format -}}</time>
                 </div>
             </div>

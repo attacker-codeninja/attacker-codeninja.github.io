@@ -24,8 +24,7 @@ avatar: "/assets/img/code_ninja_svg.svg"
 
 
 
-site-css:
-  - "/assets/css/custom.css"
+
 
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
 round-avatar: true
@@ -94,19 +93,6 @@ post_search: true
 #keywords: "my,list,of,keywords"
 
 # --- Colours / background image --- #
-
-# Personalize the colours in your website. Colour values can be any valid CSS colour
-
-navbar-col: "#1a1a2e"
-navbar-text-col: "#cdd6f4"
-navbar-border-col: "#2a2a4e"
-page-col: "#0f0c29"
-text-col: "#cdd6f4"
-link-col: "#a78bfa"
-hover-col: "#74c7ec"
-footer-col: "#1a1a2e"
-footer-text-col: "#8892b0"
-footer-link-col: "#cdd6f4"
 
 # Alternatively, the navbar, footer, and page background can be set to an image
 # instead of colour
