@@ -1,40 +1,59 @@
 ---
-common-css:
-  - "/assets/css/bootstrap-social.css"
-  - "/assets/css/beautifuljekyll.css"
-common-ext-css:
-  - href: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    sri: "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-  - "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-  - "https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
-  - "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
-common-ext-js:
-  - href: "https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    sri: "sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
-  - href: "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    sri: "sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-  - href: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    sri: "sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-common-js:
-  - "/assets/js/beautifuljekyll.js"
 ---
-
 <!DOCTYPE html>
 <html lang="{{ page.language | default: site.language | default: 'en' }}">
-<!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
-{% include head.html %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
 
+  <link rel="stylesheet" href="{{ '/assets/css/base.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  
+</head>
 <body>
+  <!-- ── App Header (always visible) ── -->
+  <div id="app-header">
+    <a href="{{ '/' | relative_url }}" style="text-decoration: none;">
+      <span id="app-logo" title="Home">⬡ <span id="app-title">{{ site.title }}</span></span>
+    </a>
+    <div id="header-search">
+      <input id="search-input" type="text" placeholder="Search…  ⌘K" autocomplete="off" spellcheck="false">
+    </div>
+    <div id="header-right">
+      <span id="live-dot" title="Live sync"></span>
+      <button class="zoom-btn" title="Smaller text">A−</button>
+      <button class="zoom-btn" title="Larger text">A+</button>
+      <button id="theme-toggle-btn">☀ Light</button>
+    </div>
+  </div>
 
-  {% include gtm_body.html %}
+  <!-- ── Main ── -->
+  <div id="main" style="flex-direction: row;">
+    <!-- ── Sidebar ── -->
+    <div id="sidebar" style="display: flex;">
+      <div id="sidebar-header">
+        <span>Files</span>
+      </div>
+      <div id="file-tree">
+        {% for post in site.posts %}
+          <div class="tree-item {% if page.url == post.url %}active{% endif %}">
+            <span class="tree-icon">📄</span>
+            <a href="{{ post.url | relative_url }}" class="tree-name" style="color: inherit; text-decoration: none; padding-left: 5px;">{{ post.title }}</a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    <!-- ── Content ── -->
+    <div id="content-area">
+      {{ content }}
+    </div>
+  </div>
 
-  {% include nav.html %}
-
-  {{ content }}
-
-  {% include footer.html %}
-
-  {% include footer-scripts.html %}
-
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
 </body>
 </html>
