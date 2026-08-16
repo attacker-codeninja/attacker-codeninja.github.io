@@ -111,16 +111,6 @@ main{
   margin-top: 1.5em;
   margin-bottom: 0.75em;
   line-height: 1.2;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.post-content h1::after, .post-content h2::after, .post-content h3::after, .post-content h4::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, var(--border), transparent);
 }
 
 .post-content h1 { font-size: clamp(28px, 4vw, 42px); }
