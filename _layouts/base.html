@@ -9,51 +9,92 @@
 
   <link rel="stylesheet" href="{{ '/assets/css/base.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
   
+  <style>
+    /* Override slide hiding for blog layout */
+    main { overflow-y: auto; display: block; }
+    .slide { display: block !important; max-width: 800px; margin: 0 auto; padding: 40px 30px; animation: none; height: auto; }
+    
+    /* Markdown Element Styles mapped to bac-book */
+    .slide-body h1 { font-family: var(--mono); font-weight: 700; font-size: clamp(22px,3.4vw,36px); line-height: 1.18; margin-bottom: 20px; margin-top: 40px; letter-spacing: -0.01em; color: var(--text-primary); }
+    .slide-body h2 { font-family: var(--sans); font-weight: 600; font-size: 22px; color: var(--gold); margin-top: 35px; margin-bottom: 15px; }
+    .slide-body h3 { font-family: var(--sans); font-weight: 600; font-size: 18px; color: var(--text-primary); margin-top: 25px; margin-bottom: 12px; }
+    .slide-body p { font-size: 15px; line-height: 1.7; margin-bottom: 16px; color: var(--text-primary); }
+    .slide-body a { color: var(--blue); text-decoration: none; }
+    .slide-body a:hover { text-decoration: underline; }
+    .slide-body ul, .slide-body ol { margin-bottom: 16px; padding-left: 20px; font-size: 15px; line-height: 1.7; color: var(--text-primary); }
+    .slide-body li { margin-bottom: 8px; }
+    .slide-body blockquote { border-left: 3px solid var(--gold); padding: 6px 0 6px 18px; margin: 20px 0; font-family: var(--mono); font-size: 16px; line-height: 1.5; color: var(--text-dim); background: rgba(255, 255, 255, 0.03); border-radius: 0 6px 6px 0; }
+    .slide-body pre { background: var(--bg-panel); border: 1px solid var(--border); padding: 16px; border-radius: 8px; overflow-x: auto; margin-bottom: 20px; }
+    .slide-body code { font-family: var(--mono); font-size: 13px; color: var(--blue); background: var(--bg-panel-2); padding: 2px 5px; border-radius: 4px; }
+    .slide-body pre code { background: none; padding: 0; color: var(--text-primary); }
+    .slide-body table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+    .slide-body th, .slide-body td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+    .slide-body th { font-family: var(--mono); font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-dim); background: var(--bg-panel-2); }
+    .slide-body img { max-width: 100%; border-radius: 8px; border: 1px solid var(--border); margin: 20px 0; }
+    .slide-body strong { color: var(--gold); }
+    
+    /* Toc link styling override */
+    a.toc-chapter { text-decoration: none; }
+    a.toc-chapter:hover { background: var(--bg-panel-2); }
+    
+    /* Layout tweaks */
+    html, body { height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+    .body-row { flex: 1; display: flex; overflow: hidden; }
+    aside.toc { height: 100%; overflow-y: auto; }
+    main { flex: 1; height: 100%; overflow-y: auto; }
+  </style>
 </head>
 <body>
-  <!-- ── App Header (always visible) ── -->
-  <div id="app-header">
-    <a href="{{ '/' | relative_url }}" style="text-decoration: none;">
-      <span id="app-logo" title="Home">⬡ <span id="app-title">{{ site.title }}</span></span>
-    </a>
-    <div id="header-search">
-      <input id="search-input" type="text" placeholder="Search…  ⌘K" autocomplete="off" spellcheck="false">
-    </div>
-    <div id="header-right">
-      <span id="live-dot" title="Live sync"></span>
-      <button class="zoom-btn" title="Smaller text">A−</button>
-      <button class="zoom-btn" title="Larger text">A+</button>
-      <button id="theme-toggle-btn">☀ Light</button>
-    </div>
-  </div>
 
-  <!-- ── Main ── -->
-  <div id="main" style="flex-direction: row;">
-    <!-- ── Sidebar ── -->
-    <div id="sidebar" style="display: flex;">
-      <div id="sidebar-header">
-        <span>Files</span>
-      </div>
-      <div id="file-tree">
-        {% for post in site.posts %}
-          <div class="tree-item {% if page.url == post.url %}active{% endif %}">
-            <span class="tree-icon">📄</span>
-            <a href="{{ post.url | relative_url }}" class="tree-name" style="color: inherit; text-decoration: none; padding-left: 5px;">{{ post.title }}</a>
-          </div>
-        {% endfor %}
+<header>
+  <div style="display:flex; align-items:center; gap:10px; min-width:0;">
+    <div class="brand">
+      <span class="dot"></span>
+      <div class="brand-text">
+        <a href="{{ '/' | relative_url }}" style="text-decoration: none; color: inherit;">
+          <span class="title">{{ site.title | upcase }}</span>
+        </a>
+        <span class="pos">Security Research & Writeups</span>
       </div>
     </div>
-    
-    <!-- ── Content ── -->
-    <div id="content-area">
-      {{ content }}
-    </div>
   </div>
+  <div class="badge" data-state="key">
+    <span class="light"></span>
+    <span class="label">LIVE</span>
+  </div>
+</header>
 
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-  <script>hljs.highlightAll();</script>
+<div class="body-row">
+  <aside class="toc" id="toc">
+    <div class="toc-book-title">Table of Contents</div>
+    <div class="toc-book-sub">My latest security research, mental models, and exploits.</div>
+    <div id="tocContent">
+      {% for post in site.posts %}
+      <a href="{{ post.url | relative_url }}" class="toc-chapter built {% if page.url == post.url %}active{% endif %}">
+        <span class="num">{{ forloop.index }}</span>
+        {{ post.title }}
+      </a>
+      {% endfor %}
+    </div>
+  </aside>
+
+  <main>
+    <section class="slide active">
+      <div class="slide-body">
+        {{ content }}
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <a href="{{ '/' | relative_url }}" class="navbtn">← Home</a>
+  <div class="progress-wrap">
+    <span class="progress-text">Attacker CodeNinja</span>
+    <div class="progress-bar"><div class="progress-fill" style="width:100%;"></div></div>
+  </div>
+</footer>
+
 </body>
 </html>
