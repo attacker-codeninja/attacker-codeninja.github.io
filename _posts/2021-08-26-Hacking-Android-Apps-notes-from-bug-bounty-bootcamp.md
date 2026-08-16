@@ -2,6 +2,8 @@
 layout: post
 title: My Notes on Hacking Android Apps from Bug Bounty Bootcamp 
 subtitle: android hacking Notes
+categories:
+  - Bug Bounty
 tags: [androing pentesting]
 ---
 

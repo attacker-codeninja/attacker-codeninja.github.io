@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Learn from AMA Series Part 1
+categories:
+  - Bug Bounty
 tags: [AMA,ama, bug bounty]
 ---
 

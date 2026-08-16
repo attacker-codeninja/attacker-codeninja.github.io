@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Learn Prototype Pollution in Series - Part 3
+categories:
+  - Bug Bounty
 tags: [prototype pollution]
 ---
 

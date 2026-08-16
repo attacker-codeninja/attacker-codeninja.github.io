@@ -2,6 +2,8 @@
 layout: post
 title: Awesome Bug Bounty Roadmap 
 subtitle: bug bounty roadmap
+categories:
+  - Bug Bounty
 tags: [bug bounty roadmap]
 ---
 

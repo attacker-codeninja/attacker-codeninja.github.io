@@ -4,7 +4,7 @@ title: "Mastering Claude Code Series - Part 1"
 subtitle: "An Introduction to the Series from a Security Engineer's Perspective"
 date: 2026-08-15
 categories:
-  - Claude Code AI
+  - Claude Code Masterclass Series
 tags:
   - Claude Code AI
   - AI-Tools

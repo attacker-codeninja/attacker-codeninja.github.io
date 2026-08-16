@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Awesome Bug Bounty Bookmarks
+categories:
+  - Bug Bounty
 tags: [bookmarks, bug bounty]
 ---
 

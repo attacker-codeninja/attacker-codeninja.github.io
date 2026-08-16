@@ -2,6 +2,8 @@
 layout: post
 title: My Notes on Code-Review from Bug Bounty Bootcamp 
 subtitle: Code Review Notes
+categories:
+  - Bug Bounty
 tags: [code review]
 ---
 

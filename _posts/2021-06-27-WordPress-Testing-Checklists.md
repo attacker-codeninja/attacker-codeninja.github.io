@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Wordpress Testing Checklist
+categories:
+  - Bug Bounty
 tags: [checklist,wordpress]
 ---
 

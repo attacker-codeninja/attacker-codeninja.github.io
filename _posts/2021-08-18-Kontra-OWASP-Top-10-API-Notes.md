@@ -2,6 +2,8 @@
 layout: post
 title: My Notes on OWASP Top 10 for API from Kontra website
 subtitle: Kontra OWASP Top 10 for API - Notes
+categories:
+  - Bug Bounty
 tags: [api]
 ---
 

@@ -2,6 +2,8 @@
 layout: post
 title: My Notes on Host Header Attack from Portswigger 
 subtitle: Host Header Attack
+categories:
+  - Bug Bounty
 tags: [host header attack]
 ---
 

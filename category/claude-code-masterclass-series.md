@@ -1,30 +1,30 @@
 ---
 layout: base
-title: Projects
-category_name: Projects
-permalink: /category/projects/
+title: Claude Code Masterclass Series
+category_name: Claude Code Masterclass Series
+permalink: /category/claude-code-masterclass-series/
 ---
 
 <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 18px; margin-bottom: 50px;">
   <div style="font-family: var(--mono); font-size: 13px; color: var(--text-dim); letter-spacing: 0.1em; text-transform: uppercase;">Category</div>
-  <div style="font-family: var(--mono); font-weight: 700; font-size: clamp(34px, 6vw, 64px); line-height: 1.05; letter-spacing: -0.02em;">
-    Projects
+  <div style="font-family: var(--mono); font-weight: 700; font-size: clamp(34px, 6vw, 64px); line-height: 1.05; letter-spacing: -0.02em; color: var(--green);">
+    Claude Code Masterclass Series
   </div>
 </div>
 
-<div class="grid cols-2" id="post-grid" style="margin-top: 40px;">
-  {% for post in site.categories["Projects"] %}
-    <a href="{{ post.url | relative_url }}" class="post-list-item" style="display: none;">
-      <h2>{{ post.title }}</h2>
-      <div class="date">{{ post.date | date: "%B %-d, %Y" }}</div>
+<div class="grid cols-2" id="post-grid" style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;">
+  {% for post in site.categories["Claude Code Masterclass Series"] %}
+    <a href="{{ post.url | relative_url }}" class="post-list-item cat-card" style="display: none; background: rgba(61, 214, 140, 0.05); border: 1px solid rgba(61, 214, 140, 0.3); padding: 30px; align-items: flex-start; text-align: left; height: 100%;">
+      <h2 style="color: var(--green); font-size: 20px; line-height: 1.4; margin-bottom: 12px;">{{ post.title }}</h2>
+      <div class="date" style="margin-bottom: 16px; opacity: 0.8; font-size: 12px;">{{ post.date | date: "%B %-d, %Y" }}</div>
       {% if post.excerpt %}
-        <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+        <p style="color: var(--text-dim); font-size: 14px; line-height: 1.6;">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
       {% endif %}
     </a>
   {% endfor %}
 </div>
 
-<div id="pagination" style="display: flex; justify-content: center; gap: 20px; margin-top: 60px; font-family: var(--mono);">
+<div id="pagination" style="display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 60px; font-family: var(--mono);">
   <button id="prevBtn" onclick="changePage(-1)" style="padding: 10px 20px; background: var(--bg-panel); border: 1px solid var(--border); color: var(--text-primary); border-radius: 8px; cursor: pointer; transition: 0.2s;">&larr; Previous</button>
   <span id="pageInfo" style="padding: 10px 0; color: var(--text-dim); font-size: 14px;"></span>
   <button id="nextBtn" onclick="changePage(1)" style="padding: 10px 20px; background: var(--bg-panel); border: 1px solid var(--border); color: var(--text-primary); border-radius: 8px; cursor: pointer; transition: 0.2s;">Next &rarr;</button>

@@ -2,6 +2,8 @@
 layout: post
 title: Learn-with-R0X4R-Recon-Automation
 subtitle: Recon Automation by R0X4R
+categories:
+  - Bug Bounty
 tags: [recon,automation]
 ---
 

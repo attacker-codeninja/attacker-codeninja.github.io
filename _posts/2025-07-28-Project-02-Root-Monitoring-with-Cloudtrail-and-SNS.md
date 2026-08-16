@@ -3,9 +3,7 @@ layout: post
 title: "Project 02: Root Account Monitoring with CloudTrail and SNS Alerts"
 date: 2025-07-28
 categories:
-  - AWS
-  - Cloud Security
-  - Projects
+  - AWS Projects
 tags:
   - Root User
   - CloudTrail

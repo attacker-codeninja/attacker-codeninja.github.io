@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Youtube Notes - Learn-with-darklotuskdb-Recon
+categories:
+  - Bug Bounty
 tags: [recon, notes]
 ---
 

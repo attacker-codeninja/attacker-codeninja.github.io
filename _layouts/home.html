@@ -10,23 +10,18 @@ layout: base
 </div>
 
 <div class="category-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; margin-top: 40px;">
-  <a href="{{ '/category/aws/' | relative_url }}" class="cat-card" style="background: rgba(232, 176, 75, 0.05); border: 1px solid rgba(232, 176, 75, 0.3);">
-    <h2 style="color: var(--gold);">AWS</h2>
-    <p>{{ site.categories['AWS'].size | default: 0 }} Research Logs</p>
+  <a href="{{ '/category/bug-bounty/' | relative_url }}" class="cat-card" style="background: rgba(229, 72, 77, 0.05); border: 1px solid rgba(229, 72, 77, 0.3);">
+    <h2 style="color: var(--red);">Bug Bounty</h2>
+    <p>{{ site.categories['Bug Bounty'].size | default: 0 }} Research Logs</p>
   </a>
 
-  <a href="{{ '/category/cloud-security/' | relative_url }}" class="cat-card" style="background: rgba(79, 163, 227, 0.05); border: 1px solid rgba(79, 163, 227, 0.3);">
-    <h2 style="color: var(--blue);">Cloud Security</h2>
-    <p>{{ site.categories['Cloud Security'].size | default: 0 }} Research Logs</p>
+  <a href="{{ '/category/aws-projects/' | relative_url }}" class="cat-card" style="background: rgba(232, 176, 75, 0.05); border: 1px solid rgba(232, 176, 75, 0.3);">
+    <h2 style="color: var(--gold);">AWS Projects</h2>
+    <p>{{ site.categories['AWS Projects'].size | default: 0 }} Research Logs</p>
   </a>
 
-  <a href="{{ '/category/claude-code-ai/' | relative_url }}" class="cat-card" style="background: rgba(61, 214, 140, 0.05); border: 1px solid rgba(61, 214, 140, 0.3);">
-    <h2 style="color: var(--green);">Claude Code AI</h2>
-    <p>{{ site.categories['Claude Code AI'].size | default: 0 }} Research Logs</p>
-  </a>
-
-  <a href="{{ '/category/projects/' | relative_url }}" class="cat-card" style="background: rgba(229, 72, 77, 0.05); border: 1px solid rgba(229, 72, 77, 0.3);">
-    <h2 style="color: var(--red);">Projects</h2>
-    <p>{{ site.categories['Projects'].size | default: 0 }} Research Logs</p>
+  <a href="{{ '/category/claude-code-masterclass-series/' | relative_url }}" class="cat-card" style="background: rgba(61, 214, 140, 0.05); border: 1px solid rgba(61, 214, 140, 0.3);">
+    <h2 style="color: var(--green);">Claude Masterclass</h2>
+    <p>{{ site.categories['Claude Code Masterclass Series'].size | default: 0 }} Research Logs</p>
   </a>
 </div>

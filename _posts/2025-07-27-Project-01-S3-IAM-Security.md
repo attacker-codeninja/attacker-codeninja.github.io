@@ -3,9 +3,7 @@ layout: post
 title: "Project 01: Securing Your First S3 Bucket & IAM User"
 date: 2025-07-27
 categories:
-  - AWS
-  - Cloud Security
-  - Projects
+  - AWS Projects
 tags:
   - S3
   - IAM
