@@ -3,18 +3,19 @@ layout: base
 ---
 
 <article>
-  <header class="post-header">
-    <span class="post-date">{{ page.date | date: "%B %-d, %Y" }}</span>
-    <h1 class="post-title">{{ page.title }}</h1>
-    
-    {% if page.tags.size > 0 %}
-      <div class="post-tags">
-        {% for tag in page.tags %}
-          <a href="{{ '/tags' | relative_url }}#{{- tag -}}" class="post-tag">{{- tag -}}</a>
-        {% endfor %}
-      </div>
-    {% endif %}
-  </header>
+  <div class="eyebrow">
+    <span>{{ page.date | date: "%B %-d, %Y" }}</span>
+  </div>
+
+  <h1 class="post-title">{{ page.title }}</h1>
+  
+  {% if page.tags.size > 0 %}
+    <div style="display: flex; gap: 8px; margin-bottom: 30px; flex-wrap: wrap;">
+      {% for tag in page.tags %}
+        <a href="{{ '/tags' | relative_url }}#{{- tag -}}" style="font-family: var(--mono); font-size: 12px; padding: 4px 10px; background: var(--bg-panel); border: 1px solid var(--border); color: var(--text-dim); border-radius: 4px; text-decoration: none;">{{- tag -}}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
 
   <div class="post-content">
     {{ content }}
