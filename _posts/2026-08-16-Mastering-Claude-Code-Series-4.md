@@ -38,7 +38,7 @@ Claude Code actually comes in multiple "bodies":
 
 Regardless of the body, **the engine is exactly the same.** 
 
-They all use the exact same **Model + Harness + Tools** architecture that we learned in our previous parts
+They all use the exact same **Model + Harness + Tools** architecture that we learned in our previous parts.
 
 ## 🥊 Claude.ai (Chat) vs. Claude Code: The Practical <span class="strike">Difference</span>
 
@@ -90,8 +90,31 @@ You hear the buzzword "Agent" everywhere. Here is the simple, real definition:
 
 Claude Code is not a chatbot. It is a full-fledged agent that verifies its own work.
 
-## 🧩 The Final Layer (The Agent <span class="strike">SDK)</span>
+## 🧩 The Final Layer (The Agent <span class="strike">SDK</span>)
 
 There is one last secret you should know. "Claude Code" is actually just a ready-made, coding-focused product built on top of a much larger pattern: the **Anthropic Agent SDK**.
 
 By using the exact same building blocks we discussed in Part 3 (Context Engineering, Memory Files, Tools), you can actually build your own custom agents. Claude Code is simply Anthropic's official implementation of these exact principles!
+
+---
+
+### 📝 Summary of Part <span class="strike">4</span>
+
+To wrap up our introduction to Claude Code as a product:
+*   **One Engine, Many Forms:** Whether you use the CLI, IDE extension, or Web App, the underlying Model + Harness + Tools architecture remains exactly the same.
+*   **Chatbot vs. Agent:** Claude.ai is a chatbot (you copy-paste). Claude Code is an agent (it reads, executes, and verifies automatically).
+*   **The 2026 Edge:** With 42 built-in tools, Computer-Use capabilities, Auto-Snapshots, and Plan Mode, Claude Code acts as a true "Deep Thinking Partner".
+*   **The SDK Foundation:** Claude Code is the ultimate implementation of the Anthropic Agent SDK, built entirely on the Context Engineering concepts we've covered.
+
+---
+
+### 🔮 Sneak Peek: What's coming in Part <span class="mk-link">5?</span>
+
+Now that we know *what* Claude Code is, we need to understand the underlying "physics" of how it behaves before writing our first commands. 
+
+In **Part 5: The AI Concepts You Actually Need to Understand**, we will break down:
+*   **Law 1: It is NOT Deterministic Software** (The "Senior Engineer" vs. "Vending Machine" mindset).
+*   **Law 2: Everything is Tokens** (Uncovering the invisible "whiteboard" and how thousands of tokens are consumed before you even type a word).
+*   **The Claude 5-Generation Evolution:** How context engineering rules have fundamentally changed (Hint: your old, strict `CLAUDE.md` rules might actually be hurting performance now!)
+
+Stay tuned as we establish the final ground rules before getting our hands dirty with real code! 🚀
