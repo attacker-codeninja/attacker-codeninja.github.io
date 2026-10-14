@@ -1,9 +1,14 @@
 ---
 layout: post
-title: Awesome Bug Bounty Bookmarks
+title: "Awesome Bug Bounty Bookmarks"
+subtitle: "Helpful websites, recon methodologies and blogs"
+date: 2021-06-27
 categories:
   - Bug Bounty
-tags: [bookmarks, bug bounty]
+tags:
+  - bookmarks
+  - bug bounty
+description: "A collection of useful bug bounty websites, recon methodologies, checklists and blogs."
 ---
 
 ## Awesome Bug bounty <span class="strike">Bookmarks</span>
@@ -64,4 +69,3 @@ tags: [bookmarks, bug bounty]
 
 
 * [All about IDOR vulnerability](https://notes.mufaddal.info/web/idor)
-* 

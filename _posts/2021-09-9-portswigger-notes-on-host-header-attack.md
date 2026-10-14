@@ -1,10 +1,13 @@
 ---
 layout: post
-title: My Notes on Host Header Attack from Portswigger 
-subtitle: Host Header Attack
+title: "My Notes on Host Header Attack from Portswigger"
+subtitle: "Host Header Attack"
+date: 2021-09-09
 categories:
   - Bug Bounty
-tags: [host header attack]
+tags:
+  - host header attack
+description: "My PortSwigger notes on HTTP Host header attacks: testing techniques, password reset poisoning, cache poisoning and routing-based SSRF."
 ---
 
 
@@ -29,7 +32,7 @@ tags: [host header attack]
 
 # Scenarios | Cases =>
 
-###1.
+### 1.
 
 ```
 Still access to Target website even when we give Unexpected Host Header Value.
@@ -38,7 +41,7 @@ If Default -> Better for us
 Here need to study -> what the application does with the Host header and whether this behavior is exploitable?
 ```
 
-###2.
+### 2.
 
 ```
 Host Header main part for website -> so tampering with it often mean unable to reach the target application at all.
@@ -297,7 +300,7 @@ Ways to do this things -> HTTP Response Splitting, using unkeyed inputs, or by r
 ### How to construct Web Cache Poisoning  Attack ? =>
 
 * **Find out unkeyed inputs** -> Tool -> Param Miner
-* ** Extract Responses from the backend** 
+* **Extract Responses from the backend** 
 	* Know how exactly website working
 	* Find out an input that is reflecting in the response from the server without any sanitization or is used to dynamically generate other data
 	* It all depends on Various factors such as -> file extension, route, status code, response header
@@ -308,7 +311,7 @@ Ways to do this things -> HTTP Response Splitting, using unkeyed inputs, or by r
 
 * Analyze request and response
 * Add Another Host header and input anything there like -> aakash123
-* In Response check for "aakash123" which is reflecting on -> <script type="text/javascript" src="//aakash123/resources/js/tracking.js"></script>
+* In Response check for "aakash123" which is reflecting on -> `<script type="text/javascript" src="//aakash123/resources/js/tracking.js"></script>`
 * So, js src using for importing tracking.js file
 * Now even after remove 2nd Host from Request and forward this request and we can see still given input from previous request reflecting in new response
 * So, now we need to make a file "/resources/js/tracking.js" in explot server or attacker's control domain which having injecting payload

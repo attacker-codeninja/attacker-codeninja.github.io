@@ -9,15 +9,56 @@ layout: base
 
   <h1 class="post-title">{{ page.title }}</h1>
   
-  {% if page.tags.size > 0 %}
-    <div style="display: flex; gap: 8px; margin-bottom: 30px; flex-wrap: wrap;">
-      {% for tag in page.tags %}
-        <a href="{{ '/tags' | relative_url }}#{{- tag -}}" style="font-family: var(--mono); font-size: 12px; padding: 4px 10px; background: var(--bg-panel); border: 1px solid var(--border); color: var(--text-dim); border-radius: 4px; text-decoration: none;">{{- tag -}}</a>
-      {% endfor %}
-    </div>
-  {% endif %}
+  <div class="post-meta">
+    {% if page.tags.size > 0 %}
+      <div class="post-tags">
+        {% for tag in page.tags %}
+          <a class="tag-chip" href="{{ '/tags' | relative_url }}#{{- tag -}}">{{- tag -}}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% comment %} Reading view switch; the same control sits in the slides bar. {% endcomment %}
+    <nav class="view-switch" aria-label="Reading view">
+      <a href="{{ page.url | relative_url }}" aria-current="page">Article</a>
+      <a href="{{ '/slides/' | relative_url }}?p={{ page.url | relative_url | url_encode }}">Slides</a>
+    </nav>
+  </div>
 
   <div class="post-content">
     {{ content }}
   </div>
+
+  {% comment %} Prev/Next within the same category. site.categories is newest-first. {% endcomment %}
+  {% assign nav_cat = page.categories | first %}
+  {% assign nav_posts = site.categories[nav_cat] %}
+  {% assign nav_idx = -1 %}
+  {% for p in nav_posts %}
+    {% if p.url == page.url %}{% assign nav_idx = forloop.index0 %}{% endif %}
+  {% endfor %}
+  {% assign older_post = nil %}
+  {% assign newer_post = nil %}
+  {% if nav_idx >= 0 %}
+    {% assign older_idx = nav_idx | plus: 1 %}
+    {% assign older_post = nav_posts[older_idx] %}
+    {% if nav_idx > 0 %}
+      {% assign newer_idx = nav_idx | minus: 1 %}
+      {% assign newer_post = nav_posts[newer_idx] %}
+    {% endif %}
+  {% endif %}
+  {% if older_post or newer_post %}
+    <nav class="post-nav" aria-label="More in {{ nav_cat }}">
+      {% if older_post %}
+        <a class="post-nav-link prev" href="{{ older_post.url | relative_url }}">
+          <span class="post-nav-label">&larr; Previous</span>
+          <span class="post-nav-title">{{ older_post.title }}</span>
+        </a>
+      {% endif %}
+      {% if newer_post %}
+        <a class="post-nav-link next" href="{{ newer_post.url | relative_url }}">
+          <span class="post-nav-label">Next &rarr;</span>
+          <span class="post-nav-title">{{ newer_post.title }}</span>
+        </a>
+      {% endif %}
+    </nav>
+  {% endif %}
 </article>

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Project 01: Securing Your First S3 Bucket & IAM User"
+subtitle: "A Beginner's Journey into S3 Security and IAM"
 date: 2025-07-27
 categories:
   - AWS Projects
@@ -10,7 +11,7 @@ tags:
   - Bucket
   - Policy
   - Security
-description: Beginner-friendly project to understand S3 misconfigurations, IAM policies, and securing your AWS resources the right way.
+description: "Beginner-friendly project to understand S3 misconfigurations, IAM policies, and securing your AWS resources the right way."
 ---
 
 ![Securing Your First S3 Bucket Project](/assets/img/s3-iam-project/your-header-image.png)
@@ -21,7 +22,7 @@ description: Beginner-friendly project to understand S3 misconfigurations, IAM p
 > _A Beginner’s Journey into S3 Security and IAM - Guided by a Security Engineer_
 
 
-### 🎯 <span class="strike">**Objective</span>**
+### 🎯 <span class="strike">Objective</span>
 
 > **Help beginners understand how simple misconfigurations in S3 buckets and IAM policies can expose sensitive data - and how to fix them securely.**
 
@@ -121,7 +122,7 @@ Disabling public access is dangerous unless you **really** need public files. Ma
 📄 File Name: `sensitive.txt`  
 📝 Content: You can add something like:
 
-```json
+```text
 Internal Project Credentials:
 DB_USERNAME=admin
 DB_PASSWORD=123456
@@ -243,7 +244,7 @@ When **Block Public Access is enabled**, AWS does these enforcement-level things
 
 ---
 
-### ✅ Step 4: Create an IAM User – <span class="strike">`junior-analyst</span>`
+### ✅ Step 4: Create an IAM User – <span class="strike">`junior-analyst`</span>
 
 ✅ Go to IAM → Users → Add User  
 ✅ Username: `junior-analyst`  
@@ -500,13 +501,13 @@ When you enable Server Access Logging:
 
 - S3 writes access logs in a **.log format** to the **target bucket** (e.g., `log-bucket-yourname`)
 - These logs are stored as objects inside folders like:
-```json
+```text
 logs/AWSLogs/AccountID/S3/BucketName/yyyy-mm-dd-HH-MM-SS-UUID
 ```
 
 Each log line contains fields like:
 
-```json
+```text
 79a5 EXAMPLEBUCKET [27/Jul/2025:14:55:05 +0000] 192.0.2.3 arn:aws:iam::123456789:user/Junior-Analyst REST.GET.OBJECT sensitive.txt 200 -
 ```
 

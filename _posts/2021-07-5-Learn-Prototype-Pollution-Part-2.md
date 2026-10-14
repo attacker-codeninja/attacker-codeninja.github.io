@@ -1,9 +1,13 @@
 ---
 layout: post
-title: Learn Prototype Pollution in Series - Part 2
+title: "Learn Prototype Pollution in Series - Part 2"
+subtitle: "Objects, constructors and prototypes revisited"
+date: 2021-07-05
 categories:
   - Bug Bounty
-tags: [prototype pollution]
+tags:
+  - prototype pollution
+description: "Part 2 of the Prototype Pollution series: objects, constructors, the this keyword, prototypes and the prototype chain."
 ---
 
 
@@ -61,7 +65,7 @@ So, lets learn again about the same concept.
 >
 > These => **firstName,lastName,age,country** => is **properties**
 >
-> Just like we access array using their index[0-1] similarly we can access objects using **properties **
+> Just like we access array using their index[0-1] similarly we can access objects using **properties**
 >
 > #### How we access it ?
 >
@@ -235,7 +239,7 @@ So, lets learn again about the same concept.
 
 
 
-> ####  Now What is **Constructor ** ?
+> ####  Now What is **Constructor** ?
 >
 > 
 >
@@ -282,7 +286,7 @@ So, lets learn again about the same concept.
 >
 > 
 >
-> **The advantage of constructors is that objects created with the same constructor contain the same properties and methods. **
+> **The advantage of constructors is that objects created with the same constructor contain the same properties and methods.**
 >
 > So, when we want to create multiple similar objects, we can create our own  constructors and therefore our own reference types
 
@@ -429,9 +433,9 @@ So, lets learn again about the same concept.
 >
 > 
 >
-> > In existing **objects** or **object constructor ** => we want to add **property** and **methods**
+> > In existing **objects** or **object constructor** => we want to add **property** and **methods**
 >
-> > And **JavaScript  Prototype ** property allows us to add new properties to object constructors and also new methods to object constructors
+> > And **JavaScript  Prototype** property allows us to add new properties to object constructors and also new methods to object constructors
 >
 > How? => 
 >
@@ -629,7 +633,7 @@ So, lets learn again about the same concept.
 
   * Only values `undefined`and `null`no wrapper objects.
 
-* **Changing Prototypes ** 
+* **Changing Prototypes** 
 
   * > Any changes to the prototype will be immediately visible to all objects referencing this prototype.
 

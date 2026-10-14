@@ -1,10 +1,14 @@
 ---
 layout: post
-title: Learn-with-R0X4R-Recon-Automation
-subtitle: Recon Automation by R0X4R
+title: "Learn-with-R0X4R-Recon-Automation"
+subtitle: "Recon Automation by R0X4R"
+date: 2021-06-27
 categories:
   - Bug Bounty
-tags: [recon,automation]
+tags:
+  - recon
+  - automation
+description: "Notes on recon automation by R0X4R: subdomain enumeration, port scan, vulnerability scan tools and Burp tips."
 ---
 
 ### Subdomain <span class="strike">Enumeration</span>

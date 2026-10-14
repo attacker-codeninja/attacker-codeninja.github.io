@@ -49,9 +49,9 @@ Here is the practical, day-to-day breakdown of how they differ:
 | Feature | 🤖 Claude.ai (Chat) | 🕵️‍♂️ Claude Code (Agent) |
 | :--- | :--- | :--- |
 | **File Access** | No (Upload/paste manually) | **Yes.** Direct read/write/edit to local files. |
-| **Shell/Terminal** | No | **Yes.** Bash commands khud chala sakta hai. |
-| **Workflow** | **Single-step:** Ek response deta hai, phir khatam. | **Multi-step Loop:** Action ➡️ Result ➡️ Next Action. |
-| **Project Context** | Har baar naya paste karna padta hai. | Automatically `CLAUDE.md`, files, aur git history padh leta hai. |
+| **Shell/Terminal** | No | **Yes.** Can run Bash commands by itself. |
+| **Workflow** | **Single-step:** Gives one response, then stops. | **Multi-step Loop:** Action ➡️ Result ➡️ Next Action. |
+| **Project Context** | You have to paste it fresh every time. | Automatically reads `CLAUDE.md`, files, and git history. |
 
 ### 🔍 A Real-World <span class="mk-link">Example</span>
 Let's look at how this difference plays out when you want to create and test a new authentication function.

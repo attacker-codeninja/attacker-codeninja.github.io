@@ -1,10 +1,13 @@
 ---
 layout: post
-title: My Notes on Hacking APIs from Bug Bounty Bootcamp 
-subtitle: android hacking Notes
+title: "My Notes on Hacking APIs from Bug Bounty Bootcamp"
+subtitle: "API Hacking Notes"
+date: 2021-08-28
 categories:
   - Bug Bounty
-tags: [androing pentesting]
+tags:
+  - api
+description: "Notes on Chapter 24 of Bug Bounty Bootcamp: REST, SOAP and GraphQL APIs, API recon and testing for common API bugs."
 ---
 
 # Bug Bounty Bootcamp Notes - Chapter 24 - API <span class="strike">HACKING</span>
@@ -261,7 +264,7 @@ tags: [androing pentesting]
   * Next Task ->
     * Based on given endpoints -> PREDICT their structure and can try for other endpoints by assuming or predicting 
     * Example ->
-      * If -> ``/posts/POST _ID/read and /posts/POST_ID/delete`   => exist
+      * If -> `/posts/POST_ID/read` and `/posts/POST_ID/delete`   => exist
       * Then try -> `/posts/POST_ID/edit`
       * If -> ` /posts/1234 and /posts/1236` => Then try => `/posts/1235`
       * Might get result or not based on application
@@ -295,7 +298,7 @@ tags: [androing pentesting]
 
 
 
-> **NOTE: **
+> **NOTE:**
 >
 > Make sure to take lots of notes while RECON
 >
@@ -316,7 +319,7 @@ tags: [androing pentesting]
   * API issue **access token** to each API Client
   * and clients use these access token **to perform actions or retrieve data**
 * If these **access tokens** => `aren’t properly issued and validated`
-  * **attackers might bypass authentication and access data illegally. **
+  * **attackers might bypass authentication and access data illegally.**
 * Example ->
   * sometimes API tokens aren’t validated after the server receives them
   * Other times, API tokens are not randomly generated and can be predicted

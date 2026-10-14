@@ -1,10 +1,13 @@
 ---
 layout: post
-title: Awesome Bug Bounty Roadmap 
-subtitle: bug bounty roadmap
+title: "Awesome Bug Bounty Roadmap"
+subtitle: "Bug Bounty Roadmap"
+date: 2022-06-06
 categories:
   - Bug Bounty
-tags: [bug bounty roadmap]
+tags:
+  - bug bounty roadmap
+description: "A roadmap for beginner and intermediate bug hunters: basics, reading list, books, practice, recon and YouTube channels."
 ---
 
 # Awesome Bug Bounty <span class="strike">Roadmap</span>
@@ -74,7 +77,7 @@ Without wasting time, following are the Roadmaps =>
     * [https://lab.wallarm.com/owasp-top-10-2021-proposal-based-on-a-statistical-data/?utm_source=Reddit&utm_medium=SubReddits&utm_campaign=owasp-2021](https://lab.wallarm.com/owasp-top-10-2021-proposal-based-on-a-statistical-data/?utm_source=Reddit&utm_medium=SubReddits&utm_campaign=owasp-2021-)
     * [https://www.ceos3c.com/security/avoid-burnout-as-a-programmer-or-hacker/](https://www.ceos3c.com/security/avoid-burnout-as-a-programmer-or-hacker/)
     * [https://r2c.dev/blog/2021/four-levels-of-maturity-that-bridge-the-app-sec-engineering-divide/](https://r2c.dev/blog/2021/four-levels-of-maturity-that-bridge-the-app-sec-engineering-divide/)
-    * [http//rez0.blog/hacking/2020/12/26/non-technical-bug-bounty-tips.html](http//rez0.blog/hacking/2020/12/26/non-technical-bug-bounty-tips.html)
+    * [http://rez0.blog/hacking/2020/12/26/non-technical-bug-bounty-tips.html](http://rez0.blog/hacking/2020/12/26/non-technical-bug-bounty-tips.html)
     * [https://twitter.com/daeken/status/1337600964128354304](https://twitter.com/daeken/status/1337600964128354304)
     * [https://danielmiessler.com/blog/analysis-of-the-recon-attack-surface-management-space/](https://danielmiessler.com/blog/analysis-of-the-recon-attack-surface-management-space/)
     * [https://secalert.net/index.html%3F.html#2020_bug_bounty_com](https://secalert.net/index.html%3F.html#2020_bug_bounty_com)
@@ -111,8 +114,8 @@ Without wasting time, following are the Roadmaps =>
     * [https://www.linkedin.com/pulse/anatomy-automated-account-takeovers-tal-eliyahu/](https://www.linkedin.com/pulse/anatomy-automated-account-takeovers-tal-eliyahu/)
     * [https://medium.com/@circleninja/a-small-change-in-life-helps-to-convert-entertainment-to-productive-work-9bd8cc1993ce](https://medium.com/@circleninja/a-small-change-in-life-helps-to-convert-entertainment-to-productive-work-9bd8cc1993ce)
     * [https://subfn.net/2020/04/08/learn-bypasses-not-payloads/](https://subfn.net/2020/04/08/learn-bypasses-not-payloads/)
-    * [http//collingreene.com/5_years_of_bug_bounty.html](http//collingreene.com/5_years_of_bug_bounty.html)
-    * [http//10degres.net/how-to-keep-hackers-motivated-in-bug-bounty/](http//10degres.net/how-to-keep-hackers-motivated-in-bug-bounty/)
+    * [http://collingreene.com/5_years_of_bug_bounty.html](http://collingreene.com/5_years_of_bug_bounty.html)
+    * [http://10degres.net/how-to-keep-hackers-motivated-in-bug-bounty/](http://10degres.net/how-to-keep-hackers-motivated-in-bug-bounty/)
     * [https://www.helpnetsecurity.com/2020/04/07/bug-hunting-career/](https://www.helpnetsecurity.com/2020/04/07/bug-hunting-career/)
     * [https://blog.detectify.com/2020/04/01/top-pen-testing-tips-detectify-crowdsource/](https://blog.detectify.com/2020/04/01/top-pen-testing-tips-detectify-crowdsource/)
     * [https://craighays.com/bug-bounty-hunting-tips-5-aim-to-become-world-class-in-your-niche/](https://craighays.com/bug-bounty-hunting-tips-5-aim-to-become-world-class-in-your-niche/)
@@ -122,9 +125,9 @@ Without wasting time, following are the Roadmaps =>
     * [https://twitter.com/pdp/status/1229085767877713935](https://twitter.com/pdp/status/1229085767877713935)
     * [https://www.reddit.com/r/bugbounty/comments/f1n9fh/weekly_discussion_february_10_2020_ask_all_your/fh8xvrc/?context=8&depth=9](https://www.reddit.com/r/bugbounty/comments/f1n9fh/weekly_discussion_february_10_2020_ask_all_your/fh8xvrc/?context=8&depth=9)
     * [https://medium.com/@circleninja/how-to-become-more-successful-and-achieve-your-dreams-17cd1d3c0613](https://medium.com/@circleninja/how-to-become-more-successful-and-achieve-your-dreams-17cd1d3c0613)
-    * [http//10degres.net/5-things-to-avoid-in-bug-bounty/](http//10degres.net/5-things-to-avoid-in-bug-bounty/)
+    * [http://10degres.net/5-things-to-avoid-in-bug-bounty/](http://10degres.net/5-things-to-avoid-in-bug-bounty/)
     * [https://www.fourzerothree.in/p/note-making-and-methodology-bug-bounty?s=r](https://www.fourzerothree.in/p/note-making-and-methodology-bug-bounty?s=r)
-    * [http//10degres.net/bug-bounty-management-a-bad-example/](http//10degres.net/bug-bounty-management-a-bad-example/)
+    * [http://10degres.net/bug-bounty-management-a-bad-example/](http://10degres.net/bug-bounty-management-a-bad-example/)
     * [https://knoxxs.github.io/learning/course/2016/01/06/learn-how-to-learn/](https://knoxxs.github.io/learning/course/2016/01/06/learn-how-to-learn/)
     * [https://medium.com/@gergely.revay/how-to-become-a-web-pentester-526a4da541f8](https://medium.com/@gergely.revay/how-to-become-a-web-pentester-526a4da541f8)
     * [https://danielmiessler.com/blog/the-most-important-productivity-lesson-i-ever-learned/](https://danielmiessler.com/blog/the-most-important-productivity-lesson-i-ever-learned/)
@@ -167,7 +170,6 @@ NOTE : Its not necessary to complete every books [Though it will help a lot for 
 
 <br><br>
 * Some Useful Youtube Channels must to join and watch
-    * [https://www.youtube.com/channel/UCDl4jpAVAezUdzsDBDDTGsQ](https://www.youtube.com/channel/UCDl4jpAVAezUdzsDBDDTGsQ)
     * [https://www.youtube.com/channel/UCDl4jpAVAezUdzsDBDDTGsQ](https://www.youtube.com/channel/UCDl4jpAVAezUdzsDBDDTGsQ)
     * [https://www.youtube.com/c/SpinTheHack](https://www.youtube.com/c/SpinTheHack)
     * [https://www.youtube.com/c/BugBountyReportsExplained](https://www.youtube.com/c/BugBountyReportsExplained)

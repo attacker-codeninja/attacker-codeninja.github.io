@@ -1,10 +1,13 @@
 ---
 layout: post
-title: My Notes on Hacking Android Apps from Bug Bounty Bootcamp 
-subtitle: android hacking Notes
+title: "My Notes on Hacking Android Apps from Bug Bounty Bootcamp"
+subtitle: "Android Hacking Notes"
+date: 2021-08-26
 categories:
   - Bug Bounty
-tags: [androing pentesting]
+tags:
+  - android pentesting
+description: "Notes on Chapter 23 of Bug Bounty Bootcamp: mobile proxy setup, certificate pinning bypass, APK anatomy, tools and hunting."
 ---
 
 # Bug Bounty Bootcamp Notes - Chapter 23 - HACKING ANDROID <span class="strike">APPS</span>
@@ -60,7 +63,7 @@ tags: [androing pentesting]
   * Save the downloaded certificate, email it to yourself, and download it to your mobile device.
   * Next, install the certificate on your device
   * This process will also depend on the specifics of the system running on your device, but it should be something like choosing
-    * **Settings** -> **Security ** -> **Install Certificates from Storage**
+    * **Settings** -> **Security** -> **Install Certificates from Storage**
     * Click the certificate you just downloaded and select **VPN and apps** for the Certificate use option. 
   * We, now be able to audit HTTPS traffic with Burp.
 

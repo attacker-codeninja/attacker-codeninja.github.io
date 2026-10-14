@@ -1,9 +1,14 @@
 ---
 layout: post
-title: Learn from AMA Series Part 1
+title: "Learn from AMA Series Part 1"
+subtitle: "Methodology notes from BugBountyForum AMAs"
+date: 2021-07-04
 categories:
   - Bug Bounty
-tags: [AMA,ama, bug bounty]
+tags:
+  - AMA
+  - bug bounty
+description: "What top hunters shared in BugBountyForum AMAs: recon, tools and how they test for server-side bugs."
 ---
 
 ## Learn from AMA Series from <span class="strike">BugBountyForum</span>

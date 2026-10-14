@@ -1,0 +1,427 @@
+---
+layout: null
+permalink: /slides/
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slides - {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/base.css' | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <style>
+    /* Slide view experiment: renders an existing post as slides. Theme tokens come from base.css. */
+    :root { --accent: var(--gold); --bar-h: 56px; }
+    html, body { height: 100%; overflow: hidden; }
+
+    .progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--accent); z-index: 3; transition: width .2s ease; }
+
+    .deck { position: fixed; inset: 0; }
+    .measure { position: fixed; inset: 0; visibility: hidden; pointer-events: none; }
+    .slide { position: absolute; inset: 0; display: none; flex-direction: column;
+      padding: clamp(20px, 6vh, 64px) clamp(18px, 6vw, 96px) calc(var(--bar-h) + clamp(12px, 3vh, 32px)); }
+    .slide.active, .measure .slide { display: flex; }
+    .slide-body { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; width: 100%; max-width: 1100px; margin: 0 auto; }
+    .slide-body > .inner { margin: auto 0; }   /* vertical centre that still overflows downward (measurable) */
+
+    /* Bigger type than the article: this is read from a distance */
+    .slide .post-content > .inner > :first-child { margin-top: 0; }
+    .slide .post-content > .inner > :last-child { margin-bottom: 0; }
+    .slide .post-content p,
+    .slide .post-content li,
+    .slide .post-content blockquote { font-size: clamp(17px, 0.9rem + 0.55vw, 24px); line-height: 1.6; }
+    .slide .post-content h1 { font-size: clamp(30px, 4.2vw, 60px); margin-top: 0; }
+    .slide .post-content h2 { font-size: clamp(26px, 3.4vw, 48px); margin-top: 0; }
+    .slide .post-content h3 { font-size: clamp(22px, 2.6vw, 36px); margin-top: 0; }
+    .slide .post-content img { display: block; max-height: 58vh; width: auto; margin: 12px auto; object-fit: contain; }
+    .slide .post-content table { display: block; overflow-x: auto; max-width: 100%; font-size: clamp(14px, 1.1vw, 17px); }
+    .slide .post-content pre code { font-size: clamp(13px, 1vw, 16px); }
+    /* Long lines wrap instead of scrolling sideways; long blocks are split across slides by line. */
+    .slide .post-content pre, .slide .post-content pre code { white-space: pre-wrap; overflow-wrap: anywhere; }
+    /* highlight.js theme adds padding to code.hljs after measuring; keep the size measured */
+    .slide .post-content pre code.hljs { padding: 0; overflow: visible; }
+    .slide .cont-item { list-style: none; }   /* an item continued from the previous slide */
+    .slide .continued { font-family: var(--mono); font-size: 13px; color: var(--text-dim); margin-bottom: 14px; }
+
+    /* Title slide */
+    .title-slide .eyebrow { flex-wrap: wrap; }
+    .title-slide .eyebrow span { white-space: nowrap; }
+    .title-slide .eyebrow .cat { color: var(--accent); }
+    .deck-title, .slide .continued { text-wrap: balance; }
+    .deck-title { font-family: var(--mono); font-weight: 700; font-size: clamp(34px, 6vw, 80px); line-height: 1.05; letter-spacing: -0.02em; overflow-wrap: anywhere; }
+    .deck-sub { font-size: clamp(18px, 1rem + 1vw, 30px); color: var(--text-dim); margin-top: 18px; }
+    .deck-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .deck-tags span { font-family: var(--mono); font-size: 12px; padding: 4px 10px; background: var(--bg-panel); border: 1px solid var(--border); color: var(--text-dim); border-radius: 4px; }
+
+    /* Bottom bar */
+    .bar { position: fixed; left: 0; right: 0; bottom: 0; height: var(--bar-h); z-index: 2; display: flex; align-items: center; gap: 12px;
+      padding: 0 clamp(12px, 3vw, 28px); border-top: 1px solid var(--border); background: rgba(18,24,33,0.85); backdrop-filter: blur(6px); font-family: var(--mono); font-size: 13px; }
+    .bar a { color: var(--text-dim); text-decoration: none; white-space: nowrap; }
+    .bar a:hover { color: var(--text-primary); }
+    .bar .view-switch { margin-left: 0; }
+    .bar .where { flex: 1; min-width: 0; color: var(--text-dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; }
+    .bar .count { color: var(--text-primary); white-space: nowrap; }
+    .bar button { font: inherit; color: var(--text-primary); background: var(--bg-panel-2); border: 1px solid var(--border); border-radius: 6px; padding: 7px 12px; cursor: pointer; }
+    .bar button:disabled { opacity: .35; cursor: default; }
+    .bar :focus-visible, .picker :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    /* Phones: the switch and arrows always stay; Home is one tap away via All slides, position shows in the top line */
+    @media (max-width: 640px) { .bar { gap: 10px; font-size: 12px; } .bar .where, .bar .to-home { display: none; } .bar .count { margin-left: auto; } .bar button { padding: 7px 10px; } }
+    @media (max-width: 400px) { .bar { gap: 8px; padding: 0 10px; } .bar .count { display: none; } .bar .view-switch { margin-left: auto; } .bar .view-switch a { padding: 5px 9px; } }
+
+    /* Post picker (no ?p=) */
+    .picker { height: 100%; overflow-y: auto; padding: 48px clamp(18px, 6vw, 96px); }
+    .picker-inner { max-width: 900px; margin: 0 auto; }
+    .picker .to-home { display: inline-block; margin-bottom: 20px; font-family: var(--mono); font-size: 13px; color: var(--text-dim); text-decoration: none; }
+    .picker .to-home:hover { color: var(--text-primary); }
+    .picker h1 { font-family: var(--mono); font-size: clamp(32px, 5vw, 56px); letter-spacing: -0.02em; }
+    .picker > div > p { color: var(--text-dim); margin: 12px 0 36px; }
+    .picker h2 { font-family: var(--mono); font-size: 18px; margin: 32px 0 12px; }
+    .picker ul { list-style: none; border-top: 1px solid var(--border); }
+    .picker li a { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border); color: var(--text-primary); text-decoration: none; }
+    .picker li a:hover { color: var(--accent-h, var(--gold)); }
+    .picker li span { font-family: var(--mono); font-size: 12px; color: var(--text-dim); white-space: nowrap; }
+
+    @media (prefers-reduced-motion: reduce) { .progress { transition: none; } }
+  </style>
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"></div>
+<div class="deck" aria-live="polite"></div>
+<div class="measure" aria-hidden="true"></div>
+
+<nav class="bar" aria-label="Slide controls" hidden>
+  <a class="to-home" href="{{ '/' | relative_url }}">Home</a>
+  <a class="to-list" href="{{ '/slides/' | relative_url }}">All slides</a>
+  <span class="view-switch" role="navigation" aria-label="Reading view">
+    <a class="to-article" href="#">Article</a>
+    <a class="to-slides" href="#" aria-current="page">Slides</a>
+  </span>
+  <span class="where"></span>
+  <span class="count"></span>
+  <button class="prev" type="button" aria-label="Previous slide">&larr;</button>
+  <button class="next" type="button" aria-label="Next slide">&rarr;</button>
+</nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="{{ '/assets/js/no-orphan.js' | relative_url }}"></script>
+<script>
+  // Post metadata from Jekyll (no post bodies; bodies are fetched from the built post pages).
+  const POSTS = [{% for p in site.posts %}
+    { "url": {{ p.url | relative_url | jsonify }}, "title": {{ p.title | jsonify }}, "subtitle": {{ p.subtitle | jsonify }},
+      "date": {{ p.date | date: "%B %-d, %Y" | jsonify }}, "category": {{ p.categories | first | jsonify }}, "tags": {{ p.tags | jsonify }} }{% unless forloop.last %},{% endunless %}{% endfor %}
+  ];
+  const ACCENT = { "Bug Bounty": "var(--red)", "AWS Projects": "var(--gold)", "Claude Code Masterclass Series": "var(--green)" };
+  const SLIDES_URL = {{ '/slides/' | relative_url | jsonify }};
+
+  const deck = document.querySelector('.deck');
+  const stage = document.querySelector('.measure');
+  const bar = document.querySelector('.bar');
+  const progress = document.querySelector('.progress');
+  let slides = [], current = 0, sourceNodes = [], meta = null;
+
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+
+  // ---------- Post picker ----------
+  function showPicker() {
+    document.title = 'Slides - {{ site.title }}';
+    const wrap = el('div', 'picker'), inner = el('div', 'picker-inner');
+    const home = el('a', 'to-home', '← Home'); home.href = {{ '/' | relative_url | jsonify }};
+    inner.append(home, el('h1', null, 'Slides'), el('p', null, 'Pick a post to read it as slides.'));
+    for (const cat of Object.keys(ACCENT)) {
+      const posts = POSTS.filter(p => p.category === cat).reverse();   // oldest first, like a series
+      if (!posts.length) continue;
+      const h = el('h2', null, cat); h.style.color = ACCENT[cat];
+      const ul = el('ul');
+      for (const p of posts) {
+        const a = el('a'); a.href = SLIDES_URL + '?p=' + encodeURIComponent(p.url);
+        a.append(document.createTextNode(p.title), el('span', null, p.date));
+        const li = el('li'); li.append(a); ul.append(li);
+      }
+      inner.append(h, ul);
+    }
+    wrap.append(inner); deck.replaceWith(wrap);
+  }
+
+  // ---------- Slide building ----------
+  const isBreak = n => /^(H1|H2|H3|HR)$/.test(n.tagName);
+  const isHeading = n => /^H[1-6]$/.test(n.tagName);
+  const isCode = n => n.matches('div.highlighter-rouge, pre') && !!n.querySelector('code');
+
+  function newSlide(continuedFrom) {
+    const s = el('section', 'slide'), body = el('div', 'slide-body post-content'), inner = el('div', 'inner');
+    if (continuedFrom) inner.append(el('p', 'continued', continuedFrom));   // repeat the section heading as-is
+    body.append(inner); s.append(body); stage.append(s);
+    s._inner = inner; s._body = body;
+    return s;
+  }
+  const overflows = s => s._inner.offsetHeight > s._body.clientHeight + 1;
+  const contentCount = s => [...s._inner.children].filter(c => !c.classList.contains('continued')).length;
+
+  // Last element too tall on its own: shrink it a little, else give it an inner scroll so nothing is cut off.
+  function fitInside(s, node) {
+    if (node.tagName === 'IMG') {   // images scale into the room left, never scroll
+      const room = s._body.clientHeight - (s._inner.offsetHeight - node.offsetHeight) - 4;
+      node.style.height = Math.max(room, 80) + 'px'; node.style.width = 'auto'; node.style.objectFit = 'contain';
+      return;
+    }
+    for (const k of [0.9, 0.8]) { node.style.zoom = k; if (!overflows(s)) return; }
+    node.style.zoom = '';
+    const room = s._body.clientHeight - (s._inner.offsetHeight - node.offsetHeight) - 4;
+    node.style.maxHeight = Math.max(room, 120) + 'px';
+    node.style.overflow = 'auto';
+  }
+
+  // Laid out as blocks; anything else is inline content that can be split word by word.
+  const BLOCK = /^(P|DIV|UL|OL|LI|BLOCKQUOTE|PRE|TABLE|THEAD|TBODY|TFOOT|TR|H[1-6]|FIGURE|FIGCAPTION|DL|DT|DD|SECTION|DETAILS|SUMMARY|HR)$/;
+  // Never split: a link stays whole, a table row stays whole, media stays whole.
+  const ATOMIC = /^(A|IMG|TR|IFRAME|VIDEO|SVG|HR|BR|INPUT|BUTTON)$/;
+
+  // Detach an element's children as units to place one by one.
+  // Inline content becomes words + whole inline elements; mixed content groups inline runs into a span.
+  function toUnits(node) {
+    if (node.tagName === 'TABLE') node._thead = node.querySelector(':scope > thead');
+    const kids = [...node.childNodes];
+    kids.forEach(c => c.remove());
+    const out = [];
+    if (!kids.some(c => c.nodeType === 1 && BLOCK.test(c.tagName))) {
+      for (const c of kids) {
+        if (c.nodeType === 3) (c.textContent.match(/\S+\s*|\s+/g) || []).forEach(w => out.push(document.createTextNode(w)));
+        else out.push(c);
+      }
+      return out;
+    }
+    let run = null;
+    for (const c of kids) {
+      if (c.nodeType === 1 && BLOCK.test(c.tagName)) { run = null; out.push(c); }
+      else if (c.nodeType === 3 && !c.textContent.trim()) { if (run) run.append(c); }
+      else { if (!run) { run = el('span', 'run'); out.push(run); } run.append(c); }
+    }
+    return out;
+  }
+
+  function buildSlides() {
+    stage.innerHTML = '';
+    const out = [titleSlide()];
+    let s = null, heading = null, srcIdx = 0;
+    const push = () => { if (s && contentCount(s)) out.push(s); };
+    const nextSlide = () => { push(); s = newSlide(heading); s.dataset.src = srcIdx; };
+
+    // Drop shells left empty after their content moved to the next slide.
+    const prune = p => {
+      while (p && p !== s._inner && !p.textContent.trim() && !p.querySelector('img,iframe,video,svg')) { const up = p.parentNode; p.remove(); p = up; }
+    };
+
+    // Anything on this slide besides `node` and the section heading?
+    const hasOtherContent = node => {
+      for (let cur = node; cur && cur !== s._inner; cur = cur.parentNode) {
+        for (const sib of cur.parentNode.childNodes) {
+          if (sib === cur) continue;
+          if (sib.nodeType === 3) { if (sib.textContent.trim()) return true; continue; }
+          if (cur.parentNode === s._inner && (isHeading(sib) || sib.classList.contains('continued'))) continue;
+          return true;
+        }
+      }
+      return false;
+    };
+
+    // Code block: fill line by line, continue on new slides.
+    const placeCode = (node, parent, makeParent) => {
+      const lines = node.querySelector('code').textContent.replace(/\n$/, '').split('\n');
+      let block = node, chunk = [];
+      const setLines = () => { block.querySelector('code').textContent = chunk.join('\n'); };
+      setLines();
+      for (const line of lines) {
+        chunk.push(line); setLines();
+        if (!overflows(s)) continue;
+        chunk.pop();
+        if (!chunk.length && !hasOtherContent(block)) {
+          chunk = [line]; setLines();   // first line on an otherwise empty slide: split it right here
+        } else {
+          if (chunk.length) setLines(); else { block.remove(); prune(parent); }
+          nextSlide(); parent = makeParent();
+          block = node.cloneNode(true); parent.append(block);
+          chunk = [line]; setLines();
+        }
+        // One line taller than a whole slide (wrapped): keep the longest prefix that fits, carry the rest over.
+        let rest = line;
+        while (overflows(s) && rest.length > 1) {
+          let lo = 1, hi = rest.length - 1;
+          while (lo < hi) { const mid = (lo + hi + 1) >> 1; chunk = [rest.slice(0, mid)]; setLines(); if (overflows(s)) hi = mid - 1; else lo = mid; }
+          chunk = [rest.slice(0, lo)]; setLines();
+          rest = rest.slice(lo);
+          nextSlide(); parent = makeParent();
+          block = node.cloneNode(true); parent.append(block);
+          chunk = [rest]; setLines();
+        }
+      }
+      return parent;
+    };
+
+    // Put `node` into `parent`. Doesn't fit: move it whole to the next slide; still doesn't fit:
+    // split it into pieces. makeParent() rebuilds `parent` on a new slide. Returns where the next sibling goes.
+    function place(node, parent, makeParent) {
+      parent.append(node);
+      if (!overflows(s)) return parent;
+      if (hasOtherContent(node)) {
+        node.remove(); prune(parent);
+        nextSlide(); parent = makeParent(); parent.append(node);
+        if (!overflows(s)) return parent;
+      }
+      if (node.nodeType !== 1) return parent;
+      if (ATOMIC.test(node.tagName) || !node.childNodes.length) { fitInside(s, node); return parent; }
+      if (isCode(node)) return placeCode(node, parent, makeParent);
+      return splitInto(node, makeParent);
+    }
+
+    // Spread an element's children over slides, cloning the element as a shell on each new slide.
+    function splitInto(node, makeParent) {
+      const units = toUnits(node);
+      const isOL = node.tagName === 'OL', base = isOL ? parseInt(node.getAttribute('start') || '1', 10) : 0;
+      let k = 0, cur = node;
+      const makeCur = () => {
+        const c = node.cloneNode(false);
+        c.removeAttribute('id');
+        if (node.tagName === 'LI') c.classList.add('cont-item');   // same item continues: no new bullet/number
+        if (isOL) c.start = base + k;
+        if (node._thead) { const th = node._thead.cloneNode(true); th.classList.add('repeat'); c.append(th); }   // tables repeat their header
+        makeParent().append(c);
+        return c;
+      };
+      for (k = 0; k < units.length; k++) cur = place(units[k], cur, makeCur);
+      return cur.parentNode;
+    }
+
+    sourceNodes.forEach((src, i) => {
+      srcIdx = i;
+      if (isBreak(src)) {
+        // A slide holding only headings so far keeps going: no heading is left alone on a slide.
+        const onlyHeadings = s && contentCount(s) && [...s._inner.children].every(c => isHeading(c) || c.classList.contains('continued'));
+        if (!onlyHeadings) { push(); s = null; }
+        if (src.tagName === 'HR') return;
+        heading = src.textContent.trim();
+      }
+      if (!s) { s = newSlide(); s.dataset.src = i; }
+      place(src.cloneNode(true), s._inner, () => s._inner);
+    });
+    push();
+    out.forEach(x => { delete x._inner; delete x._body; });
+    return out;
+  }
+
+  function titleSlide() {
+    const s = newSlide(); s.classList.add('title-slide'); s.dataset.src = -1;
+    const eb = el('div', 'eyebrow'); eb.append(el('span', null, meta.date)); if (meta.category) eb.append(el('span', 'cat', meta.category));
+    s._inner.append(eb, el('h1', 'deck-title', meta.title));
+    if (window.noOrphans) noOrphans(s._inner);
+    if (meta.subtitle) s._inner.append(el('p', 'deck-sub', meta.subtitle));
+    if (meta.tags && meta.tags.length) { const t = el('div', 'deck-tags'); meta.tags.forEach(x => t.append(el('span', null, x))); s._inner.append(t); }
+    return s;
+  }
+
+  function render(keepSrc) {
+    const built = buildSlides();
+    deck.innerHTML = ''; built.forEach(x => deck.append(x)); stage.innerHTML = '';
+    slides = built;
+    if (window.hljs) deck.querySelectorAll('pre code').forEach(c => hljs.highlightElement(c));
+    if (keepSrc != null) {   // after a resize, stay on the slide that holds the same content
+      let idx = 0; slides.forEach((x, k) => { if (+x.dataset.src <= keepSrc) idx = k; }); current = idx;
+    }
+    go(current);
+  }
+
+  function go(n) {
+    current = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((x, k) => x.classList.toggle('active', k === current));
+    bar.querySelector('.count').textContent = (current + 1) + ' / ' + slides.length;
+    bar.querySelector('.prev').disabled = current === 0;
+    bar.querySelector('.next').disabled = current === slides.length - 1;
+    progress.style.width = ((current + 1) / slides.length * 100) + '%';
+    history.replaceState(null, '', '#' + (current + 1));
+  }
+
+  // ---------- Load a post ----------
+  async function loadPost(path) {
+    const url = new URL(path, location.origin);
+    if (url.origin !== location.origin) throw new Error('Only posts from this blog can be shown.');
+    meta = POSTS.find(p => p.url === url.pathname);
+    if (!meta) throw new Error('No post found at ' + url.pathname + '.');
+
+    const res = await fetch(url.pathname);
+    if (!res.ok) throw new Error('The post page returned HTTP ' + res.status + '.');
+    const doc = new DOMParser().parseFromString(await res.text(), 'text/html');
+    const content = doc.querySelector('.post-content');
+    if (!content) throw new Error('The post page has no .post-content block.');
+
+    // Make links and images absolute so they work from /slides/.
+    content.querySelectorAll('[src]').forEach(n => n.setAttribute('src', new URL(n.getAttribute('src'), url).href));
+    content.querySelectorAll('a[href]').forEach(n => n.setAttribute('href', new URL(n.getAttribute('href'), url).href));
+    sourceNodes = [...content.children].map(n => document.importNode(n, true));
+    if (window.noOrphans) { const box = el('div', 'post-content'); sourceNodes.forEach(n => box.append(n)); noOrphans(box); sourceNodes.forEach(n => n.remove()); }
+    // Code as plain text + language class; highlighting happens per slide after splitting.
+    sourceNodes.forEach(n => n.querySelectorAll('pre code').forEach(c => {
+      c.textContent = c.textContent;
+      const lang = (c.closest('[class*="language-"]')?.className.match(/language-([\w-]+)/) || [])[1];
+      c.className = lang && window.hljs && hljs.getLanguage(lang) ? 'language-' + lang : '';
+    }));
+
+    // Image sizes must be known before measuring: preload, then pin width/height so layout
+    // reserves the right space even before the copy in a slide finishes loading.
+    const imgs = sourceNodes.flatMap(n => n.tagName === 'IMG' ? [n] : [...n.querySelectorAll('img')]);
+    await Promise.all(imgs.map(img => new Promise(r => {
+      const i = new Image();
+      i.onload = () => { img.setAttribute('width', i.naturalWidth); img.setAttribute('height', i.naturalHeight); r(); };
+      i.onerror = r; i.src = img.src; setTimeout(r, 8000);
+    })));
+    await document.fonts.ready;
+
+    document.title = meta.title + ' (slides) - {{ site.title }}';
+    document.documentElement.style.setProperty('--accent', ACCENT[meta.category] || 'var(--gold)');
+    bar.querySelector('.to-article').href = url.pathname;
+    bar.querySelector('.to-slides').href = location.pathname + location.search;
+    bar.querySelector('.where').textContent = meta.title;
+    bar.hidden = false;
+    current = Math.max(0, (parseInt(location.hash.slice(1), 10) || 1) - 1);
+    render();
+  }
+
+  // ---------- Controls ----------
+  bar.querySelector('.prev').addEventListener('click', () => go(current - 1));
+  bar.querySelector('.next').addEventListener('click', () => go(current + 1));
+  document.addEventListener('keydown', e => {
+    if (!slides.length || e.metaKey || e.ctrlKey || e.altKey) return;
+    const k = e.key;
+    if (k === 'ArrowRight' || k === 'PageDown' || (k === ' ' && !e.shiftKey)) { e.preventDefault(); go(current + 1); }
+    else if (k === 'ArrowLeft' || k === 'PageUp' || (k === ' ' && e.shiftKey)) { e.preventDefault(); go(current - 1); }
+    else if (k === 'Home') go(0);
+    else if (k === 'End') go(slides.length - 1);
+    else if (k === 'f' || k === 'F') { document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.(); }
+  });
+  let touchX = null;
+  deck.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+  deck.addEventListener('touchend', e => {
+    if (touchX == null) return;
+    const dx = e.changedTouches[0].clientX - touchX; touchX = null;
+    if (Math.abs(dx) > 50) go(current + (dx < 0 ? 1 : -1));
+  });
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    if (!slides.length) return;
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => render(+slides[current].dataset.src), 200);
+  });
+
+  // ---------- Start ----------
+  const wanted = new URLSearchParams(location.search).get('p');
+  if (!wanted) showPicker();
+  else loadPost(wanted).catch(err => {
+    const box = el('div', 'picker'), inner = el('div', 'picker-inner');
+    const back = el('a', null, 'Open the post list'); back.href = SLIDES_URL; back.style.color = 'var(--blue)';
+    inner.append(el('h1', null, 'Can’t show these slides'), el('p', null, err.message), back);
+    box.append(inner); deck.replaceWith(box);
+  });
+</script>
+</body>
+</html>

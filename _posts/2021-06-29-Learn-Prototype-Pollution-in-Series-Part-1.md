@@ -1,9 +1,13 @@
 ---
 layout: post
-title: Learn Prototype Pollution in Series - Part 1
+title: "Learn Prototype Pollution in Series - Part 1"
+subtitle: "JavaScript objects and prototype basics"
+date: 2021-06-29
 categories:
   - Bug Bounty
-tags: [prototype pollution]
+tags:
+  - prototype pollution
+description: "Part 1 of the Prototype Pollution series: JavaScript objects, constructors, properties, methods and prototypes."
 ---
 
 # Vulnerability Focus - Prototype Pollution - Part <span class="strike">1</span>
@@ -273,29 +277,27 @@ tags: [prototype pollution]
 * > *Every object can have another object as its prototype*
   > *Then the former object inherits all of its prototype's properties.*
   >
-  > *An object specifies its prototype via the internal property* `*[[Prototype]]*`
+  > *An object specifies its prototype via the internal property* `[[Prototype]]`
   >
-  > *The chain of objects connected by the* `*[[Prototype]]*` *property is called the* *prototype chain*
+  > *The chain of objects connected by the* `[[Prototype]]` *property is called the* *prototype chain*
 
   
 
 * > *The* `__proto__` *is an* [accessor property](http://www.javascripttutorial.net/javascript-objects/#accessor_property) *of the* `Object.prototype` *object.*
   >
-  > *It exposes the internal prototype linkage (* `[[Prototype]])`) *of an object through which it is accessed*
+  > *It exposes the internal prototype linkage (*`[[Prototype]]`*) of an object through which it is accessed*
 
-* > `**[[Prototype]]**`An object specifies its prototype via the internal property
+* > `[[Prototype]]` -> An object specifies its prototype via the internal property
   >
-  > `**__proto__**` brings direct access to `[[Prototype]]` to the language
+  > `__proto__` brings direct access to `[[Prototype]]` to the language
   >
-  > ```js
-  > **prototype**` is the ***object\*** that is used to build `__proto__` when you create an object with `new.
-  > ```
+  > `prototype` is the **object** that is used to build `__proto__` when you create an object with `new`.
   >
-  > `**prototype**` is not available on the instances themselves (or other objects), but only on the constructor functions.
+  > `prototype` is not available on the instances themselves (or other objects), but only on the constructor functions.
   >
-  > `**prototype**` is only available on functions since they are copied from `Function` and `Object,` but in anything else it is not. 
+  > `prototype` is only available on functions since they are copied from `Function` and `Object`, but in anything else it is not. 
   >
-  > However, `**__proto__**` is available everywhere.
+  > However, `__proto__` is available everywhere.
 
 
 

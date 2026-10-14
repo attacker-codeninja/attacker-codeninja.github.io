@@ -37,8 +37,18 @@
   {{ content }}
 </main>
 
+<footer class="site-footer">
+  <span>&copy; {{ site.time | date: "%Y" }} {{ site.author }}</span>
+  <nav aria-label="Footer links">
+    <a href="https://github.com/{{ site.social-network-links.github }}">GitHub</a>
+    <a href="https://twitter.com/{{ site.social-network-links.twitter }}">Twitter</a>
+    <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+  </nav>
+</footer>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="{{ '/assets/js/no-orphan.js' | relative_url }}"></script>
 
 </body>
 </html>

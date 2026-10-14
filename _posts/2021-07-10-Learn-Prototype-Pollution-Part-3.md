@@ -1,9 +1,13 @@
 ---
 layout: post
-title: Learn Prototype Pollution in Series - Part 3
+title: "Learn Prototype Pollution in Series - Part 3"
+subtitle: "Prototype chain, inheritance and a first look at pollution"
+date: 2021-07-10
 categories:
   - Bug Bounty
-tags: [prototype pollution]
+tags:
+  - prototype pollution
+description: "Part 3 of the Prototype Pollution series: how the prototype chain works, prototype inheritance and what prototype pollution is."
 ---
 
 
@@ -35,7 +39,7 @@ tags: [prototype pollution]
 >
 > 
 >
-> * In JAVA , classes have **constructor **
+> * In JAVA , classes have **constructor**
 > * In JavaScript, a Function can serve as a constructor 
 > * We use **Capital Letter** for naming our Constructor Function
 
@@ -47,7 +51,7 @@ tags: [prototype pollution]
 > >
 > > After that we can create **instances** of **A and/or B**
 >
-> > In JavaScript => an Object can **inherit** from other object via a **Property  ** => which is called **Prototype **
+> > In JavaScript => an Object can **inherit** from other object via a **Property** => which is called **Prototype**
 >
 > > Example => 
 > >
@@ -82,7 +86,7 @@ tags: [prototype pollution]
 > var emp = new Employee("Aakash", "Senior Security Engineer");
 > ```
 >
-> > Now, If a JS Engine won't find a property in **Employee **, it will keep looking in its prototype chain -> **Person** and **Object**
+> > Now, If a JS Engine won't find a property in **Employee**, it will keep looking in its prototype chain -> **Person** and **Object**
 >
 > > There is also another property `__proto__` which came in ECMA6
 
@@ -142,7 +146,7 @@ tags: [prototype pollution]
 
 > So, prototype object is actually the **class** that is used to create the object
 >
-> And to see which class was  used to create a particular object ->  we can essentially check the name of the **constructor **
+> And to see which class was  used to create a particular object ->  we can essentially check the name of the **constructor**
 >
 > -> HOW ? -> ``__proto__``
 >
@@ -245,7 +249,7 @@ __proto__: Object
 
 > #### Why I wrote above things ?
 >
-> To learn -> how to access prototype object and see what's available there and check the name of the **constructor **
+> To learn -> how to access prototype object and see what's available there and check the name of the **constructor**
 >
 >
 > we can do this -> `arr.__proto__`  

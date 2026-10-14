@@ -1,10 +1,13 @@
 ---
 layout: post
-title: My Notes on Code-Review from Bug Bounty Bootcamp 
-subtitle: Code Review Notes
+title: "My Notes on Code-Review from Bug Bounty Bootcamp"
+subtitle: "Code Review Notes"
+date: 2021-08-24
 categories:
   - Bug Bounty
-tags: [code review]
+tags:
+  - code review
+description: "Notes on Chapter 22 of Bug Bounty Bootcamp: the fast grep approach and the detailed approach to source code review."
 ---
 
 # Bug Bounty Bootcamp Notes - Chapter 22 : CONDUCTING CODE <span class="strike">REVIEWS</span>
@@ -138,7 +141,7 @@ tags: [code review]
   * Look for **filepaths** to configuration files in source code as well
   * Configuration files often have the file extensions 
     * **.conf, .env, .cnf, .cfg, .cf, .ini, .sys, or .plist**
-* **Additional paths, deprecated endpoints, and endpoints **
+* **Additional paths, deprecated endpoints, and endpoints**
   * These are endpoints that users might not encounter when using the application normally.
   * But , If found by attacker =>  lead to vulnerabilities such as **authentication bypass** and **sensitive information leak**, depending on the exposed endpoint.
   * search for strings and characters that indicate URLs like

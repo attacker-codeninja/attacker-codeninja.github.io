@@ -1,9 +1,13 @@
 ---
 layout: post
-title: Learn Prototype Pollution in Series - Part 4
+title: "Learn Prototype Pollution in Series - Part 4"
+subtitle: "The attack, and __proto__ vs prototype"
+date: 2021-07-18
 categories:
   - Bug Bounty
-tags: [prototype pollution]
+tags:
+  - prototype pollution
+description: "Part 4 of the Prototype Pollution series: how the attack works, its impact, and the difference between __proto__ and prototype."
 ---
 
 
@@ -54,9 +58,9 @@ tags: [prototype pollution]
 >
 > * Overwriting the prototype of a default javascript object is considered a bad practice for a long time
 >
-> * If the **prototype ** modified by attacker -> then it is **Prototype  Pollution**
+> * If the **prototype** modified by attacker -> then it is **Prototype  Pollution**
 >
->   * It happens due to some unsafe ***merge\***, ***clone\***, ***extend\*** and ***path assignment\*** operations on JSON objects obtained through user inputs.
+>   * It happens due to some unsafe **merge**, **clone**, **extend** and **path assignment** operations on JSON objects obtained through user inputs.
 >
 >   * So, we need to make a note of these operations
 >
@@ -124,7 +128,7 @@ tags: [prototype pollution]
 
 
 
-## Difference between `__proto_` and <span class="strike">prototype</span>
+## Difference between `__proto__` and <span class="strike">prototype</span>
 
 
 
@@ -140,8 +144,8 @@ tags: [prototype pollution]
 >   * Such all its **children**  have access to these members (properties, methods) as well
 > * So, **prototype** is just a property  on every function in JavaScript  with JS Engine adds for us.
 > * Inheritance vs Delegation 
->   * **Inheritance **  -> COPY properties FROM
->   * **Delegation **  ->  LINK properties TO
+>   * **Inheritance**  -> COPY properties FROM
+>   * **Delegation**  ->  LINK properties TO
 >   * All Objects ultimately **delegate** to **Object.prototype**
 >
 > 
@@ -150,9 +154,9 @@ tags: [prototype pollution]
 > >
 > > `__proto__` -> property of all objects [**except  Object.create(null)**]
 > >
-> > **prototype ** -> property of all  **constructor ** functions 
+> > **prototype** -> property of all  **constructor** functions 
 > >
-> > **constructor ** -> property of all  **prototype ** objects 
+> > **constructor** -> property of all  **prototype** objects 
 > >
 > >
 > > i.e ->
@@ -280,7 +284,7 @@ tags: [prototype pollution]
 >
 > 
 >
-> > prototype chain as a chain of ***command\*** request. 
+> > prototype chain as a chain of **command** request. 
 >
 > > Its a chain that links you to where to go in other to get your requests answered. 
 >

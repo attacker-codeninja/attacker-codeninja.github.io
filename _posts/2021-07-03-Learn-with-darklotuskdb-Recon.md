@@ -1,9 +1,14 @@
 ---
 layout: post
-title: Youtube Notes - Learn-with-darklotuskdb-Recon
+title: "Youtube Notes - Learn-with-darklotuskdb-Recon"
+subtitle: "Recon notes from darklotuskdb"
+date: 2021-07-03
 categories:
   - Bug Bounty
-tags: [recon, notes]
+tags:
+  - recon
+  - notes
+description: "Notes on recon with darklotuskdb: subdomain enumeration, Shodan and Spyse recon, open redirect and SSRF tips."
 ---
 
 ## Subdomain <span class="strike">Enumeration</span>

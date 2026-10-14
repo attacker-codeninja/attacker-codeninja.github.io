@@ -1,10 +1,13 @@
 ---
 layout: post
-title: My Notes on OWASP Top 10 for API from Kontra website
-subtitle: Kontra OWASP Top 10 for API - Notes
+title: "My Notes on OWASP Top 10 for API from Kontra website"
+subtitle: "Kontra OWASP Top 10 for API - Notes"
+date: 2021-08-18
 categories:
   - Bug Bounty
-tags: [api]
+tags:
+  - api
+description: "My notes on the OWASP Top 10 for API lessons from Kontra, with test ideas and mitigations."
 ---
 
 
@@ -95,7 +98,7 @@ tags: [api]
 >       * Is there no protection for **clickjacking** ? Like  Is **x-frame-options** present or not in Request Header
 >       * We can make  **Malicious HTML Page**
 >         * Where, we need to put a **button** to lure **victim to click on that** [**accept**]
->         * And in **iframe** => we will put link of **disable 2fa verification ** => which is actually **hidden from victim**
+>         * And in **iframe** => we will put link of **disable 2fa verification** => which is actually **hidden from victim**
 
 * FIX : -> Must be protection there like =>
 >     * X-Frame-Options  OR `Content-Security-Policy` header

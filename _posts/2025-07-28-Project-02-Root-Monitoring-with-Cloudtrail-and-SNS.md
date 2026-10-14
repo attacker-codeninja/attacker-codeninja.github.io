@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Project 02: Root Account Monitoring with CloudTrail and SNS Alerts"
+subtitle: "Setting up real-time alerts like a Cloud Security Engineer"
 date: 2025-07-28
 categories:
   - AWS Projects
@@ -11,12 +12,12 @@ tags:
   - Monitoring
   - Alerts
   - IAM
-description: A beginner-friendly AWS project to detect and alert on root account usage using CloudTrail, EventBridge, and SNS. Learn why root access is risky and how to monitor it securely.
+description: "A beginner-friendly AWS project to detect and alert on root account usage using CloudTrail, EventBridge, and SNS. Learn why root access is risky and how to monitor it securely."
 ---
 
 ![](/assets/img/project-2-root-account-monitoring/your-header-image.png)
 
-# 🔐 Project 2: monitoring/ AWS Root Account Activity with CloudTrail + SNS — Guided by a Security <span class="strike">Engineer</span>
+# 🔐 Project 2: Monitoring AWS Root Account Activity with CloudTrail + SNS — Guided by a Security <span class="strike">Engineer</span>
 
 
 This blog is all about - Setting Up Real-Time Alerts Like a Cloud Security Engineer
@@ -87,7 +88,7 @@ Here’s what we’ll use to make our alert system:
 
 ---
 
-## 🛠️ Step-by-Step Setup: Root Account monitoring/ in <span class="strike">AWS</span>
+## 🛠️ Step-by-Step Setup: Root Account Monitoring in <span class="strike">AWS</span>
 
 > Don't worry, each step includes what and _why_ we’re doing it. ❤️
 
@@ -254,7 +255,7 @@ We’re not making that mistake. 😉 You’ll get alerted within seconds of a r
 
 ---
 
-### 📡 Step 4: Create CloudWatch Rule <span class="strike">(EventBridge</span>)
+### 📡 Step 4: Create CloudWatch Rule (<span class="strike">EventBridge</span>)
 
 We now tell AWS:  
 **“If anyone logs in using the root user, send me an alert.”**
@@ -294,7 +295,7 @@ Here’s how AWS explains it:
 
 ##### 🚧 Why This Matters for Security Engineers
 
-If you're monitoring/ root account usage (like we are in this project), you'll often find old blogs telling you to:
+If you're monitoring root account usage (like we are in this project), you'll often find old blogs telling you to:
 
 > "Create a CloudWatch Event Rule for root login."
 
@@ -318,7 +319,7 @@ Why AWS Shows Both CloudWatch and EventBridge?
 - **EventBridge** now handles **event rules and routing**, which **used to be called CloudWatch Events**.
     
 
-So both services exist for different **monitoring/ and response purposes**.
+So both services exist for different **monitoring and response purposes**.
 
 
 So ->
@@ -375,7 +376,7 @@ Let's first know about this and which one we need for this time
     
     - EventBridge + Lambda can **auto-revert misconfigurations** (e.g., make an S3 bucket private again if someone makes it public).
         
-3. **Audit & monitoring/**
+3. **Audit & Monitoring**
     
     - Forward events to S3 or CloudWatch Logs for **security auditing**.
         
@@ -408,7 +409,7 @@ We Selected **Rule with an Event Pattern** - Bt Why ?
 > Trigger this rule **only when a specific event** happens
 > So This is for **event-driven automation**
 > When that exact pattern happens, AWS triggers the rule.
-> **This is what you want for _security monitoring/_** - listen for specific activities like **root account usage**.
+> **This is what you want for _security monitoring_** - listen for specific activities like **root account usage**.
 
 
 But What about **Rule with a Schedule** ?
@@ -735,7 +736,7 @@ This wasn’t about fancy tools. It was about building **the one alarm that matt
 
 > **Someone just entered the kingdom.**
 
-We leveraged **CloudTrail**, **SNS**, and **EventBridge Rules** to set up a low-cost, high-value root monitoring/ pipeline.
+We leveraged **CloudTrail**, **SNS**, and **EventBridge Rules** to set up a low-cost, high-value root monitoring pipeline.
 
 ## ✅ What We <span class="strike">Built</span>
 
