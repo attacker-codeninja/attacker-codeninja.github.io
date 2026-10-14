@@ -10,4 +10,7 @@ ehthumbs.db
 
 Gemfile.lock
 
+# personal Obsidian vault settings, not part of the blog
+.obsidian/
+
 beautiful-jekyll-theme-*.gem
