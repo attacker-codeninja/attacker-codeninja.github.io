@@ -1,0 +1,161 @@
+/* Notebook theme: second look for the blog, picked with the theme switch (assets/js/theme.js).
+   Paper page on a desk, handwritten headings, highlighter marks, colour-headed tables, labelled code.
+   Rules sit under :where(...) so they weigh the same as base.css and callout cards still win inside them.
+   Fonts (Kalam, Caveat, Nunito, JetBrains Mono) are loaded by theme.js only when this theme is on. */
+
+:root[data-theme="notebook"]{
+  --bg-base:#e8e1d3; --bg-panel:#fffdf6; --bg-panel-2:#f3ede0; --border:#d6ccb8;
+  --text-primary:#1f2933; --text-dim:#52606d;
+  --gold:#a15c07; --red:#c81e1e; --green:#15803d; --blue:#1d4ed8;
+  --mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --sans:'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --hand:'Kalam', 'Caveat', 'Comic Sans MS', cursive;
+  --ink:#1f2933; --paper:#fffdf6; --rule:#d9e4ef; --margin:#f2a7a7; --pen-red:#d62828; --pen-blue:#1d4ed8;
+  --hl-yellow:#fff176; --hl-green:#b9f6ca; --hl-pink:#ffb3d1; --hl-blue:#b3e5fc; --hl-orange:#ffd59e;
+  color-scheme:light;
+}
+
+/* ---------- desk + paper page ---------- */
+:where(html[data-theme="notebook"]) body{
+  background-color:var(--bg-base);
+  background-image:radial-gradient(rgba(0,0,0,.035) 1px, transparent 1px);
+  background-size:6px 6px;
+}
+:where(html[data-theme="notebook"]) main{
+  position:relative; width:calc(100% - 32px); max-width:1060px; margin:28px auto 40px;
+  padding:40px 48px 60px 108px;
+  background:
+    linear-gradient(90deg, transparent 72px, var(--margin) 72px, var(--margin) 74px, transparent 74px),
+    linear-gradient(transparent 31px, var(--rule) 31px) 0 0 / 100% 32px;
+  background-color:var(--paper);
+  border-radius:6px 14px 14px 6px;
+  box-shadow:0 1px 0 #fff inset, 0 18px 40px rgba(60,40,10,.18), 0 2px 6px rgba(60,40,10,.12);
+}
+:where(html[data-theme="notebook"]) main::before{   /* spiral holes */
+  content:""; position:absolute; left:20px; top:0; bottom:0; width:26px; pointer-events:none;
+  background:radial-gradient(circle at 13px 13px, var(--bg-base) 7px, #b9ae97 8px, transparent 9px) 0 12px/26px 44px repeat-y;
+}
+
+/* ---------- header / footer ---------- */
+:where(html[data-theme="notebook"]) header{ background:rgba(255,253,246,.92); border-bottom:2px dashed #cfc6b3; }
+:where(html[data-theme="notebook"]) .category-nav{ font-family:var(--hand); font-size:18px; text-transform:none; letter-spacing:0; }
+:where(html[data-theme="notebook"]) .category-nav a.active{ color:var(--pen-red); border-bottom-color:var(--pen-red); }
+:where(html[data-theme="notebook"]) .site-footer{ border-top:2px dashed #cfc6b3; }
+
+/* ---------- headings ---------- */
+:where(html[data-theme="notebook"]) :is(h1.post-title, .post-content h1, .post-content h2, .post-content h3, .post-content h4,
+  .post-list-item h2, .cat-card h2, .deck-title){ font-family:var(--hand); letter-spacing:0; }
+:where(html[data-theme="notebook"]) h1.post-title{ font-size:clamp(34px, 5vw, 52px); }
+:where(html[data-theme="notebook"]) .post-content h2{ display:table; position:relative; margin-bottom:.9em; }
+:where(html[data-theme="notebook"]) .post-content h2::after{   /* red scribble underline */
+  content:""; position:absolute; left:-4px; right:-10px; bottom:-10px; height:12px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8 C 60 2, 120 11, 180 5 S 270 3, 298 7' stroke='%23d62828' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+}
+:where(html[data-theme="notebook"]) .post-content h3{ color:var(--pen-blue); }
+/* big inline-styled page titles (home hero, category pages) */
+:where(html[data-theme="notebook"]) main [style*="font-size: clamp(34px"]{ font-family:var(--hand) !important; letter-spacing:0 !important; }
+
+/* ---------- body text ---------- */
+:where(html[data-theme="notebook"]) .post-content p,
+:where(html[data-theme="notebook"]) .post-content ul,
+:where(html[data-theme="notebook"]) .post-content ol{ font-size:18px; }
+:where(html[data-theme="notebook"]) .post-content ul,
+:where(html[data-theme="notebook"]) .post-content ol{
+  background:rgba(255,255,255,.7); border:1.5px solid #cfc6b3; border-radius:14px 6px 14px 6px; box-shadow:3px 3px 0 #e2d9c6;
+}
+:where(html[data-theme="notebook"]) .post-content :is(ul, ol) :is(ul, ol){ background:transparent; border:0; box-shadow:none; }
+:where(html[data-theme="notebook"]) .post-content li::marker{ color:var(--pen-red); }
+:where(html[data-theme="notebook"]) .post-content a{ color:var(--pen-blue); text-decoration:underline; text-decoration-color:rgba(29,78,216,.35); text-underline-offset:3px; }
+
+/* ---------- highlighter marks (fixed-px soft ends, so long marks are covered end to end) ---------- */
+:where(html[data-theme="notebook"]) :is(.post-content mark, .mk-key, .mk-good, .mk-bad, .mk-link){
+  color:inherit; padding:0 4px; border-radius:3px;
+  background:linear-gradient(100deg, transparent 0 3px, var(--hl, var(--hl-yellow)) 5px calc(100% - 5px), transparent calc(100% - 3px)) no-repeat 0 60% / 100% 78%;
+  -webkit-box-decoration-break:clone; box-decoration-break:clone;
+}
+:where(html[data-theme="notebook"]) .mk-good{ --hl:var(--hl-green); }
+:where(html[data-theme="notebook"]) .mk-bad{ --hl:var(--hl-pink); }
+:where(html[data-theme="notebook"]) .mk-link{ --hl:var(--hl-blue); }
+:where(html[data-theme="notebook"]) .strike{ color:var(--pen-red); }
+
+/* ---------- plain quotes: a soft sticky note ---------- */
+:where(html[data-theme="notebook"]) .post-content blockquote{
+  font-family:var(--sans); font-size:18px; color:var(--ink);
+  background:#fffbe6; border-left:4px solid #f2c94c; border-radius:4px 12px 12px 4px;
+  padding:12px 18px; box-shadow:0 6px 14px rgba(60,40,10,.08);
+}
+:where(html[data-theme="notebook"]) .post-content blockquote strong{ color:var(--pen-red); }
+
+/* ---------- tables: card with colour-coded column headers ---------- */
+:where(html[data-theme="notebook"]) .post-content table{
+  border-collapse:separate; border-spacing:0; margin:18px 0 24px; font-size:16px;
+  background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 0 0 2px var(--ink);
+}
+:where(html[data-theme="notebook"]) .post-content th{
+  font-family:var(--hand); font-size:19px; font-weight:700; letter-spacing:0; text-transform:none; color:var(--ink);
+  background:var(--hl-yellow); border-bottom:2px solid var(--ink); padding:10px 12px;
+}
+:where(html[data-theme="notebook"]) .post-content th:nth-child(3){ background:var(--hl-blue); }
+:where(html[data-theme="notebook"]) .post-content th:nth-child(4){ background:var(--hl-green); }
+:where(html[data-theme="notebook"]) .post-content th:nth-child(5){ background:var(--hl-pink); }
+:where(html[data-theme="notebook"]) .post-content td{ padding:9px 12px; border-bottom:0; border-top:1px dashed #cbd2d9; color:var(--ink); }
+:where(html[data-theme="notebook"]) .post-content tr:first-child td{ border-top:0; }
+:where(html[data-theme="notebook"]) .post-content td:first-child{ font-weight:800; }
+
+/* ---------- code: dark slab, hard shadow, language sticker ---------- */
+:where(html[data-theme="notebook"]) .post-content code{ background:#f1ede2; border:0; color:var(--ink); }
+:where(html[data-theme="notebook"]) .post-content pre{
+  background:#1e2530; border:0; border-radius:12px; padding:16px 18px; color:#e6edf3; line-height:1.6;
+  box-shadow:5px 5px 0 rgba(31,41,51,.25);
+}
+:where(html[data-theme="notebook"]) .post-content pre code{ background:none; color:inherit; font-size:15px; }
+:where(html[data-theme="notebook"]) .post-content div.highlighter-rouge[data-lang]{ position:relative; }
+:where(html[data-theme="notebook"]) .post-content div.highlighter-rouge[data-lang]::before{
+  content:attr(data-lang); position:absolute; top:8px; right:10px; z-index:1;
+  background:var(--hl-yellow); color:var(--ink); border:1.5px solid var(--ink); border-radius:8px;
+  font-family:var(--hand); font-size:15px; line-height:1.5; padding:0 10px;
+}
+
+/* ---------- cards, chips, switches ---------- */
+:where(html[data-theme="notebook"]) :is(.cat-card, .post-list-item, .post-nav-link){
+  border-radius:16px 6px 16px 6px; box-shadow:4px 4px 0 rgba(31,41,51,.18);
+}
+:where(html[data-theme="notebook"]) .post-nav-link{ background:#fff; border:2px solid var(--ink); }
+:where(html[data-theme="notebook"]) .tag-chip{ background:#fff; border-color:#cfc6b3; color:var(--ink); }
+:where(html[data-theme="notebook"]) .view-switch{ background:#fff; border:2px solid var(--ink); border-radius:10px 4px 10px 4px; box-shadow:2px 2px 0 var(--ink); }
+:where(html[data-theme="notebook"]) .view-switch :is(a, button){ color:var(--text-dim); }
+:where(html[data-theme="notebook"]) .view-switch :is(a[aria-current], button[aria-pressed="true"]){ background:var(--hl-yellow); color:var(--ink); }
+
+/* ---------- slides (slides/index.html) ---------- */
+:root[data-theme="notebook"] .deck .slide{
+  background:
+    linear-gradient(90deg, transparent 56px, var(--margin) 56px, var(--margin) 58px, transparent 58px),
+    linear-gradient(transparent 31px, var(--rule) 31px) 0 0 / 100% 32px;
+  background-color:var(--paper);
+}
+:root[data-theme="notebook"] .bar{ background:rgba(255,253,246,.94); border-top:2px dashed #cfc6b3; }
+:root[data-theme="notebook"] .bar button{ background:var(--paper); border:2px solid var(--ink); border-radius:12px 5px 12px 5px; box-shadow:2px 2px 0 var(--ink); color:var(--ink); }
+:root[data-theme="notebook"] .bar .view-switch button{ background:none; border:0; box-shadow:none; border-radius:6px; color:var(--text-dim); }
+:root[data-theme="notebook"] .bar .view-switch button[aria-pressed="true"]{ background:var(--hl-yellow); color:var(--ink); }
+:root[data-theme="notebook"] .progress{ height:5px; background:linear-gradient(90deg, var(--hl-yellow), var(--hl-orange)); }
+
+/* ---------- phones ---------- */
+@media (max-width:640px){
+  :where(html[data-theme="notebook"]) main{ width:calc(100% - 16px); margin:16px auto 24px; padding:24px 16px 40px 52px; }
+  :where(html[data-theme="notebook"]) main{
+    background:
+      linear-gradient(90deg, transparent 40px, var(--margin) 40px, var(--margin) 42px, transparent 42px),
+      linear-gradient(transparent 31px, var(--rule) 31px) 0 0 / 100% 32px;
+    background-color:var(--paper);
+  }
+  :where(html[data-theme="notebook"]) main::before{ left:6px; }
+  :where(html[data-theme="notebook"]) .post-content p,
+  :where(html[data-theme="notebook"]) .post-content ul,
+  :where(html[data-theme="notebook"]) .post-content ol{ font-size:17px; }
+}
+
+/* ---------- print: plain paper ---------- */
+@media print{
+  :where(html[data-theme="notebook"]) main{ background:#fff; box-shadow:none; padding:0 8px; margin:0; width:auto; }
+  :where(html[data-theme="notebook"]) main::before{ display:none; }
+}

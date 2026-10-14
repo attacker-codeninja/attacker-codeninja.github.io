@@ -1,0 +1,25 @@
+/* obsidian.css - looks for what obsidian.js adds to posts: ==highlight==, #tags, diagrams, inline SVG. */
+
+/* ==highlight==: soft gold marker on Dark; Notebook's marker style comes from notebook.css */
+:root:not([data-theme="notebook"]) .post-content mark:not([class]){ background:rgba(232,176,75,.24); color:var(--text-primary); font-weight:inherit; padding:0 3px; }
+
+.md-tag{ display:inline-block; font-family:var(--mono); font-size:.82em; line-height:1.5; padding:0 8px; border-radius:999px;
+  color:var(--gold); background:color-mix(in srgb, var(--gold) 14%, transparent); border:1px solid color-mix(in srgb, var(--gold) 35%, transparent); }
+
+/* Mermaid diagrams */
+.mermaid-box{ margin:22px 0; padding:18px; text-align:center; overflow-x:auto;
+  background:var(--bg-panel); border:1px solid var(--border); border-radius:12px; }
+.post-content .mermaid-box pre.mermaid{ background:none; border:0; padding:0; margin:0; box-shadow:none; color:var(--text-dim); text-align:left; white-space:pre-wrap; }
+.post-content .mermaid-box pre.mermaid[data-processed]{ text-align:center; }
+.mermaid-box svg{ max-width:100%; height:auto; }
+:where(html[data-theme="notebook"]) .mermaid-box{ background:#fff; border:2px solid var(--ink); border-radius:14px 6px 14px 6px; box-shadow:4px 4px 0 rgba(31,41,51,.18); }
+
+/* Inline SVG images */
+.md-svg{ display:inline-block; max-width:100%; vertical-align:middle; }
+.md-svg svg{ display:block; max-width:100%; height:auto; }
+
+/* Slides: drawings stay whole and fit the slide */
+.slide .post-content .mermaid-box svg, .slide .post-content .md-svg svg{ max-height:56vh; width:auto; margin:0 auto; }
+.slide .post-content img[data-broken]{ width:72px; height:32px; max-height:none; }
+
+@media print{ .mermaid-box{ break-inside:avoid; } }

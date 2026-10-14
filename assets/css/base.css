@@ -503,9 +503,14 @@ header > div:first-child{ min-width:0; }
 
 /* Reading view switch (Article | Slides), used on posts and in the slides bar */
 .view-switch{ display:inline-flex; flex:0 0 auto; margin-left:auto; padding:3px; border:1px solid var(--border); border-radius:8px; background:var(--bg-panel); font-family:var(--mono); font-size:12px; }
-.view-switch a{ padding:5px 12px; border-radius:6px; color:var(--text-dim); text-decoration:none; white-space:nowrap; transition:color 0.2s ease, background 0.2s ease; }
-.view-switch a:hover, .view-switch a:focus-visible{ color:var(--text-primary); }
-.view-switch a[aria-current]{ background:var(--bg-panel-2); color:var(--gold); }
+.view-switch a, .view-switch button{ padding:5px 12px; border-radius:6px; color:var(--text-dim); text-decoration:none; white-space:nowrap; transition:color 0.2s ease, background 0.2s ease; }
+.view-switch button{ font:inherit; background:none; border:0; cursor:pointer; }
+.view-switch a:hover, .view-switch a:focus-visible, .view-switch button:hover, .view-switch button:focus-visible{ color:var(--text-primary); }
+.view-switch a[aria-current], .view-switch button[aria-pressed="true"]{ background:var(--bg-panel-2); color:var(--gold); }
+
+/* Theme switch (Dark | Notebook) sits in the header's brand row; the row wraps on phones */
+.theme-switch{ margin-left:0; }
+@media (max-width:640px){ header > div:first-child{ flex-wrap:wrap; row-gap:10px; } }
 
 /* No lone word on the last line of titles and headings (balanced line breaks) */
 h1.post-title, .post-content h1, .post-content h2, .post-content h3, .post-content h4,

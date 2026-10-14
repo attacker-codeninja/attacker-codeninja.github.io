@@ -7,7 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
 
+  <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
   <link rel="stylesheet" href="{{ '/assets/css/base.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/notebook.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/callouts.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/obsidian.css' | relative_url }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
   
 </head>
@@ -23,6 +27,10 @@
       <span class="light"></span>
       <span class="label">LIVE</span>
     </div>
+    <span class="view-switch theme-switch" role="group" aria-label="Theme">
+      <button type="button" data-theme-set="dark">Dark</button>
+      <button type="button" data-theme-set="notebook">Notebook</button>
+    </span>
   </div>
   
   <nav class="category-nav">
@@ -46,9 +54,12 @@
   </nav>
 </footer>
 
+{% include site-data.html %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
 <script src="{{ '/assets/js/no-orphan.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/obsidian.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/callouts.js' | relative_url }}"></script>
+<script>mdCode(document);</script>
 
 </body>
 </html>

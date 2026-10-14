@@ -9,7 +9,11 @@ sitemap: false
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Slides - {{ site.title }}</title>
+  <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
   <link rel="stylesheet" href="{{ '/assets/css/base.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/notebook.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/callouts.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/obsidian.css' | relative_url }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
   <style>
     /* Slide view experiment: renders an existing post as slides. Theme tokens come from base.css. */
@@ -44,6 +48,9 @@ sitemap: false
     .slide .post-content pre code.hljs { padding: 0; overflow: visible; }
     .slide .cont-item { list-style: none; }   /* an item continued from the previous slide */
     .slide .continued { font-family: var(--mono); font-size: 13px; color: var(--text-dim); margin-bottom: 14px; }
+    .slide .co, .slide .co .co-b { font-size: clamp(16px, 0.85rem + 0.45vw, 21px); }
+    .slide details.co > summary { cursor: default; }   /* toggles are shown open in slides */
+    .source-stage { position: absolute; left: -300vw; top: 0; width: min(1100px, 100vw); visibility: hidden; pointer-events: none; }   /* laid out, so diagrams get real sizes */
 
     /* Title slide */
     .title-slide .eyebrow { flex-wrap: wrap; }
@@ -65,9 +72,11 @@ sitemap: false
     .bar .count { color: var(--text-primary); white-space: nowrap; }
     .bar button { font: inherit; color: var(--text-primary); background: var(--bg-panel-2); border: 1px solid var(--border); border-radius: 6px; padding: 7px 12px; cursor: pointer; }
     .bar button:disabled { opacity: .35; cursor: default; }
+    .bar .view-switch button { background: none; border: 0; padding: 5px 12px; }   /* theme switch keeps the segmented look */
+    .bar .view-switch button[aria-pressed="true"] { background: var(--bg-panel-2); }
     .bar :focus-visible, .picker :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
     /* Phones: the switch and arrows always stay; Home is one tap away via All slides, position shows in the top line */
-    @media (max-width: 640px) { .bar { gap: 10px; font-size: 12px; } .bar .where, .bar .to-home { display: none; } .bar .count { margin-left: auto; } .bar button { padding: 7px 10px; } }
+    @media (max-width: 640px) { .bar .theme-switch { display: none; } .bar { gap: 10px; font-size: 12px; } .bar .where, .bar .to-home { display: none; } .bar .count { margin-left: auto; } .bar button { padding: 7px 10px; } }
     @media (max-width: 400px) { .bar { gap: 8px; padding: 0 10px; } .bar .count { display: none; } .bar .view-switch { margin-left: auto; } .bar .view-switch a { padding: 5px 9px; } }
 
     /* Post picker (no ?p=) */
@@ -99,6 +108,10 @@ sitemap: false
     <a class="to-article" href="#">Article</a>
     <a class="to-slides" href="#" aria-current="page">Slides</a>
   </span>
+  <span class="view-switch theme-switch" role="group" aria-label="Theme">
+    <button type="button" data-theme-set="dark">Dark</button>
+    <button type="button" data-theme-set="notebook">Notebook</button>
+  </span>
   <span class="where"></span>
   <span class="count"></span>
   <button class="prev" type="button" aria-label="Previous slide">&larr;</button>
@@ -107,6 +120,9 @@ sitemap: false
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script src="{{ '/assets/js/no-orphan.js' | relative_url }}"></script>
+{% include site-data.html %}
+<script src="{{ '/assets/js/obsidian.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/callouts.js' | relative_url }}"></script>
 <script>
   // Post metadata from Jekyll (no post bodies; bodies are fetched from the built post pages).
   const POSTS = [{% for p in site.posts %}
@@ -120,7 +136,7 @@ sitemap: false
   const stage = document.querySelector('.measure');
   const bar = document.querySelector('.bar');
   const progress = document.querySelector('.progress');
-  let slides = [], current = 0, sourceNodes = [], meta = null;
+  let slides = [], current = 0, sourceNodes = [], meta = null, content = null;
 
   const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
 
@@ -183,6 +199,7 @@ sitemap: false
   // Inline content becomes words + whole inline elements; mixed content groups inline runs into a span.
   function toUnits(node) {
     if (node.tagName === 'TABLE') node._thead = node.querySelector(':scope > thead');
+    if (node.classList && node.classList.contains('co')) node._head = node.querySelector(':scope > .co-h');
     const kids = [...node.childNodes];
     kids.forEach(c => c.remove());
     const out = [];
@@ -221,6 +238,7 @@ sitemap: false
           if (sib === cur) continue;
           if (sib.nodeType === 3) { if (sib.textContent.trim()) return true; continue; }
           if (cur.parentNode === s._inner && (isHeading(sib) || sib.classList.contains('continued'))) continue;
+          if (sib.classList.contains('co-h')) continue;   // a callout's header is a heading too: its body fills this slide first
           return true;
         }
       }
@@ -287,6 +305,7 @@ sitemap: false
         if (node.tagName === 'LI') c.classList.add('cont-item');   // same item continues: no new bullet/number
         if (isOL) c.start = base + k;
         if (node._thead) { const th = node._thead.cloneNode(true); th.classList.add('repeat'); c.append(th); }   // tables repeat their header
+        if (node._head) { const h = node._head.cloneNode(true); h.classList.add('repeat'); c.append(h); }   // callouts repeat theirs
         makeParent().append(c);
         return c;
       };
@@ -325,7 +344,7 @@ sitemap: false
     const built = buildSlides();
     deck.innerHTML = ''; built.forEach(x => deck.append(x)); stage.innerHTML = '';
     slides = built;
-    if (window.hljs) deck.querySelectorAll('pre code').forEach(c => hljs.highlightElement(c));
+    if (window.hljs) deck.querySelectorAll('pre code[class*="language-"]').forEach(c => hljs.highlightElement(c));   // named languages only
     if (keepSrc != null) {   // after a resize, stay on the slide that holds the same content
       let idx = 0; slides.forEach((x, k) => { if (+x.dataset.src <= keepSrc) idx = k; }); current = idx;
     }
@@ -342,6 +361,27 @@ sitemap: false
     history.replaceState(null, '', '#' + (current + 1));
   }
 
+  // Fresh copies of the post: code as plain text + language class (coloured per slide after splitting),
+  // image sizes known before measuring.
+  async function takeSource() {
+    sourceNodes = [...content.children].map(n => n.cloneNode(true));
+    if (window.noOrphans) { const box = el('div', 'post-content'); sourceNodes.forEach(n => box.append(n)); noOrphans(box); sourceNodes.forEach(n => n.remove()); }
+    sourceNodes.forEach(n => n.querySelectorAll('pre code').forEach(c => {
+      if (c.closest('.mermaid-box')) return;
+      c.textContent = c.textContent; c.removeAttribute('data-highlighted');
+      const lang = (c.closest('[class*="language-"]')?.className.match(/language-([\w-]+)/) || [])[1];
+      c.className = lang && lang !== 'plaintext' && window.hljs && hljs.getLanguage(lang) ? 'language-' + lang : '';
+    }));
+    // Pin image sizes so layout reserves the right space even before the copy in a slide finishes loading.
+    const imgs = sourceNodes.flatMap(n => n.tagName === 'IMG' ? [n] : [...n.querySelectorAll('img')]);
+    await Promise.all(imgs.map(img => new Promise(r => {
+      const i = new Image();
+      i.onload = () => { img.setAttribute('width', i.naturalWidth); img.setAttribute('height', i.naturalHeight); r(); };
+      i.onerror = () => { img.dataset.broken = '1'; r(); };   // fixed size: measured and shown the same
+      i.src = img.src; setTimeout(r, 8000);
+    })));
+  }
+
   // ---------- Load a post ----------
   async function loadPost(path) {
     const url = new URL(path, location.origin);
@@ -352,29 +392,22 @@ sitemap: false
     const res = await fetch(url.pathname);
     if (!res.ok) throw new Error('The post page returned HTTP ' + res.status + '.');
     const doc = new DOMParser().parseFromString(await res.text(), 'text/html');
-    const content = doc.querySelector('.post-content');
-    if (!content) throw new Error('The post page has no .post-content block.');
+    const found = doc.querySelector('.post-content');
+    if (!found) throw new Error('The post page has no .post-content block.');
 
+    // The post stays laid out off screen: diagrams need real sizes, and are redrawn on theme change.
+    content = document.importNode(found, true);
+    content.classList.add('source-stage');
+    document.body.append(content);
     // Make links and images absolute so they work from /slides/.
     content.querySelectorAll('[src]').forEach(n => n.setAttribute('src', new URL(n.getAttribute('src'), url).href));
     content.querySelectorAll('a[href]').forEach(n => n.setAttribute('href', new URL(n.getAttribute('href'), url).href));
-    sourceNodes = [...content.children].map(n => document.importNode(n, true));
-    if (window.noOrphans) { const box = el('div', 'post-content'); sourceNodes.forEach(n => box.append(n)); noOrphans(box); sourceNodes.forEach(n => n.remove()); }
-    // Code as plain text + language class; highlighting happens per slide after splitting.
-    sourceNodes.forEach(n => n.querySelectorAll('pre code').forEach(c => {
-      c.textContent = c.textContent;
-      const lang = (c.closest('[class*="language-"]')?.className.match(/language-([\w-]+)/) || [])[1];
-      c.className = lang && window.hljs && hljs.getLanguage(lang) ? 'language-' + lang : '';
-    }));
-
-    // Image sizes must be known before measuring: preload, then pin width/height so layout
-    // reserves the right space even before the copy in a slide finishes loading.
-    const imgs = sourceNodes.flatMap(n => n.tagName === 'IMG' ? [n] : [...n.querySelectorAll('img')]);
-    await Promise.all(imgs.map(img => new Promise(r => {
-      const i = new Image();
-      i.onload = () => { img.setAttribute('width', i.naturalWidth); img.setAttribute('height', i.naturalHeight); r(); };
-      i.onerror = r; i.src = img.src; setTimeout(r, 8000);
-    })));
+    // Obsidian syntax and callouts as in the article; folded toggles are shown open (a slide shows its content).
+    if (window.mdExtras) await mdExtras(content);
+    if (window.makeCallouts) makeCallouts(content, url.pathname);
+    content.querySelectorAll('details').forEach(d => { d.open = true; });
+    if (window.mdDiagrams) await mdDiagrams(content);
+    await takeSource();
     await document.fonts.ready;
 
     document.title = meta.title + ' (slides) - {{ site.title }}';
@@ -407,11 +440,20 @@ sitemap: false
     if (Math.abs(dx) > 50) go(current + (dx < 0 ? 1 : -1));
   });
   let resizeTimer;
-  window.addEventListener('resize', () => {
+  const reflow = () => {
     if (!slides.length) return;
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => render(+slides[current].dataset.src), 200);
+  };
+  window.addEventListener('resize', reflow);
+  // Another theme or late web fonts change text size: measure and split again.
+  document.addEventListener('themechange', async () => {
+    await document.fonts.ready;
+    if (content && window.mdDiagrams && content.querySelector('pre.mermaid')) { await mdDiagrams(content); await takeSource(); }
+    reflow();
   });
+  if (document.fonts.addEventListener) document.fonts.addEventListener('loadingdone', reflow);
+  deck.addEventListener('click', e => { if (e.target.closest('summary')) e.preventDefault(); });
 
   // ---------- Start ----------
   const wanted = new URLSearchParams(location.search).get('p');

@@ -1,0 +1,192 @@
+/* Callouts: built by assets/js/callouts.js from Obsidian "> [!type]" blockquotes.
+   Neon cards on a dark base in both themes. Each variant only sets --c (edge, glow) and --c2 (title, icons). */
+
+.co{
+  --c:#3b82f6; --c2:#93c5fd;
+  --co-ink:#e6ebf5;                       /* text on the card; plain toggles inside a card read it */
+  --co-line:rgba(255,255,255,.12);
+  position:relative; overflow:hidden; margin:24px 0; padding:14px 18px; border-radius:14px;
+  background:linear-gradient(135deg, color-mix(in srgb, var(--c) 34%, #0b1020) 0%, #0b1020 78%);
+  border:2px solid var(--c); color:var(--co-ink); font-size:17px; line-height:1.6;
+  box-shadow:0 0 18px color-mix(in srgb, var(--c) 45%, transparent), inset 0 0 0 1px rgba(255,255,255,.05);
+}
+.co-h{
+  position:relative; z-index:1; display:flex; align-items:center; gap:10px; margin:0 0 6px;
+  font-family:var(--mono); font-weight:700; font-size:19px; line-height:1.3; color:var(--c2); text-wrap:balance;
+}
+.co.co-empty > .co-h{ margin:0; }
+.co-i{
+  width:32px; height:32px; flex:none; display:grid; place-items:center; border-radius:50%;
+  background:color-mix(in srgb, var(--c) 30%, transparent); border:1.5px solid var(--c);
+  font-family:var(--mono); font-size:15px; font-weight:600; color:var(--c2);
+}
+.co-t{ min-width:0; overflow-wrap:anywhere; }
+.co-b{ position:relative; z-index:1; padding-right:76px; }
+.co.co-noart > .co-b{ padding-right:0; }
+.co-art{
+  position:absolute; right:14px; bottom:8px; z-index:0; font-size:60px; line-height:1; opacity:.9; pointer-events:none;
+  filter:drop-shadow(0 0 12px color-mix(in srgb, var(--c) 70%, transparent));
+}
+
+/* Variants */
+.co-info{--c:#3b82f6;--c2:#93c5fd}       .co-note{--c:#8b5cf6;--c2:#c4b5fd}      .co-tip{--c:#22c55e;--c2:#86efac}
+.co-protip{--c:#84cc16;--c2:#bef264}     .co-success{--c:#10b981;--c2:#6ee7b7}   .co-warning{--c:#eab308;--c2:#fde047}
+.co-danger{--c:#ef4444;--c2:#fca5a5}     .co-important{--c:#f97316;--c2:#fdba74} .co-question{--c:#d946ef;--c2:#f0abfc}
+.co-example{--c:#0ea5e9;--c2:#7dd3fc}    .co-code{--c:#14b8a6;--c2:#5eead4}      .co-steps{--c:#7c3aed;--c2:#c4b5fd}
+.co-checklist{--c:#6366f1;--c2:#a5b4fc}  .co-idea{--c:#ec4899;--c2:#f9a8d4}      .co-definition{--c:#f59e0b;--c2:#fcd34d}
+.co-quote{--c:#64748b;--c2:#cbd5e1}      .co-link{--c:#2563eb;--c2:#93c5fd}      .co-progress{--c:#06b6d4;--c2:#67e8f9}
+.co-defense{--c:#0d9488;--c2:#5eead4}    .co-interview{--c:#e11d48;--c2:#fda4af} .co-recall{--c:#0891b2;--c2:#67e8f9}
+.co-mnemonic{--c:#ca8a04;--c2:#fde047}   .co-abstract{--c:#38bdf8;--c2:#bae6fd}  .co-failure{--c:#dc2626;--c2:#fecaca}
+.co-bug{--c:#f43f5e;--c2:#fecdd3}
+
+/* Content inside a card (beats the article styles of both themes) */
+.co:not(.co-toggle) .co-b > :first-child{ margin-top:0; }
+.co:not(.co-toggle) .co-b > :last-child{ margin-bottom:0; }
+.co:not(.co-toggle) .co-b p, .co:not(.co-toggle) .co-b li{ font-family:var(--sans); font-size:inherit; line-height:1.6; color:inherit; margin:.45em 0; }
+.co:not(.co-toggle) .co-b strong, .co:not(.co-toggle) .co-b b{ color:#fff; font-weight:700; }
+.co:not(.co-toggle) .co-b a{ color:var(--c2); }
+.co:not(.co-toggle) .co-b code{ background:rgba(255,255,255,.12); color:#fff; border:0; border-radius:4px; padding:.1em .35em; font-size:.88em; }
+.co:not(.co-toggle) .co-b ul, .co:not(.co-toggle) .co-b ol{ background:none; border:0; border-radius:0; box-shadow:none; margin:.45em 0; padding:0 0 0 1.4em; font-size:inherit; color:inherit; }
+.co:not(.co-toggle) .co-b ol{ padding-left:2.3em; }
+.co:not(.co-toggle) .co-b li::marker{ color:var(--c2); }
+.co:not(.co-toggle) .co-b img{ border-radius:10px; border:1px solid var(--co-line); }
+.co:not(.co-toggle) .co-b hr{ border:0; border-top:1px dashed var(--co-line); margin:.9em 0; }
+.co:not(.co-toggle) .co-b span[class^="mk-"], .co:not(.co-toggle) .co-b mark{ color:#0b1020; background:var(--c2); border-radius:4px; padding:0 4px; }
+
+/* table inside a card */
+.co:not(.co-toggle) .co-b table{
+  display:table; width:100%; border-collapse:separate; border-spacing:0; margin:.8em 0; font-size:15px;
+  background:rgba(255,255,255,.04); border:1px solid var(--co-line); border-radius:10px; overflow:hidden;
+}
+.co:not(.co-toggle) .co-b th{
+  padding:9px 12px; border:0; text-align:left; background:color-mix(in srgb, var(--c) 30%, transparent); color:var(--c2);
+  font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+}
+.co:not(.co-toggle) .co-b td{ padding:9px 12px; border:0; border-top:1px solid rgba(255,255,255,.08); color:var(--co-ink); vertical-align:top; }
+.co:not(.co-toggle) .co-b tr:nth-child(even) td{ background:rgba(255,255,255,.03); }
+.co:not(.co-toggle) .co-b td:first-child{ font-weight:700; }
+
+/* code inside a card */
+.co:not(.co-toggle) .co-b pre{ background:rgba(3,6,14,.6); border:1px solid var(--co-line); border-radius:10px; box-shadow:none; padding:12px 16px; margin:.8em 0; color:#e6edf3; }
+.co:not(.co-toggle) .co-b pre code{ background:none; padding:0; color:inherit; font-size:14px; }
+.co:not(.co-toggle) .co-b div.highlighter-rouge[data-lang]::before{ display:none; }   /* label sticker is for page-level code */
+
+/* quote inside a card, and the quote variant itself */
+.co:not(.co-toggle) .co-b blockquote{ margin:.6em 0; padding:8px 14px; border:0; border-left:4px solid var(--c); background:rgba(255,255,255,.05); border-radius:6px; font-family:var(--sans); font-style:italic; color:inherit; box-shadow:none; }
+.co-quote > .co-b > p{ font-style:italic; }
+
+/* checklist (markdown "- [ ]" / "- [x]"), anywhere in a post */
+.post-content ul.task-list{ list-style:none; padding-left:24px; }
+.post-content li.task-list-item{ position:relative; padding-left:34px; list-style:none; }
+.post-content li.task-list-item::marker{ content:""; }
+.task-list-item-checkbox{
+  appearance:none; -webkit-appearance:none; position:absolute; left:0; top:.2em; width:22px; height:22px; margin:0;
+  color:inherit; border:2px solid currentColor; border-radius:6px; background:transparent; cursor:pointer; opacity:.85;
+}
+.task-list-item-checkbox:checked{ background:var(--green); border-color:var(--green); opacity:1; }
+.task-list-item-checkbox:checked::after{
+  content:""; position:absolute; left:6px; top:1px; width:6px; height:12px; border:solid #0b1020; border-width:0 2.5px 2.5px 0; transform:rotate(45deg);
+}
+.co li.task-list-item:has(> .task-list-item-checkbox:checked){   /* done = struck through, only in callout checklists */
+   text-decoration:line-through; text-decoration-thickness:2px; opacity:.6; }
+.co:not(.co-toggle) .co-b ul.task-list{ padding-left:0; }
+.co:not(.co-toggle) .task-list-item-checkbox{ border-color:var(--c2); }
+.co:not(.co-toggle) .task-list-item-checkbox:checked{ background:#4ade80; border-color:#4ade80; }
+
+/* steps: numbered circles */
+.co.co-steps .co-b ol{ list-style:none; counter-reset:s; padding-left:0; }
+.co-steps .co-b ol > li{ counter-increment:s; position:relative; padding:4px 0 4px 44px; margin:4px 0; }
+.co-steps .co-b ol > li::before{
+  content:counter(s); position:absolute; left:0; top:3px; width:30px; height:30px; border-radius:50%; display:grid; place-items:center;
+  border:2px solid var(--c); background:rgba(255,255,255,.04); color:var(--c2); font-family:var(--mono); font-weight:700; font-size:14px;
+}
+
+/* definition: each paragraph is a term block */
+.co-definition > .co-b > p{ border-left:4px solid var(--c); background:rgba(255,255,255,.06); padding:8px 12px; border-radius:8px; margin:.5em 0; }
+.co-definition > .co-b > p strong{ color:var(--c2); }
+
+/* link: a paragraph that is only a link becomes a card */
+.co:not(.co-toggle) .co-b p.lnk > a{
+  display:flex; flex-direction:column; gap:2px; padding:9px 13px; border-radius:10px; text-decoration:none;
+  background:rgba(255,255,255,.06); border:1px solid var(--co-line); font-weight:700;
+}
+.co:not(.co-toggle) .co-b p.lnk > a:hover, .co:not(.co-toggle) .co-b p.lnk > a:focus-visible{ border-color:var(--c2); }
+.co:not(.co-toggle) .co-b .lnk-url{ font-family:var(--mono); font-size:12.5px; font-weight:400; color:#93a4c0; overflow-wrap:anywhere; }
+
+/* progress: <progress value max> in the body */
+.co progress{ appearance:none; -webkit-appearance:none; display:block; width:100%; height:14px; margin:8px 0 4px; border:0; border-radius:8px; background:rgba(255,255,255,.12); overflow:hidden; }
+.co progress::-webkit-progress-bar{ background:rgba(255,255,255,.12); border-radius:8px; }
+.co progress::-webkit-progress-value{ background:linear-gradient(90deg, var(--c), var(--c2)); border-radius:8px; }
+.co progress::-moz-progress-bar{ background:linear-gradient(90deg, var(--c), var(--c2)); border-radius:8px; }
+
+/* Nested callouts: inset, no art, no outer glow, smaller title */
+.co:not(.co-toggle) .co{
+  margin:.9em 0; padding:12px 14px; border-width:1.5px;
+  background:linear-gradient(135deg, color-mix(in srgb, var(--c) 24%, #070b16) 0%, #070b16 80%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);
+}
+.co:not(.co-toggle) .co > .co-h{ font-size:17px; }
+.co:not(.co-toggle) .co > .co-h .co-i{ width:26px; height:26px; font-size:13px; }
+.co:not(.co-toggle) .co > .co-art{ display:none; }
+.co:not(.co-toggle) .co > .co-b{ padding-right:0; }
+
+/* Foldable callouts (<details>) */
+details.co > summary{ cursor:pointer; list-style:none; user-select:none; }
+details.co > summary::-webkit-details-marker{ display:none; }
+details.co:not(.co-toggle) > summary::after{
+  content:""; flex:none; margin-left:auto; width:9px; height:9px;
+  border-right:2px solid var(--c2); border-bottom:2px solid var(--c2); transform:rotate(-45deg); transition:transform .2s ease;
+}
+details.co:not(.co-toggle)[open] > summary::after{ transform:rotate(45deg); }
+details.co:not([open]) > .co-h{ margin:0; }
+details.co:not([open]) > .co-art{ display:none; }
+
+/* Plain toggle: no card, a chevron and a guide line; takes the colours of where it sits */
+.co.co-toggle{
+  margin:14px 0; padding:2px 0; overflow:visible; border:0; border-radius:0; background:none; box-shadow:none;
+  color:inherit; font-size:inherit;
+}
+.co-toggle > .co-h{ font-family:var(--sans); font-size:17px; font-weight:600; color:var(--text-primary); margin:0; padding:4px 0; }
+.co:not(.co-toggle) .co-toggle > .co-h{ color:var(--co-ink); }
+.co-toggle > summary::before{
+  content:""; flex:none; width:8px; height:8px; margin:0 4px 0 2px;
+  border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(-45deg); transition:transform .2s ease;
+}
+.co-toggle[open] > summary::before{ transform:rotate(45deg); }
+.co-toggle > .co-b{ padding:4px 0 4px 18px; margin:4px 0 0 6px; border-left:2px solid var(--border); }
+.co:not(.co-toggle) .co-toggle > .co-b{ border-left-color:var(--co-line); }
+.co:not(.co-toggle) .co.co-toggle{ background:none; padding:2px 0; box-shadow:none; }
+
+/* Side by side (|side): separate cards in one row, same height; stacks when there is no room */
+.co-row{ display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px; margin:24px 0; align-items:stretch; }
+.co-row > .co{ margin:0; }
+.co-row > .co > .co-h{ padding-right:40px; }
+.co-row > .co > .co-b{ padding-right:0; }
+.co-row > .co > .co-art{ top:10px; bottom:auto; right:12px; font-size:30px; }
+.co-row > details.co > .co-h{ padding-right:0; }
+.co-row > details.co > .co-art{ display:none; }
+
+/* Phones: art moves into the header corner so the body keeps the full width */
+@media (max-width:640px){
+  .co{ padding:12px 14px; font-size:16px; }
+  .co-h{ font-size:17px; padding-right:40px; }
+  details.co:not(.co-toggle) > .co-h{ padding-right:0; }
+  .co-b{ padding-right:0; }
+  .co-art{ top:10px; bottom:auto; right:12px; font-size:30px; }
+  details.co > .co-art{ display:none; }
+  .co:not(.co-toggle) .co-b table{ display:block; overflow-x:auto; }
+}
+
+/* Notebook theme: handwritten titles, like the source design */
+:where(html[data-theme="notebook"]) .co-h{ font-family:var(--hand); font-size:23px; font-weight:700; }
+:where(html[data-theme="notebook"]) .co:not(.co-toggle) .co > .co-h{ font-size:20px; }
+:where(html[data-theme="notebook"]) .co-toggle > .co-h{ font-family:var(--sans); font-size:18px; }
+
+/* Print: light card, coloured edge */
+@media print{
+  .co{ background:#fff !important; color:#111; box-shadow:none; break-inside:avoid; }
+  .co-h, .co:not(.co-toggle) .co-b strong, .co:not(.co-toggle) .co-b td{ color:#111; }
+  .co:not(.co-toggle) .co-b code, .co:not(.co-toggle) .co-b pre{ background:#f3f4f6; color:#111; }
+  .co-art{ display:none; }
+  .co-b{ padding-right:0; }
+}
